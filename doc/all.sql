@@ -1,17 +1,21 @@
 drop table if exists `test`;
-create table `test` (
-  `id` bigint unsigned not null AUTO_INCREMENT comment '主键',
-  `name` varchar(225) not null DEFAULT '' comment '名称',
-  `password` varchar(225) not null comment '密码',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='测试';
-select * from `test`;
+create table `test`
+(
+    `id`       bigint unsigned not null AUTO_INCREMENT comment '主键',
+    `name`     varchar(225)    not null DEFAULT '' comment '名称',
+    `password` varchar(225)    not null comment '密码',
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_unicode_ci COMMENT ='测试';
+select *
+from `test`;
 
 drop table if exists `demo`;
 create table `demo`
 (
-    `id`       bigint unsigned not null AUTO_INCREMENT comment '主键',
-    `name`     varchar(225)    not null DEFAULT '' comment '名称',
+    `id`   bigint unsigned not null AUTO_INCREMENT comment '主键',
+    `name` varchar(225)    not null DEFAULT '' comment '名称',
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4
@@ -21,3 +25,29 @@ from `test`;
 
 insert into `demo` (id, name)
 values (1, '测试');
+
+#电子书表
+drop table if exists `ebook`;
+create table `ebook`
+(
+    `id`           bigint not null comment 'id',
+    `name`         varchar(50) comment '名称',
+    `category1_id` bigint comment '分类1',
+    `category2_id` bigint comment '分类2',
+    `description`  varchar(20) comment '描述',
+    `cover`        varchar(200) comment '封面',
+    `doc_count`    int comment '文档数',
+    `view_count`   int comment '阅读数',
+    `vote_count`   int comment '点赞数',
+    primary key (`id`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_unicode_ci COMMENT ='电子书';
+
+insert into `ebook` (id, name, description) values (1, 'Spring Boot 入门教程', '零基础入门Java');
+insert into `ebook` (id, name, description) values (2, 'Vue 入门教程', '零基础入门Vue');
+insert into `ebook` (id, name, description) values (3, 'Python 入门教程', '零基础入门Python');
+insert into `ebook` (id, name, description) values (4, 'Mysql 入门教程', '零基础入门Mysql');
+insert into `ebook` (id, name, description) values (5, 'Oracle 入门教程', '零基础入门Oracle');
+
+select * from `ebook`;
