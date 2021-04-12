@@ -7,4 +7,17 @@ create table `test` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='测试';
 select * from `test`;
 
-insert into `test` (id, name, password) values (1, '测试', 'password');
+drop table if exists `demo`;
+create table `demo`
+(
+    `id`       bigint unsigned not null AUTO_INCREMENT comment '主键',
+    `name`     varchar(225)    not null DEFAULT '' comment '名称',
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_unicode_ci COMMENT ='测试';
+select *
+from `test`;
+
+insert into `demo` (id, name)
+values (1, '测试');
