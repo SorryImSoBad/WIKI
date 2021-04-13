@@ -11,7 +11,7 @@
           <template #title>
                 <span>
                   <user-outlined/>
-                  subnav 111
+                  subnav 1
                 </span>
           </template>
           <a-menu-item key="1">option1</a-menu-item>
@@ -59,8 +59,5 @@ import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
 export default defineComponent({
   name: 'Home',
-  components: {
-    HelloWorld,
-  },
 });
 </script>
