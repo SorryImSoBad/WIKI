@@ -3,8 +3,6 @@
     <a-layout-sider width="200" style="background: #fff">
       <a-menu
           mode="inline"
-          v-model:selectedKeys="selectedKeys2"
-          v-model:openKeys="openKeys"
           :style="{ height: '100%', borderRight: 0 }"
       >
         <a-sub-menu key="sub1">
@@ -71,35 +69,14 @@
 
     </a-layout-content>
   </a-layout>
-  <style scoped>
-    .ant-avatar {
-      width: 50px;
-      height: 50px;
-      line-height: 50px;
-      border-radius: 8%;
-      margin: 5px 0;
-    }
-  </style>
+
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted, ref, reactive, toRef} from 'vue';
+import {defineComponent, onMounted, ref} from 'vue';
 import {StarOutlined, LikeOutlined, MessageOutlined} from '@ant-design/icons-vue';
 import axios from 'axios';
 
-const listData: Record<string, string>[] = [];
-
-for (let i = 0; i < 23; i++) {
-  listData.push({
-    href: 'https://www.antdv.com/',
-    title: `ant design vue part ${i}`,
-    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-    description:
-        'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-    content:
-        'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-  });
-}
 
 export default defineComponent({
   name: 'Home',
@@ -114,7 +91,7 @@ export default defineComponent({
 
     onMounted(() => {
       console.log('onMounted');
-      axios.get('http://localhost:8880/ebook/list').then((response) => {
+      axios.get(process.env.VUE_APP_SERVER+'/ebook/list').then((response) => {
         const data = response.data;
         ebooks.value = data.content;
         console.log(response);
@@ -135,11 +112,20 @@ export default defineComponent({
 
     return {
       ebooks,
-      listData,
       pagination,
       actions,
     };
   }
 });
 </script>
+
+<style scoped>
+.ant-avatar {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 8%;
+  margin: 5px 0;
+}
+</style>
 
