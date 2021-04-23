@@ -1,0 +1,17 @@
+<template>
+  <a-layout-footer style="text-align: center">
+    Ant Design ©2018 Created by Ant UED
+  </a-layout-footer>
+</template>
+
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
+  name: 'TheFooter',
+});
+</script>
+
+<style scoped>
+
+</style>
