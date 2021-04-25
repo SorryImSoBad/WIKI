@@ -46,8 +46,7 @@ public class EbookService {
 //            respList.add(ebookResp);
 //         }
         //列表复制
-        List<EbookResp> List = CopyUtil.copyList(ebookList, EbookResp.class);
 
-        return List;
+        return CopyUtil.copyList(ebookList, EbookResp.class);
     }
 }
