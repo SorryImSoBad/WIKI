@@ -1,6 +1,6 @@
-package com.example.demo.resp;
+package com.example.demo.req;
 
-public class EbookResp {
+public class EbookSaveReq {
     private Long id;
 
     private String name;
