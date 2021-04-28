@@ -37,7 +37,7 @@ export default Vue.extend ({
       ebooks: [],
       pagination: {
         current: 1,
-        pageSize: 2,
+        pageSize: 4,
         total: 0
       },
       columns:[
@@ -82,7 +82,7 @@ export default Vue.extend ({
   mounted(){
     this.handleQuery({
       page: 1,
-      size: 1,
+      size: this.pagination.pageSize,
     });
   },
   methods:{
@@ -102,14 +102,20 @@ export default Vue.extend ({
     handleQuery(params: any){
         this.loading = true;
         console.log('12'+params);
-        axios.get(process.env.VUE_APP_SERVER+"/ebook/list", params).then((response) => {
+        axios.get(process.env.VUE_APP_SERVER+"/ebook/list", {
+          params:{
+            page: params.page,
+            size: params.size,
+          }
+        }).then((response) => {
         this.loading = false;
         console.log(response);
         let data = response.data;
-        this.ebooks = data.content;
+        this.ebooks = data.content.list;
 
         // 重置分页按钮
         this.pagination.current = params.page;
+        this.pagination.total = data.content.total;
       });
     }
   }

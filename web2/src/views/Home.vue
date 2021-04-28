@@ -81,25 +81,25 @@
 import Vue from 'vue';
 import axios from "axios";
 
-const listData: any = [];
-for (let i = 0; i < 23; i++) {
-  listData.push({
-    href: 'https://www.antdv.com/',
-    title: `ant design vue part ${i}`,
-    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-    description:
-        'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-    content:
-        'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-  });
-}
+// const listData: any = [];
+// for (let i = 0; i < 23; i++) {
+//   listData.push({
+//     href: 'https://www.antdv.com/',
+//     title: `ant design vue part ${i}`,
+//     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+//     description:
+//         'Ant Design, a design language for background applications, is refined by Ant UED Team.',
+//     content:
+//         'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+//   });
+// }
 
 export default Vue.extend({
   name: 'Home',
   data(){
     return{
       ebooks : [],
-      listData,
+
       pagination: {
         onChange: (page: any) => {
           console.log(page);
@@ -117,7 +117,7 @@ export default Vue.extend({
     console.log('mounted123');
     axios.get(process.env.VUE_APP_SERVER+'/ebook/list').then((response)=>{
       const data = response.data;
-      this.ebooks = data.content;
+      this.ebooks = data.content.list;
       console.log(response);
       console.log(this.ebooks);
     })
