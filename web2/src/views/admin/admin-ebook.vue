@@ -80,7 +80,10 @@ export default Vue.extend ({
     };
   },
   mounted(){
-    this.handleQuery({});
+    this.handleQuery({
+      page: 1,
+      size: 1,
+    });
   },
   methods:{
     /**
