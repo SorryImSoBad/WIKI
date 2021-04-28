@@ -15,7 +15,7 @@
         </template>
         <template v-slot:action="{ text, record }">
           <a-space size="small">
-            <a-button type="primary" @click="showModal">
+            <a-button type="primary" @click="showModal(record)">
               编辑
             </a-button>
             <a-button type="danger">
@@ -32,13 +32,32 @@
       :confirm-loading="confirmLoading"
       @ok="handleOk"
   >
-    <p>{{ modalText }}</p>
+    <p>
+      <a-form :model="formState" :label-col="labelCol" :wrapper-col="wrapperCol">
+        <a-form-item label="封面">
+          <a-input v-model:value="formState.cover" />
+        </a-form-item>
+        <a-form-item label="名称">
+          <a-input v-model:value="formState.name" />
+        </a-form-item>
+        <a-form-item label="分类一">
+          <a-input v-model:value="formState.category1Id" />
+        </a-form-item>
+        <a-form-item label="分类二">
+          <a-input v-model:value="formState.category2Id" />
+        </a-form-item>
+        <a-form-item label="描述">
+          <a-input v-model:value="formState.description" />
+        </a-form-item>
+      </a-form>
+    </p>
   </a-modal>
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted, ref} from 'vue';
+import {defineComponent, onMounted, ref, reactive, toRaw, UnwrapRef} from 'vue';
 import axios from 'axios';
+import { Moment } from 'moment';
 
 export default defineComponent({
   name: 'AdminEbook',
@@ -126,8 +145,12 @@ export default defineComponent({
     const visible = ref<boolean>(false);
     const confirmLoading = ref<boolean>(false);
 
-    const showModal = () => {
+    //---------表单---------
+    const formState = ref();
+
+    const showModal = (record: any) => {
       visible.value = true;
+      formState.value = record;
     };
 
     const handleOk = () => {
@@ -138,6 +161,7 @@ export default defineComponent({
         confirmLoading.value = false;
       }, 2000);
     };
+
 
     onMounted(() => {
       handleQuery({
@@ -157,6 +181,7 @@ export default defineComponent({
       confirmLoading,
       showModal,
       handleOk,
+      formState,
     };
   },
 });
