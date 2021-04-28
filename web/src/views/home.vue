@@ -93,7 +93,7 @@ export default defineComponent({
       console.log('onMounted');
       axios.get(process.env.VUE_APP_SERVER+'/ebook/list').then((response) => {
         const data = response.data;
-        ebooks.value = data.content;
+        ebooks.value = data.content.list;
         console.log(response);
       });
     });
