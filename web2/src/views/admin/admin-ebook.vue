@@ -1,5 +1,6 @@
 <template>
   <div style="{margin: 24px;}">
+    <p><a-button type="primary" @click="add" size="large">新增</a-button></p>
     <a-table
         :columns="columns"
         :row-key="record => record.id"
@@ -11,9 +12,9 @@
       <template slot="cover" slot-scope="cover">
         <img v-if="cover" :src="cover" alt="avatar"/>
       </template>
-      <template slot="action">
+      <template slot="action" slot-scope="text, record">
         <a-space size="small">
-          <a-button type="primary">
+          <a-button type="primary" @click="showModal(record)">
             编辑
           </a-button>
           <a-button type="danger">
@@ -22,6 +23,33 @@
         </a-space>
       </template>
     </a-table>
+    <a-modal
+        title="Title"
+        :visible="visible"
+        :confirm-loading="confirmLoading"
+        @ok="handleOk"
+        @cancel="handleCancel"
+    >
+      <p>
+        <a-form-model :model="form" :label-col="labelCol" :wrapper-col="wrapperCol">
+          <a-form-model-item label="封面">
+            <a-input v-model="form.cover" />
+          </a-form-model-item>
+          <a-form-model-item label="名称">
+            <a-input v-model="form.name" />
+          </a-form-model-item>
+          <a-form-model-item label="分类一">
+            <a-input v-model="form.category1Id" />
+          </a-form-model-item>
+          <a-form-model-item label="分类二">
+            <a-input v-model="form.category2Id" />
+          </a-form-model-item>
+          <a-form-model-item label="描述">
+            <a-input v-model="form.description" />
+          </a-form-model-item>
+        </a-form-model>
+      </p>
+    </a-modal>
   </div>
 
 </template>
@@ -34,6 +62,13 @@ export default Vue.extend ({
   name: "admin-ebook",
   data() {
     return {
+      labelCol: { span: 4 },
+      wrapperCol: { span: 14 },
+      form: {},
+
+      visible: false,
+      confirmLoading: false,
+
       ebooks: [],
       pagination: {
         current: 1,
@@ -117,6 +152,40 @@ export default Vue.extend ({
         this.pagination.current = params.page;
         this.pagination.total = data.content.total;
       });
+    },
+
+    /**
+     * 编辑模块框
+     **/
+    showModal(record: any) {
+      this.visible = true;
+      this.form = record;
+    },
+    handleOk(e: any) {
+      this.confirmLoading = true;
+      axios.post(process.env.VUE_APP_SERVER+"/ebook/save", this.form
+      ).then((response) => {
+        let data = response.data;
+        if(data.success){
+          this.visible = false;
+          this.confirmLoading = false;
+
+          //重新加载列表
+          this.handleQuery({
+            page: this.pagination.current,
+            size: this.pagination.pageSize,
+          });
+        }
+      });
+    },
+    handleCancel(e: any) {
+      console.log('Clicked cancel button');
+      this.visible = false;
+    },
+
+    add(){
+      this.visible = true;
+      this.form = {};
     }
   }
 })

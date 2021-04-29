@@ -162,6 +162,7 @@ export default defineComponent({
     };
 
     const handleOk = () => {
+      console.log('123',formState.value);
       confirmLoading.value = true;
       axios.post(process.env.VUE_APP_SERVER + "/ebook/save", formState.value
       ).then((response) => {
