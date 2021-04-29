@@ -2,6 +2,9 @@
 
   <a-layout class="home">
     <a-layout-content :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }">
+      <p>
+        <a-button type="primary" @click="add" size="large">新增</a-button>
+      </p>
       <a-table
           :columns="columns"
           :row-key="record => record.id"
@@ -55,9 +58,8 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted, ref, reactive, toRaw, UnwrapRef} from 'vue';
+import {defineComponent, onMounted, ref} from 'vue';
 import axios from 'axios';
-import { Moment } from 'moment';
 
 export default defineComponent({
   name: 'AdminEbook',
@@ -147,9 +149,16 @@ export default defineComponent({
     //---------表单---------
     const formState = ref();
 
+    //编辑
     const showModal = (record: any) => {
       visible.value = true;
       formState.value = record;
+    };
+
+    //新增
+    const add = () => {
+      visible.value = true;
+      formState.value = {};
     };
 
     const handleOk = () => {
@@ -189,6 +198,7 @@ export default defineComponent({
       showModal,
       handleOk,
       formState,
+      add,
     };
   },
 });
