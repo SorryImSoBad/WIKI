@@ -17,9 +17,16 @@
           <a-button type="primary" @click="showModal(record)">
             编辑
           </a-button>
-          <a-button type="danger">
-            删除
-          </a-button>
+          <a-popconfirm
+              title="Are you sure delete this task?"
+              ok-text="Yes"
+              cancel-text="No"
+              @confirm="handleDelete(record.id)"
+          >
+            <a-button type="danger">
+              删除
+            </a-button>
+          </a-popconfirm>
         </a-space>
       </template>
     </a-table>
@@ -183,10 +190,29 @@ export default Vue.extend ({
       this.visible = false;
     },
 
+    /*
+    * 新增
+    * */
     add(){
       this.visible = true;
       this.form = {};
-    }
+    },
+
+    /*
+    * 删除
+    * */
+    handleDelete(id: number){
+      axios.delete(process.env.VUE_APP_SERVER+"/ebook/delete/"+id).then((response) => {
+        let data = response.data;
+        if(data.success){
+          //重新加载列表
+          this.handleQuery({
+            page: this.pagination.current,
+            size: this.pagination.pageSize,
+          });
+        }
+      });
+    },
   }
 })
 </script>

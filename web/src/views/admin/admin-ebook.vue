@@ -21,9 +21,17 @@
             <a-button type="primary" @click="showModal(record)">
               编辑
             </a-button>
-            <a-button type="danger">
-              删除
-            </a-button>
+            <a-popconfirm
+                title="Are you sure delete this task?"
+                ok-text="Yes"
+                cancel-text="No"
+                @confirm="handleDelete(record.id)"
+            >
+              <a-button type="danger">
+                删除
+              </a-button>
+            </a-popconfirm>
+
           </a-space>
         </template>
       </a-table>
@@ -60,6 +68,7 @@
 <script lang="ts">
 import {defineComponent, onMounted, ref} from 'vue';
 import axios from 'axios';
+import { message } from 'ant-design-vue';
 
 export default defineComponent({
   name: 'AdminEbook',
@@ -161,6 +170,19 @@ export default defineComponent({
       formState.value = {};
     };
 
+    const handleDelete = (id: number) =>{
+      axios.delete(process.env.VUE_APP_SERVER + "/ebook/delete/"+id).then((response) => {
+        const data = response.data;
+        if (data.success){
+          //重新加载列表
+          handleQuery({
+            page: pagination.value.current,
+            size: pagination.value.pageSize,
+          });
+        }
+      });
+    };
+
     const handleOk = () => {
       console.log('123',formState.value);
       confirmLoading.value = true;
@@ -179,7 +201,6 @@ export default defineComponent({
         }
       });
     };
-
 
     onMounted(() => {
       handleQuery({
@@ -200,6 +221,7 @@ export default defineComponent({
       handleOk,
       formState,
       add,
+      handleDelete,
     };
   },
 });
