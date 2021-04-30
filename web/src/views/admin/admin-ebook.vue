@@ -82,6 +82,7 @@
 import {defineComponent, onMounted, ref} from 'vue';
 import axios from 'axios';
 import { message } from 'ant-design-vue';
+import { Tool} from "@/util/tool";
 
 export default defineComponent({
   name: 'AdminEbook',
@@ -182,7 +183,7 @@ export default defineComponent({
     //编辑
     const showModal = (record: any) => {
       visible.value = true;
-      formState.value = record;
+      formState.value = Tool.copy(record);
     };
 
     //新增
