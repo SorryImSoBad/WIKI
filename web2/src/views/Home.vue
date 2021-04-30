@@ -115,7 +115,12 @@ export default Vue.extend({
   },
   mounted() {
     console.log('mounted123');
-    axios.get(process.env.VUE_APP_SERVER+'/ebook/list').then((response)=>{
+    axios.get(process.env.VUE_APP_SERVER+'/ebook/list',{
+      params: {
+        page: 1,
+        size: 1000,
+      }
+    }).then((response)=>{
       const data = response.data;
       this.ebooks = data.content.list;
       console.log(response);

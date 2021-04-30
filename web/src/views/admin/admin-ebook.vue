@@ -2,9 +2,22 @@
 
   <a-layout class="home">
     <a-layout-content :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }">
-      <p>
-        <a-button type="primary" @click="add" size="large">新增</a-button>
-      </p>
+      <a-form
+          layout="inline"
+          :model="param"
+      >
+        <a-form-item>
+          <a-input v-model:value="param.name" placeholder="Username">
+            <template #prefix><UserOutlined style="color: rgba(0, 0, 0, 0.25)" /></template>
+          </a-input>
+        </a-form-item>
+        <a-form-item>
+          <a-button type="primary" @click="handleQuery({page: 1,size: pagination.pageSize})" size="large">查询</a-button>
+        </a-form-item>
+        <a-form-item>
+          <a-button type="primary" @click="add" size="large">新增</a-button>
+        </a-form-item>
+      </a-form>
       <a-table
           :columns="columns"
           :row-key="record => record.id"
@@ -73,6 +86,8 @@ import { message } from 'ant-design-vue';
 export default defineComponent({
   name: 'AdminEbook',
   setup() {
+    const param = ref();
+    param.value = {};
     const ebooks = ref();
     const pagination = ref({
       current: 1,
@@ -123,20 +138,26 @@ export default defineComponent({
      **/
     const handleQuery = (params: any) => {
       loading.value = true;
-      console.log(params);
+      console.log('params:',params);
       axios.get(process.env.VUE_APP_SERVER + "/ebook/list", {
         params: {
           page: params.page,
-          size: params.size
+          size: params.size,
+          name: param.value.name,
         }
       }).then((response) => {
         loading.value = false;
         const data = response.data;
-        ebooks.value = data.content.list;
+        if (data.success){
+          ebooks.value = data.content.list;
 
-        // 重置分页按钮
-        pagination.value.current = params.page;
-        pagination.value.total = data.content.total;
+          // 重置分页按钮
+          pagination.value.current = params.page;
+          pagination.value.total = data.content.total;
+        } else {
+          message.error(data.message);
+        }
+
       });
     };
 
@@ -189,15 +210,18 @@ export default defineComponent({
       axios.post(process.env.VUE_APP_SERVER + "/ebook/save", formState.value
       ).then((response) => {
         const data = response.data;
+        confirmLoading.value = false;
         if (data.success){
           visible.value = false;
-          confirmLoading.value = false;
 
           //重新加载列表
           handleQuery({
             page: pagination.value.current,
             size: pagination.value.pageSize,
           });
+        } else {
+          message.error(data.message);
+
         }
       });
     };
@@ -222,6 +246,8 @@ export default defineComponent({
       formState,
       add,
       handleDelete,
+      handleQuery,
+      param,
     };
   },
 });
