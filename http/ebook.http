@@ -6,3 +6,4 @@ Content-Type: application/json
 {}
 
 ###
+GET http://localhost:8880/category/list?name=Vue
