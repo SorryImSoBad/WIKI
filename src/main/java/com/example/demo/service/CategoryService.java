@@ -31,7 +31,7 @@ public class CategoryService {
     private SnowFlake snowFlake;
 
     //查询
-    public List<CategoryQueryResp> all(CategoryQueryReq req){
+    public List<CategoryQueryResp> all(){
         CategoryExample categoryExample = new CategoryExample();
         categoryExample.setOrderByClause("sort asc");
         List<Category> categoryList = categoryMapper.selectByExample(categoryExample);
@@ -46,8 +46,6 @@ public class CategoryService {
         CategoryExample categoryExample = new CategoryExample();
         categoryExample.setOrderByClause("sort asc");
         CategoryExample.Criteria criteria = categoryExample.createCriteria();
-        if (!ObjectUtils.isEmpty(req.getName()))
-            criteria.andNameLike('%'+req.getName()+'%');
         PageHelper.startPage(req.getPage(), req.getSize());
         List<Category> categoryList = categoryMapper.selectByExample(categoryExample);
 
