@@ -7,7 +7,7 @@
           :model="param"
       >
         <a-form-item>
-          <a-button type="primary" @click="handleQuery()" size="large">查询</a-button>
+          <a-button type="primary" @click="handleQuery()" size="large">刷新</a-button>
         </a-form-item>
         <a-form-item>
           <a-button type="primary" @click="add" size="large">新增</a-button>
@@ -56,7 +56,14 @@
           <a-input v-model:value="formState.name" />
         </a-form-item>
         <a-form-item label="父分类">
-          <a-input v-model:value="formState.parent" />
+<!--          <a-input v-model:value="formState.parent" />-->
+          <a-select
+              v-model:value="formState.parent"
+              ref="select"
+          >
+            <a-select-option value="0">无</a-select-option>
+            <a-select-option v-for="c in level1" :key="c.id" :value="c.id" :disabled="formState.id === c.id">{{ c.name }}</a-select-option>
+          </a-select>
         </a-form-item>
         <a-form-item label="排序">
           <a-input v-model:value="formState.sort" />
