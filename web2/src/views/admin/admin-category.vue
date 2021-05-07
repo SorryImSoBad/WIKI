@@ -1,6 +1,6 @@
 <template>
   <div class="bg">
-    <a-form-model layout="inline" :model="param">
+    <a-form-model layout="inline" :model="param" style="margin-bottom: 5px;">
       <a-form-model-item>
         <a-button type="primary" @click="handleQuery" size="large">刷新</a-button>
       </a-form-model-item>
@@ -49,7 +49,14 @@
             <a-input v-model="form.name"/>
           </a-form-model-item>
           <a-form-model-item label="父分类">
-            <a-input v-model="form.parent"/>
+<!--            <a-input v-model="form.parent"/>-->
+            <a-select v-model="form.parent" style="width: 120px">
+              <a-select-option value="0">无</a-select-option>
+              <a-select-option v-for="c in level1" :key="c.id" :value="c.id" :disabled="form.id === c.id">{{
+                  c.name
+                }}
+              </a-select-option>
+            </a-select>
           </a-form-model-item>
           <a-form-model-item label="顺序">
             <a-input v-model="form.sort"/>
@@ -125,7 +132,7 @@ export default Vue.extend({
           console.log('原数组', this.categorys);
 
           this.level1 = Tool.array2Tree(this.categorys, 0);
-          console.log('树形数组',this.categorys);
+          console.log('树形数组', this.categorys);
         } else {
           message.error(data.message);
         }
