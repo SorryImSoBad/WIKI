@@ -52,9 +52,8 @@
 <!--            <a-input v-model="form.parent"/>-->
             <a-select v-model="form.parent" style="width: 120px">
               <a-select-option value="0">无</a-select-option>
-              <a-select-option v-for="c in level1" :key="c.id" :value="c.id" :disabled="form.id === c.id">{{
-                  c.name
-                }}
+              <a-select-option v-for="c in level1" :key="c.id" :value="c.id" :disabled="form.id === c.id">
+                {{c.name }}
               </a-select-option>
             </a-select>
           </a-form-model-item>
@@ -147,7 +146,7 @@ export default Vue.extend({
       this.visible = true;
       this.form = Tool.copy(record);
     },
-    handleOk(e: any) {
+    handleOk() {
       this.confirmLoading = true;
       axios.post(process.env.VUE_APP_SERVER + "/category/save", this.form
       ).then((response) => {
@@ -163,7 +162,7 @@ export default Vue.extend({
         }
       });
     },
-    handleCancel(e: any) {
+    handleCancel() {
       console.log('Clicked cancel button');
       this.visible = false;
     },

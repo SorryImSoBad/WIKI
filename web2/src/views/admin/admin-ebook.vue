@@ -24,6 +24,9 @@
       <template slot="cover" slot-scope="cover">
         <img v-if="cover" :src="cover" alt="avatar"/>
       </template>
+      <template slot="category" slot-scope="text, record">
+        <span>{{ getCategoryName(record.category1Id) }} / {{ getCategoryName(record.category2Id) }}</span>
+      </template>
       <template slot="action" slot-scope="text, record">
         <a-space size="small">
           <a-button type="primary" @click="showModal(record)">
@@ -57,11 +60,8 @@
           <a-form-model-item label="名称">
             <a-input v-model="form.name" />
           </a-form-model-item>
-          <a-form-model-item label="分类一">
-            <a-input v-model="form.category1Id" />
-          </a-form-model-item>
-          <a-form-model-item label="分类二">
-            <a-input v-model="form.category2Id" />
+          <a-form-model-item label="分类">
+            <a-cascader v-model="categoryIds" :field-names="{ label:'name', value:'id', children:'children'}" :options="level1" placeholder="Please select"/>
           </a-form-model-item>
           <a-form-model-item label="描述">
             <a-input v-model="form.description" />
@@ -88,12 +88,19 @@ export default Vue.extend ({
       },
       labelCol: { span: 4 },
       wrapperCol: { span: 14 },
-      form: {},
-
+      //---------表单---------
+      form: {
+        category1Id: 0,
+        category2Id: 0,
+      },
+      //---------编辑表单---------
       visible: false,
       confirmLoading: false,
 
-      ebooks: [],
+      level1: [] as any[],
+      categorys: [] as any[],
+      categoryIds: [] as any[],
+      ebooks: [] as any[],
       pagination: {
         current: 1,
         pageSize: 4,
@@ -110,12 +117,8 @@ export default Vue.extend ({
           dataIndex: 'name'
         },
         {
-          title: '分类一',
-          dataIndex: 'category1Id'
-        },
-        {
-          title: '分类二',
-          dataIndex: 'category2Id'
+          title: '分类',
+          scopedSlots: {customRender: 'category'}
         },
         {
           title: '文档数',
@@ -139,10 +142,13 @@ export default Vue.extend ({
     };
   },
   mounted(){
+    this.handleQueryCategory();
     this.handleQuery({
       page: 1,
       size: this.pagination.pageSize,
     });
+  },
+  props:{
   },
   methods:{
     /**
@@ -190,9 +196,13 @@ export default Vue.extend ({
     showModal(record: any) {
       this.visible = true;
       this.form = Tool.copy(record);
+      this.categoryIds = [this.form.category1Id, this.form.category2Id];
     },
     handleOk(e: any) {
+      console.log('handleOk', this.form);
       this.confirmLoading = true;
+      this.form.category1Id = this.categoryIds[0];
+      this.form.category2Id = this.categoryIds[1];
       axios.post(process.env.VUE_APP_SERVER+"/ebook/save", this.form
       ).then((response) => {
         let data = response.data;
@@ -220,7 +230,10 @@ export default Vue.extend ({
     * */
     add(){
       this.visible = true;
-      this.form = {};
+      this.form = {
+        category1Id: 0,
+        category2Id: 0,
+      };
     },
 
     /*
@@ -237,6 +250,36 @@ export default Vue.extend ({
           });
         }
       });
+    },
+
+    /*
+    * 查询所以分类
+    * */
+    handleQueryCategory(){
+      this.loading= true;
+      axios.get(process.env.VUE_APP_SERVER + "/category/all").then((response) => {
+        this.loading = false;
+        const data = response.data;
+        if (data.success) {
+          this.categorys = data.content;
+          console.log('原数组', this.categorys);
+
+          this.level1 = Tool.array2Tree(this.categorys, 0);
+          console.log('树形数组', this.categorys);
+        } else {
+          message.error(data.message);
+        }
+
+      });
+    },
+
+    getCategoryName(cid: number){
+      let result = "";
+      this.categorys.forEach((item:any) => {
+        if (item.id === cid)
+          result = item.name;
+      });
+      return result;
     },
   }
 })

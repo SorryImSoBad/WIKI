@@ -262,13 +262,12 @@ export default defineComponent({
 
     const getCategoryName = (cid: number) => {
       let result = "";
-      categorys.forEach((item:any) => {
+      categorys.forEach((item: any) => {
         if (item.id === cid)
           result = item.name;
       });
       return result;
     };
-
 
 
     onMounted(() => {
