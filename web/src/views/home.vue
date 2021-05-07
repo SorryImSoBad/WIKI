@@ -4,12 +4,11 @@
       <a-menu
           mode="inline"
           :style="{ height: '100%', borderRight: 0 }"
+          @click="handleClick"
       >
         <a-menu-item key="1">
-          <router-link :to="'/'">
-            <MailOutlined/>
-            <span>欢迎</span>
-          </router-link>
+          <MailOutlined/>
+          <span>欢迎</span>
         </a-menu-item>
         <a-sub-menu v-for="item in level1" :key="item.id">
           <template v-slot:title>
@@ -18,7 +17,7 @@
               {{ item.name }}
             </span>
           </template>
-          <a-menu-item v-for="child in item.children" :key="child.id" @click="handleClick">
+          <a-menu-item v-for="child in item.children" :key="child.id">
             <MailOutlined/>
             <span>{{ child.name }}</span>
           </a-menu-item>
@@ -28,7 +27,10 @@
     <a-layout-content
         :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }"
     >
-      <a-list item-layout="vertical" size="large" :grid="{ gutter: 20, column: 3 }" :data-source="ebooks">
+      <div class="welcome" v-show="isShowWelcome">
+        <span>欢迎</span>
+      </div>
+      <a-list v-show="!isShowWelcome" item-layout="vertical" size="large" :grid="{ gutter: 20, column: 3 }" :data-source="ebooks">
         <template #renderItem="{ item }">
           <a-list-item key="item.name">
             <template #actions>
@@ -48,7 +50,6 @@
           </a-list-item>
         </template>
       </a-list>
-
     </a-layout-content>
   </a-layout>
 
@@ -95,23 +96,38 @@ export default defineComponent({
       });
     };
 
-    const handleClick = () => {
-      console.log("mune click");
-    }
+    const isShowWelcome = ref(true);
+    let categoryId2 = 0;
 
-    onMounted(() => {
-      handleQueryCategory();
-      console.log('onMounted');
+    const handleQueryEbook = () => {
       axios.get(process.env.VUE_APP_SERVER + '/ebook/list', {
         params: {
           page: 1,
           size: 1000,
+          categoryId2: categoryId2,
         }
       }).then((response) => {
         const data = response.data;
         ebooks.value = data.content.list;
         console.log(response);
       });
+    }
+
+    const handleClick = (value: any) => {
+      console.log("mune click", value);
+      if(value.key === '1'){
+        isShowWelcome.value = true;
+      } else {
+        categoryId2 = Number(value.key);
+        isShowWelcome.value = false;
+        handleQueryEbook();
+      }
+    };
+
+    onMounted(() => {
+      handleQueryCategory();
+      //handleQueryEbook();
+      console.log('onMounted');
     });
 
     const pagination = {
@@ -132,6 +148,7 @@ export default defineComponent({
       actions,
       level1,
       handleClick,
+      isShowWelcome,
     };
   }
 });
