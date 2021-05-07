@@ -44,7 +44,7 @@
     </a-layout-content>
   </a-layout>
   <a-modal
-      title="分类表单"
+      title="文档表单"
       v-model:visible="visible"
       :confirm-loading="confirmLoading"
       @ok="handleOk"
@@ -54,7 +54,7 @@
         <a-form-item label="名称">
           <a-input v-model:value="formState.name" />
         </a-form-item>
-        <a-form-item label="父分类">
+        <a-form-item label="父文档">
 <!--          <a-input v-model:value="formState.parent" />-->
           <a-select
               v-model:value="formState.parent"
@@ -63,6 +63,27 @@
             <a-select-option value="0">无</a-select-option>
             <a-select-option v-for="c in level1" :key="c.id" :value="c.id" :disabled="formState.id === c.id">{{ c.name }}</a-select-option>
           </a-select>
+<!--          <a-tree-select-->
+<!--              v-model:value="formState.parent"-->
+<!--              show-search-->
+<!--              style="width: 100%"-->
+<!--              :dropdown-style="{ maxHeight: '400px', overflow: 'auto' }"-->
+<!--              placeholder="Please select"-->
+<!--              allow-clear-->
+<!--              tree-default-expand-all-->
+<!--          >-->
+<!--            <a-tree-select-node key="0-1" value="parent 1" title="parent 1">-->
+<!--              <a-tree-select-node key="0-1-1" value="parent 1-0" title="parent 1-0">-->
+<!--                <a-tree-select-node key="random" value="leaf1" title="my leaf" />-->
+<!--                <a-tree-select-node key="random1" value="leaf2" title="your leaf" />-->
+<!--              </a-tree-select-node>-->
+<!--              <a-tree-select-node key="random2" value="parent 1-1" title="parent 1-1">-->
+<!--                <a-tree-select-node key="random3" value="sss">-->
+<!--                  <template #title><b style="color: #08c">sss</b></template>-->
+<!--                </a-tree-select-node>-->
+<!--              </a-tree-select-node>-->
+<!--            </a-tree-select-node>-->
+<!--          </a-tree-select>-->
         </a-form-item>
         <a-form-item label="排序">
           <a-input v-model:value="formState.sort" />
@@ -79,11 +100,11 @@ import { message } from 'ant-design-vue';
 import { Tool} from "@/util/tool";
 
 export default defineComponent({
-  name: 'AdminCategory',
+  name: 'AdminDoc',
   setup() {
     const param = ref();
     param.value = {};
-    const categorys = ref();
+    const docs = ref();
     const level1 = ref();
     const loading = ref(false);
 
@@ -93,7 +114,7 @@ export default defineComponent({
         dataIndex: 'name'
       },
       {
-        title: '父分类',
+        title: '父文档',
         key: 'parent',
         dataIndex: 'parent'
       },
@@ -113,16 +134,16 @@ export default defineComponent({
      **/
     const handleQuery = () => {
       loading.value = true;
-      axios.get(process.env.VUE_APP_SERVER + "/category/all").then((response) => {
+      axios.get(process.env.VUE_APP_SERVER + "/doc/all").then((response) => {
         loading.value = false;
         const data = response.data;
         if (data.success){
-          categorys.value = data.content;
-          console.log('原数组',categorys.value);
+          docs.value = data.content;
+          console.log('原数组',docs.value);
 
           level1.value = [];
-          level1.value = Tool.array2Tree(categorys.value,0);
-          console.log('树形数组',categorys.value);
+          level1.value = Tool.array2Tree(docs.value,0);
+          console.log('树形数组',docs.value);
         } else {
           message.error(data.message);
         }
@@ -150,7 +171,7 @@ export default defineComponent({
     };
 
     const handleDelete = (id: number) =>{
-      axios.delete(process.env.VUE_APP_SERVER + "/category/delete/"+id).then((response) => {
+      axios.delete(process.env.VUE_APP_SERVER + "/doc/delete/"+id).then((response) => {
         const data = response.data;
         if (data.success){
           //重新加载列表
@@ -162,7 +183,7 @@ export default defineComponent({
     const handleOk = () => {
       console.log('123',formState.value);
       confirmLoading.value = true;
-      axios.post(process.env.VUE_APP_SERVER + "/category/save", formState.value
+      axios.post(process.env.VUE_APP_SERVER + "/doc/save", formState.value
       ).then((response) => {
         const data = response.data;
         confirmLoading.value = false;
@@ -184,7 +205,7 @@ export default defineComponent({
 
     return {
 
-      categorys,
+      docs,
       level1,
       columns,
       loading,
