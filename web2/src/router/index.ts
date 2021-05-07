@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
 import AdminEbook from '../views/admin/admin-ebook.vue'
+import AdminCategory from '../views/admin/admin-category.vue'
 
 Vue.use(VueRouter)
 
@@ -23,7 +24,12 @@ const routes: Array<RouteConfig> = [
     path: '/admin/ebook',
     name: 'AdminEbook',
     component: AdminEbook
-  }
+  },
+  {
+    path: '/admin/category',
+    name: 'AdminCategory',
+    component: AdminCategory
+  },
 ]
 
 const router = new VueRouter({
