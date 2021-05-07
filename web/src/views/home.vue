@@ -30,7 +30,8 @@
       <div class="welcome" v-show="isShowWelcome">
         <span>欢迎</span>
       </div>
-      <a-list v-show="!isShowWelcome" item-layout="vertical" size="large" :grid="{ gutter: 20, column: 3 }" :data-source="ebooks">
+      <a-list v-show="!isShowWelcome" item-layout="vertical" size="large" :grid="{ gutter: 20, column: 3 }"
+              :data-source="ebooks">
         <template #renderItem="{ item }">
           <a-list-item key="item.name">
             <template #actions>
@@ -115,7 +116,7 @@ export default defineComponent({
 
     const handleClick = (value: any) => {
       console.log("mune click", value);
-      if(value.key === '1'){
+      if (value.key === '1') {
         isShowWelcome.value = true;
       } else {
         categoryId2 = Number(value.key);
