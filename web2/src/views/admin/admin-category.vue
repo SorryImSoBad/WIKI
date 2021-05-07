@@ -11,7 +11,7 @@
     <a-table
         :columns="columns"
         :row-key="record => record.id"
-        :data-source="categorys"
+        :data-source="level1"
         :loading="loading"
         :pagination="false"
     >
@@ -46,13 +46,13 @@
       <p>
         <a-form-model :model="form" :label-col="labelCol" :wrapper-col="wrapperCol">
           <a-form-model-item label="名称">
-            <a-input v-model="form.name" />
+            <a-input v-model="form.name"/>
           </a-form-model-item>
-          <a-form-model-item label="分类一">
-            <a-input v-model="form.parent" />
+          <a-form-model-item label="父分类">
+            <a-input v-model="form.parent"/>
           </a-form-model-item>
-          <a-form-model-item label="分类二">
-            <a-input v-model="form.sort" />
+          <a-form-model-item label="顺序">
+            <a-input v-model="form.sort"/>
           </a-form-model-item>
         </a-form-model>
       </p>
@@ -65,24 +65,26 @@
 import Vue from 'vue';
 import axios from "axios";
 import {Tool} from "@/util/tool";
-import { message } from 'ant-design-vue';
+import {message} from 'ant-design-vue';
 
-export default Vue.extend ({
+export default Vue.extend({
   name: "admin-category",
   data() {
     return {
       param: {
         name: '',
       },
-      labelCol: { span: 4 },
-      wrapperCol: { span: 14 },
+      labelCol: {span: 4},
+      wrapperCol: {span: 14},
+      //---------表单---------
       form: {},
-
+      //---------编辑表单---------
       visible: false,
       confirmLoading: false,
 
-      categorys: [],
-      columns:[
+      categorys: [] as any[],
+      level1: [] as any[],
+      columns: [
         {
           title: '名称',
           dataIndex: 'name'
@@ -105,21 +107,25 @@ export default Vue.extend ({
       loading: false,
     };
   },
-  mounted(){
+  mounted() {
     this.handleQuery();
   },
-  methods:{
+  methods: {
     /**
      * 数据查询
      **/
-    handleQuery(){
-        this.loading = true;
-        axios.get(process.env.VUE_APP_SERVER+"/category/all").then((response) => {
+    handleQuery() {
+      this.loading = true;
+      axios.get(process.env.VUE_APP_SERVER + "/category/all").then((response) => {
         this.loading = false;
         console.log(response);
         let data = response.data;
-        if (data.success){
+        if (data.success) {
           this.categorys = data.content;
+          console.log('原数组', this.categorys);
+
+          this.level1 = Tool.array2Tree(this.categorys, 0);
+          console.log('树形数组',this.categorys);
         } else {
           message.error(data.message);
         }
@@ -136,10 +142,10 @@ export default Vue.extend ({
     },
     handleOk(e: any) {
       this.confirmLoading = true;
-      axios.post(process.env.VUE_APP_SERVER+"/category/save", this.form
+      axios.post(process.env.VUE_APP_SERVER + "/category/save", this.form
       ).then((response) => {
         let data = response.data;
-        if(data.success){
+        if (data.success) {
           this.visible = false;
           this.confirmLoading = false;
 
@@ -158,7 +164,7 @@ export default Vue.extend ({
     /*
     * 新增
     * */
-    add(){
+    add() {
       this.visible = true;
       this.form = {};
     },
@@ -166,10 +172,10 @@ export default Vue.extend ({
     /*
     * 删除
     * */
-    handleDelete(id: number){
-      axios.delete(process.env.VUE_APP_SERVER+"/category/delete/"+id).then((response) => {
+    handleDelete(id: number) {
+      axios.delete(process.env.VUE_APP_SERVER + "/category/delete/" + id).then((response) => {
         let data = response.data;
-        if(data.success){
+        if (data.success) {
           //重新加载列表
           this.handleQuery();
         }
@@ -185,7 +191,7 @@ img {
   height: 50px;
 }
 
-.bg{
+.bg {
   margin: 24px;
 }
 </style>
