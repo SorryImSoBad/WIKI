@@ -143,10 +143,6 @@ export default Vue.extend ({
   },
   mounted(){
     this.handleQueryCategory();
-    this.handleQuery({
-      page: 1,
-      size: this.pagination.pageSize,
-    });
   },
   props:{
   },
@@ -266,6 +262,11 @@ export default Vue.extend ({
 
           this.level1 = Tool.array2Tree(this.categorys, 0);
           console.log('树形数组', this.categorys);
+
+          this.handleQuery({
+            page: 1,
+            size: this.pagination.pageSize,
+          });
         } else {
           message.error(data.message);
         }

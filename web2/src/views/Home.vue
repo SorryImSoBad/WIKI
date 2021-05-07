@@ -24,11 +24,11 @@
       </a-menu>
     </a-layout-sider>
     <a-layout style="padding: 0 24px">
-      <div >
-        <span>
-          欢迎
-        </span>
-      </div>
+<!--      <div >-->
+<!--        <span>-->
+<!--          欢迎-->
+<!--        </span>-->
+<!--      </div>-->
       <a-layout-content
           :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }"
       >
