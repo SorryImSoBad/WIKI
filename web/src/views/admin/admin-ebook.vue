@@ -8,7 +8,9 @@
       >
         <a-form-item>
           <a-input v-model:value="param.name" placeholder="Username">
-            <template #prefix><UserOutlined style="color: rgba(0, 0, 0, 0.25)" /></template>
+            <template #prefix>
+              <UserOutlined style="color: rgba(0, 0, 0, 0.25)"/>
+            </template>
           </a-input>
         </a-form-item>
         <a-form-item>
@@ -28,6 +30,9 @@
       >
         <template #cover="{ text: cover }">
           <img v-if="cover" :src="cover" alt="avatar"/>
+        </template>
+        <template v-slot:category="{text, record }">
+          <span>{{ getCategoryName(record.category1Id) }} / {{ getCategoryName(record.category2Id) }}</span>
         </template>
         <template v-slot:action="{ text, record }">
           <a-space size="small">
@@ -59,19 +64,17 @@
     <p>
       <a-form :model="formState" :label-col="labelCol" :wrapper-col="wrapperCol">
         <a-form-item label="封面">
-          <a-input v-model:value="formState.cover" />
+          <a-input v-model:value="formState.cover"/>
         </a-form-item>
         <a-form-item label="名称">
-          <a-input v-model:value="formState.name" />
+          <a-input v-model:value="formState.name"/>
         </a-form-item>
-        <a-form-item label="分类一">
-          <a-input v-model:value="formState.category1Id" />
-        </a-form-item>
-        <a-form-item label="分类二">
-          <a-input v-model:value="formState.category2Id" />
+        <a-form-item label="分类">
+          <a-cascader v-model:value="categoryIds" :field-names="{ label: 'name', value: 'id', children: 'children'}"
+                      :options="level1" placeholder="Please select"/>
         </a-form-item>
         <a-form-item label="描述">
-          <a-input v-model:value="formState.description" />
+          <a-input v-model:value="formState.description"/>
         </a-form-item>
       </a-form>
     </p>
@@ -81,15 +84,17 @@
 <script lang="ts">
 import {defineComponent, onMounted, ref} from 'vue';
 import axios from 'axios';
-import { message } from 'ant-design-vue';
-import { Tool} from "@/util/tool";
+import {message} from 'ant-design-vue';
+import {Tool} from "@/util/tool";
 
 export default defineComponent({
   name: 'AdminEbook',
-  setup() {
+  setup: function () {
     const param = ref();
     param.value = {};
     const ebooks = ref();
+    const level1 = ref();
+    const categoryIds = ref();
     const pagination = ref({
       current: 1,
       pageSize: 4,
@@ -108,12 +113,8 @@ export default defineComponent({
         dataIndex: 'name'
       },
       {
-        title: '分类一',
-        dataIndex: 'category1Id'
-      },
-      {
-        title: '分类二',
-        dataIndex: 'category2Id'
+        title: '分类',
+        slots: {customRender: 'category'}
       },
       {
         title: '文档数',
@@ -134,12 +135,13 @@ export default defineComponent({
       }
     ];
 
+
     /**
      * 数据查询
      **/
     const handleQuery = (params: any) => {
       loading.value = true;
-      console.log('params:',params);
+      console.log('params:', params);
       axios.get(process.env.VUE_APP_SERVER + "/ebook/list", {
         params: {
           page: params.page,
@@ -149,7 +151,7 @@ export default defineComponent({
       }).then((response) => {
         loading.value = false;
         const data = response.data;
-        if (data.success){
+        if (data.success) {
           ebooks.value = data.content.list;
 
           // 重置分页按钮
@@ -184,6 +186,7 @@ export default defineComponent({
     const showModal = (record: any) => {
       visible.value = true;
       formState.value = Tool.copy(record);
+      categoryIds.value = [formState.value.category1Id, formState.value.category2Id]
     };
 
     //新增
@@ -192,10 +195,10 @@ export default defineComponent({
       formState.value = {};
     };
 
-    const handleDelete = (id: number) =>{
-      axios.delete(process.env.VUE_APP_SERVER + "/ebook/delete/"+id).then((response) => {
+    const handleDelete = (id: number) => {
+      axios.delete(process.env.VUE_APP_SERVER + "/ebook/delete/" + id).then((response) => {
         const data = response.data;
-        if (data.success){
+        if (data.success) {
           //重新加载列表
           handleQuery({
             page: pagination.value.current,
@@ -206,13 +209,15 @@ export default defineComponent({
     };
 
     const handleOk = () => {
-      console.log('123',formState.value);
+      console.log('handleOk', formState.value);
       confirmLoading.value = true;
+      formState.value.category1Id = categoryIds.value[0];
+      formState.value.category2Id = categoryIds.value[1];
       axios.post(process.env.VUE_APP_SERVER + "/ebook/save", formState.value
       ).then((response) => {
         const data = response.data;
         confirmLoading.value = false;
-        if (data.success){
+        if (data.success) {
           visible.value = false;
 
           //重新加载列表
@@ -227,7 +232,42 @@ export default defineComponent({
       });
     };
 
+    let categorys: any;
+    /*
+    * 查询所以分类
+    * */
+    const handleQueryCategory = () => {
+      loading.value = true;
+      axios.get(process.env.VUE_APP_SERVER + "/category/all").then((response) => {
+        loading.value = false;
+        const data = response.data;
+        if (data.success) {
+          categorys = data.content;
+          console.log('原数组', categorys);
+
+          level1.value = [];
+          level1.value = Tool.array2Tree(categorys, 0);
+          console.log('树形数组', categorys);
+        } else {
+          message.error(data.message);
+        }
+
+      });
+    };
+
+    const getCategoryName = (cid: number) => {
+      let result = "";
+      categorys.forEach((item:any) => {
+        if (item.id === cid)
+          result = item.name;
+      });
+      return result;
+    };
+
+
+
     onMounted(() => {
+      handleQueryCategory();
       handleQuery({
         page: 1,
         size: pagination.value.pageSize,
@@ -249,6 +289,9 @@ export default defineComponent({
       handleDelete,
       handleQuery,
       param,
+      categoryIds,
+      level1,
+      getCategoryName,
     };
   },
 });
