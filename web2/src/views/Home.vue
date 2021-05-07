@@ -6,12 +6,11 @@
           :default-selected-keys="['1']"
           :default-open-keys="['1']"
           :style="{ height: '100%', borderRight: 0 }"
+          @click="handleClick"
       >
         <a-menu-item key="1">
-          <router-link to="/">
-            <a-icon type="pie-chart"/>
-            <span>欢迎</span>
-          </router-link>
+          <a-icon type="pie-chart"/>
+          <span>欢迎</span>
         </a-menu-item>
         <a-sub-menu v-for="item in level1" :key="item.id">
           <template slot="title">
@@ -24,13 +23,11 @@
       </a-menu>
     </a-layout-sider>
     <a-layout style="padding: 0 24px">
-<!--      <div >-->
-<!--        <span>-->
-<!--          欢迎-->
-<!--        </span>-->
-<!--      </div>-->
+      <div class="welcome" :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }" v-show="isShowWelcome">
+        <span>欢迎</span>
+      </div>
       <a-layout-content
-          :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }"
+          :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }" v-show="!isShowWelcome"
       >
         <a-list item-layout="vertical" size="large" :grid="{ gutter: 20, column: 3 }" :data-source="ebooks">
           <a-list-item slot="renderItem" key="item.title" slot-scope="item">
@@ -64,6 +61,8 @@ export default Vue.extend({
       ebooks: [] as any[],
       categorys: [] as any[],
       level1: [] as any[],
+      isShowWelcome: true,
+      categoryId2: 0,
 
       pagination: {
         onChange: (page: any) => {
@@ -79,21 +78,25 @@ export default Vue.extend({
     };
   },
   mounted() {
-    this.handleQueryCategory();
     console.log('mounted123');
-    axios.get(process.env.VUE_APP_SERVER + '/ebook/list', {
-      params: {
-        page: 1,
-        size: 1000,
-      }
-    }).then((response) => {
-      const data = response.data;
-      this.ebooks = data.content.list;
-      console.log(response);
-      console.log(this.ebooks);
-    });
+    this.handleQueryCategory();
+    this.handleQueryEbook()
   },
   methods:{
+    handleQueryEbook(){
+      axios.get(process.env.VUE_APP_SERVER + '/ebook/list', {
+        params: {
+          page: 1,
+          size: 1000,
+          categoryId2: this.categoryId2
+        }
+      }).then((response) => {
+        const data = response.data;
+        this.ebooks = data.content.list;
+        console.log(response);
+        console.log(this.ebooks);
+      });
+    },
     /*
     * 查询所以分类
     * */
@@ -112,8 +115,15 @@ export default Vue.extend({
       });
     },
 
-    handleClick(){
-      console.log("mune click");
+    handleClick(value: any){
+      console.log("mune click", value);
+      if(value.key === '1'){
+        this.isShowWelcome = true;
+      } else {
+        this.isShowWelcome = false;
+        this.categoryId2 = Number(value.key);
+        this.handleQueryEbook();
+      }
     }
   }
 });
