@@ -2,12 +2,7 @@
   <div class="bg">
     <a-form-model layout="inline" :model="param">
       <a-form-model-item>
-        <a-input v-model="param.name" placeholder="Username">
-          <a-icon slot="prefix" type="user" style="color:rgba(0,0,0,.25)" />
-        </a-input>
-      </a-form-model-item>
-      <a-form-model-item>
-        <a-button type="primary" @click="handleQuery({page:1,size:pagination.pageSize})" size="large">查询</a-button>
+        <a-button type="primary" @click="handleQuery" size="large">刷新</a-button>
       </a-form-model-item>
       <a-form-model-item>
         <a-button type="primary" @click="add" size="large">新增</a-button>
@@ -16,10 +11,9 @@
     <a-table
         :columns="columns"
         :row-key="record => record.id"
-        :data-source="ebooks"
-        :pagination="pagination"
+        :data-source="categorys"
         :loading="loading"
-        @change="handleTableChange"
+        :pagination="false"
     >
       <template slot="cover" slot-scope="cover">
         <img v-if="cover" :src="cover" alt="avatar"/>
@@ -51,20 +45,14 @@
     >
       <p>
         <a-form-model :model="form" :label-col="labelCol" :wrapper-col="wrapperCol">
-          <a-form-model-item label="封面">
-            <a-input v-model="form.cover" />
-          </a-form-model-item>
           <a-form-model-item label="名称">
             <a-input v-model="form.name" />
           </a-form-model-item>
           <a-form-model-item label="分类一">
-            <a-input v-model="form.category1Id" />
+            <a-input v-model="form.parent" />
           </a-form-model-item>
           <a-form-model-item label="分类二">
-            <a-input v-model="form.category2Id" />
-          </a-form-model-item>
-          <a-form-model-item label="描述">
-            <a-input v-model="form.description" />
+            <a-input v-model="form.sort" />
           </a-form-model-item>
         </a-form-model>
       </p>
@@ -80,7 +68,7 @@ import {Tool} from "@/util/tool";
 import { message } from 'ant-design-vue';
 
 export default Vue.extend ({
-  name: "admin-ebook",
+  name: "admin-category",
   data() {
     return {
       param: {
@@ -93,41 +81,20 @@ export default Vue.extend ({
       visible: false,
       confirmLoading: false,
 
-      ebooks: [],
-      pagination: {
-        current: 1,
-        pageSize: 4,
-        total: 0
-      },
+      categorys: [],
       columns:[
-        {
-          title: '封面',
-          dataIndex: 'cover',
-          scopedSlots: {customRender: 'cover'}
-        },
         {
           title: '名称',
           dataIndex: 'name'
         },
         {
-          title: '分类一',
-          dataIndex: 'category1Id'
+          title: '父分类',
+          key: 'parent',
+          dataIndex: 'parent'
         },
         {
-          title: '分类二',
-          dataIndex: 'category2Id'
-        },
-        {
-          title: '文档数',
-          dataIndex: 'docCount'
-        },
-        {
-          title: '阅读数',
-          dataIndex: 'viewCount'
-        },
-        {
-          title: '点赞数',
-          dataIndex: 'voteCount'
+          title: '顺序',
+          dataIndex: 'sort'
         },
         {
           title: 'Action',
@@ -139,44 +106,20 @@ export default Vue.extend ({
     };
   },
   mounted(){
-    this.handleQuery({
-      page: 1,
-      size: this.pagination.pageSize,
-    });
+    this.handleQuery();
   },
   methods:{
     /**
-     * 表格点击页码时触发
-     */
-    handleTableChange(pagination: any){
-      console.log("看看自带的分页参数都有啥：" + pagination);
-      this.handleQuery({
-        page: pagination.current,
-        size: pagination.pageSize,
-      });
-    },
-    /**
      * 数据查询
      **/
-    handleQuery(params: any){
+    handleQuery(){
         this.loading = true;
-        console.log('params'+params);
-        axios.get(process.env.VUE_APP_SERVER+"/ebook/list", {
-          params:{
-            page: params.page,
-            size: params.size,
-            name: this.param.name,
-          }
-        }).then((response) => {
+        axios.get(process.env.VUE_APP_SERVER+"/category/all").then((response) => {
         this.loading = false;
         console.log(response);
         let data = response.data;
         if (data.success){
-          this.ebooks = data.content.list;
-
-          // 重置分页按钮
-          this.pagination.current = params.page;
-          this.pagination.total = data.content.total;
+          this.categorys = data.content;
         } else {
           message.error(data.message);
         }
@@ -193,7 +136,7 @@ export default Vue.extend ({
     },
     handleOk(e: any) {
       this.confirmLoading = true;
-      axios.post(process.env.VUE_APP_SERVER+"/ebook/save", this.form
+      axios.post(process.env.VUE_APP_SERVER+"/category/save", this.form
       ).then((response) => {
         let data = response.data;
         if(data.success){
@@ -201,10 +144,7 @@ export default Vue.extend ({
           this.confirmLoading = false;
 
           //重新加载列表
-          this.handleQuery({
-            page: this.pagination.current,
-            size: this.pagination.pageSize,
-          });
+          this.handleQuery();
         } else {
           message.error(data.message);
         }
@@ -227,14 +167,11 @@ export default Vue.extend ({
     * 删除
     * */
     handleDelete(id: number){
-      axios.delete(process.env.VUE_APP_SERVER+"/ebook/delete/"+id).then((response) => {
+      axios.delete(process.env.VUE_APP_SERVER+"/category/delete/"+id).then((response) => {
         let data = response.data;
         if(data.success){
           //重新加载列表
-          this.handleQuery({
-            page: this.pagination.current,
-            size: this.pagination.pageSize,
-          });
+          this.handleQuery();
         }
       });
     },
