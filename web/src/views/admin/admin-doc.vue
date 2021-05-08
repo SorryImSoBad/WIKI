@@ -32,7 +32,7 @@
                 title="Are you sure delete this task?"
                 ok-text="Yes"
                 cancel-text="No"
-                @confirm="handleDelete(record.id)"
+                @confirm="CshowModal(record.id)"
             >
               <a-button type="danger">
                 删除
@@ -72,6 +72,14 @@
         </a-form-item>
       </a-form>
     </p>
+  </a-modal>
+  <a-modal
+      title="确认"
+      v-model:visible="Cvisible"
+      :confirm-loading="CconfirmLoading"
+      @ok="handleDelete"
+  >
+    <p>{{ modalText }}</p>
   </a-modal>
 </template>
 
@@ -171,12 +179,20 @@ export default defineComponent({
       treeSelectData.value.unshift({id: 0, name: '无'});
     };
 
-    const handleDelete = (id: number) => {
-      axios.delete(process.env.VUE_APP_SERVER + "/doc/delete/" + id).then((response) => {
+    const handleDelete = () => {
+      modalText.value = 'The modal will be closed after two seconds';
+      CconfirmLoading.value = true;
+      axios.delete(process.env.VUE_APP_SERVER + "/doc/delete/" + ids.join(",")).then((response) => {
         const data = response.data;
+        CconfirmLoading.value = false;
         if (data.success) {
+          Cvisible.value = false;
+
           //重新加载列表
           handleQuery();
+        } else {
+          message.error(data.message);
+
         }
       });
     };
@@ -198,6 +214,21 @@ export default defineComponent({
 
         }
       });
+    };
+
+    /*
+    * 删除二次确认
+    * */
+    const modalText = ref<string>('Content of the modal');
+    const Cvisible = ref<boolean>(false);
+    const CconfirmLoading = ref<boolean>(false);
+
+    const CshowModal = (id: number) => {
+      ids = [];
+      names = [];
+      getDeleteIds(level1.value, id);
+      modalText.value = '将删除:【' + names.join(',') + '】删除后不可恢复,确认删除?';
+      Cvisible.value = true;
     };
 
     /*
@@ -229,6 +260,37 @@ export default defineComponent({
       }
     };
 
+    let ids: Array<string> = [];
+    let names: Array<string> = [];
+    /*
+     * 查找整根树枝
+     */
+    const getDeleteIds = (treeSelectData: any, id: any) => {
+      //遍历某一节点
+      for (let i = 0; i < treeSelectData.length; i++) {
+        const node = treeSelectData[i];
+        if (node.id === id) {
+          //如果当前节点是目标节点
+          ids.push(id);
+          names.push(node.name);
+
+          //遍历所有子节点
+          const children = node.children;
+          if (Tool.isNotEmpty(children)) {
+            for (let i = 0; i < children.length; i++) {
+              getDeleteIds(children, children[i].id);
+            }
+          }
+        } else {
+          //如果当前节点不是目标节点，找其子节点是不是目标节点
+          const children = node.children;
+          if (Tool.isNotEmpty(children)) {
+            getDeleteIds(children, id);
+          }
+        }
+      }
+    };
+
 
     onMounted(() => {
       handleQuery();
@@ -249,6 +311,10 @@ export default defineComponent({
       handleQuery,
       param,
       treeSelectData,
+      modalText,
+      Cvisible,
+      CconfirmLoading,
+      CshowModal,
     };
   },
 });

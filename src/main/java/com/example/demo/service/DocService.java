@@ -31,7 +31,7 @@ public class DocService {
     private SnowFlake snowFlake;
 
     //查询
-    public List<DocQueryResp> all(){
+    public List<DocQueryResp> all() {
         DocExample docExample = new DocExample();
         docExample.setOrderByClause("sort asc");
         List<Doc> docList = docMapper.selectByExample(docExample);
@@ -42,7 +42,7 @@ public class DocService {
         return list;
     }
 
-    public PageResp<DocQueryResp> list(DocQueryReq req){
+    public PageResp<DocQueryResp> list(DocQueryReq req) {
         DocExample docExample = new DocExample();
         docExample.setOrderByClause("sort asc");
         DocExample.Criteria criteria = docExample.createCriteria();
@@ -71,18 +71,25 @@ public class DocService {
     }
 
     //保存
-    public void save(DocSaveReq req){
+    public void save(DocSaveReq req) {
         Doc doc = CopyUtil.copy(req, Doc.class);
-        if(ObjectUtils.isEmpty(req.getId())){
+        if (ObjectUtils.isEmpty(req.getId())) {
             doc.setId(snowFlake.nextId());
             docMapper.insert(doc);
-        }else {
+        } else {
             docMapper.updateByPrimaryKey(doc);
         }
     }
 
     //删除
-    public void delete(Long id){
+    public void delete(Long id) {
         docMapper.deleteByPrimaryKey(id);
+    }
+
+    public void delete(List<String> ids) {
+        DocExample docExample = new DocExample();
+        DocExample.Criteria criteria = docExample.createCriteria();
+        criteria.andIdIn(ids);
+        docMapper.deleteByExample(docExample);
     }
 }

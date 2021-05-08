@@ -2,14 +2,15 @@ package com.example.demo.controller;
 
 import com.example.demo.req.DocQueryReq;
 import com.example.demo.req.DocSaveReq;
-import com.example.demo.resp.DocQueryResp;
 import com.example.demo.resp.CommonResp;
+import com.example.demo.resp.DocQueryResp;
 import com.example.demo.resp.PageResp;
 import com.example.demo.service.DocService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -22,7 +23,7 @@ public class DocController {
     @GetMapping("/all")
     public CommonResp all() {
         CommonResp<List<DocQueryResp>> resp = new CommonResp<>();
-        List<DocQueryResp> list= docService.all();
+        List<DocQueryResp> list = docService.all();
         resp.setContent(list);
         return resp;
     }
@@ -30,7 +31,7 @@ public class DocController {
     @GetMapping("/list")
     public CommonResp list(@Valid DocQueryReq req) {
         CommonResp<PageResp<DocQueryResp>> resp = new CommonResp<>();
-        PageResp<DocQueryResp> list= docService.list(req);
+        PageResp<DocQueryResp> list = docService.list(req);
         resp.setContent(list);
         return resp;
     }
@@ -42,10 +43,11 @@ public class DocController {
         return resp;
     }
 
-    @DeleteMapping("/delete/{id}")
-    public CommonResp delete(@PathVariable Long id) {
+    @DeleteMapping("/delete/{idsStr}")
+    public CommonResp delete(@PathVariable String idsStr) {
         CommonResp resp = new CommonResp<>();
-        docService.delete(id);
+        List<String> list = Arrays.asList(idsStr.split(","));
+        docService.delete(list);
         return resp;
     }
 }
