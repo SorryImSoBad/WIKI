@@ -80,10 +80,13 @@ import {defineComponent, onMounted, ref} from 'vue';
 import axios from 'axios';
 import {message} from 'ant-design-vue';
 import {Tool} from "@/util/tool";
+import { useRoute } from 'vue-router';
 
 export default defineComponent({
   name: 'AdminDoc',
   setup() {
+    const route = useRoute();
+    console.log("路由", route);
     const param = ref();
     param.value = {};
     const docs = ref({});
@@ -158,7 +161,9 @@ export default defineComponent({
     //新增
     const add = () => {
       visible.value = true;
-      formState.value = {};
+      formState.value = {
+        ebookId: route.query.ebookId,
+      };
 
       treeSelectData.value = Tool.copy(level1.value);
 
