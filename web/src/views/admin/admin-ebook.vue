@@ -243,6 +243,7 @@ export default defineComponent({
     * */
     const handleQueryCategory = () => {
       loading.value = true;
+      level1.value = [];
       axios.get(process.env.VUE_APP_SERVER + "/category/all").then((response) => {
         loading.value = false;
         const data = response.data;

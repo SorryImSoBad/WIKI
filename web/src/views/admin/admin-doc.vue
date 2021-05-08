@@ -52,41 +52,23 @@
     <p>
       <a-form :model="formState" :label-col="{ span: 6 }" :wrapper-col="{ span: 18}">
         <a-form-item label="名称">
-          <a-input v-model:value="formState.name" />
+          <a-input v-model:value="formState.name"/>
         </a-form-item>
         <a-form-item label="父文档">
-<!--          <a-input v-model:value="formState.parent" />-->
-          <a-select
+          <a-tree-select
               v-model:value="formState.parent"
-              ref="select"
+              style="width: 100%"
+              :dropdown-style="{ maxHeight: '400px', overflow: 'auto' }"
+              :tree-data="treeSelectData"
+              placeholder="Please select"
+              tree-default-expand-all
+              :replaceFields="{title: 'name', key: 'id', value: 'id'}"
           >
-            <a-select-option value="0">无</a-select-option>
-            <a-select-option v-for="c in level1" :key="c.id" :value="c.id" :disabled="formState.id === c.id">{{ c.name }}</a-select-option>
-          </a-select>
-<!--          <a-tree-select-->
-<!--              v-model:value="formState.parent"-->
-<!--              show-search-->
-<!--              style="width: 100%"-->
-<!--              :dropdown-style="{ maxHeight: '400px', overflow: 'auto' }"-->
-<!--              placeholder="Please select"-->
-<!--              allow-clear-->
-<!--              tree-default-expand-all-->
-<!--          >-->
-<!--            <a-tree-select-node key="0-1" value="parent 1" title="parent 1">-->
-<!--              <a-tree-select-node key="0-1-1" value="parent 1-0" title="parent 1-0">-->
-<!--                <a-tree-select-node key="random" value="leaf1" title="my leaf" />-->
-<!--                <a-tree-select-node key="random1" value="leaf2" title="your leaf" />-->
-<!--              </a-tree-select-node>-->
-<!--              <a-tree-select-node key="random2" value="parent 1-1" title="parent 1-1">-->
-<!--                <a-tree-select-node key="random3" value="sss">-->
-<!--                  <template #title><b style="color: #08c">sss</b></template>-->
-<!--                </a-tree-select-node>-->
-<!--              </a-tree-select-node>-->
-<!--            </a-tree-select-node>-->
-<!--          </a-tree-select>-->
+
+          </a-tree-select>
         </a-form-item>
         <a-form-item label="排序">
-          <a-input v-model:value="formState.sort" />
+          <a-input v-model:value="formState.sort"/>
         </a-form-item>
       </a-form>
     </p>
@@ -96,18 +78,19 @@
 <script lang="ts">
 import {defineComponent, onMounted, ref} from 'vue';
 import axios from 'axios';
-import { message } from 'ant-design-vue';
-import { Tool} from "@/util/tool";
+import {message} from 'ant-design-vue';
+import {Tool} from "@/util/tool";
 
 export default defineComponent({
   name: 'AdminDoc',
   setup() {
     const param = ref();
     param.value = {};
-    const docs = ref();
+    const docs = ref({});
     const level1 = ref();
     const loading = ref(false);
-
+    const treeSelectData = ref();
+    treeSelectData.value = [];
     const columns = [
       {
         title: '名称',
@@ -134,16 +117,17 @@ export default defineComponent({
      **/
     const handleQuery = () => {
       loading.value = true;
+      level1.value = [];
       axios.get(process.env.VUE_APP_SERVER + "/doc/all").then((response) => {
         loading.value = false;
         const data = response.data;
-        if (data.success){
+        if (data.success) {
           docs.value = data.content;
-          console.log('原数组',docs.value);
+          console.log('原数组', docs.value);
 
           level1.value = [];
-          level1.value = Tool.array2Tree(docs.value,0);
-          console.log('树形数组',docs.value);
+          level1.value = Tool.array2Tree(docs.value, 0);
+          console.log('树形数组', docs.value);
         } else {
           message.error(data.message);
         }
@@ -162,18 +146,30 @@ export default defineComponent({
     const showModal = (record: any) => {
       visible.value = true;
       formState.value = Tool.copy(record);
+
+      //不能选择当前节点及子孙节点，作为父节点，会使树断开
+      treeSelectData.value = Tool.copy(level1.value);
+      setDisabled(treeSelectData.value, record.id);
+
+      //为选择添加一个无
+      treeSelectData.value.unshift({id: 0, name: '无'});
     };
 
     //新增
     const add = () => {
       visible.value = true;
       formState.value = {};
+
+      treeSelectData.value = Tool.copy(level1.value);
+
+      //为选择添加一个无
+      treeSelectData.value.unshift({id: 0, name: '无'});
     };
 
-    const handleDelete = (id: number) =>{
-      axios.delete(process.env.VUE_APP_SERVER + "/doc/delete/"+id).then((response) => {
+    const handleDelete = (id: number) => {
+      axios.delete(process.env.VUE_APP_SERVER + "/doc/delete/" + id).then((response) => {
         const data = response.data;
-        if (data.success){
+        if (data.success) {
           //重新加载列表
           handleQuery();
         }
@@ -181,13 +177,13 @@ export default defineComponent({
     };
 
     const handleOk = () => {
-      console.log('123',formState.value);
+      console.log('123', formState.value);
       confirmLoading.value = true;
       axios.post(process.env.VUE_APP_SERVER + "/doc/save", formState.value
       ).then((response) => {
         const data = response.data;
         confirmLoading.value = false;
-        if (data.success){
+        if (data.success) {
           visible.value = false;
 
           //重新加载列表
@@ -199,12 +195,41 @@ export default defineComponent({
       });
     };
 
+    /*
+     * 将当前节点与其子节点变成disabled
+     */
+    const setDisabled = (treeSelectData: any, id: any) => {
+      //遍历某一节点
+      for (let i = 0; i < treeSelectData.length; i++) {
+        const node = treeSelectData[i];
+        if (node.id === id) {
+          //如果当前节点是目标节点
+          console.log("disabled", node);
+          node.disabled = true;
+
+          //遍历所有子节点
+          const children = node.children;
+          if (Tool.isNotEmpty(children)) {
+            for (let i = 0; i < children.length; i++) {
+              setDisabled(children, children[i].id);
+            }
+          }
+        } else {
+          //如果当前节点不是目标节点，找其子节点是不是目标节点
+          const children = node.children;
+          if (Tool.isNotEmpty(children)) {
+            setDisabled(children, id);
+          }
+        }
+      }
+    };
+
+
     onMounted(() => {
       handleQuery();
     });
 
     return {
-
       docs,
       level1,
       columns,
@@ -218,6 +243,7 @@ export default defineComponent({
       handleDelete,
       handleQuery,
       param,
+      treeSelectData,
     };
   },
 });
