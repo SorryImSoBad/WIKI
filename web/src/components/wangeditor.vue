@@ -5,8 +5,9 @@
 </template>
 
 <script>
-import { onMounted, onBeforeUnmount, ref, reactive } from 'vue';
+import {onMounted, onBeforeUnmount, ref, reactive} from 'vue';
 import WangEditor from 'wangeditor';
+
 export default {
   name: "wangeditor",
   setup() {
@@ -41,7 +42,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-
-</style>
