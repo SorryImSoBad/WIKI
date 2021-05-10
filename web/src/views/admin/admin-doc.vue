@@ -2,7 +2,7 @@
 
   <a-layout class="home">
     <a-layout-content :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }">
-      <a-row>
+      <a-row :gutter="24">
         <a-col :span="8">
           <a-form
               layout="inline"
@@ -21,13 +21,14 @@
               :data-source="level1"
               :loading="loading"
               :pagination="false"
+              size="small"
           >
-            <template #cover="{ text: cover }">
-              <img v-if="cover" :src="cover" alt="avatar"/>
+            <template #name="{ text, record }">
+              {{record.sort}} {{text}}
             </template>
             <template v-slot:action="{ text, record }">
               <a-space size="small">
-                <a-button type="primary" @click="showModal(record)">
+                <a-button type="primary" @click="showModal(record)" size="small">
                   编辑
                 </a-button>
                 <a-popconfirm
@@ -36,7 +37,7 @@
                     cancel-text="No"
                     @confirm="CshowModal(record.id)"
                 >
-                  <a-button type="danger">
+                  <a-button type="danger" size="small">
                     删除
                   </a-button>
                 </a-popconfirm>
@@ -45,27 +46,36 @@
           </a-table>
         </a-col>
         <a-col :span="16">
-          <a-form :model="formState" :label-col="{ span: 6 }" :wrapper-col="{ span: 18}">
-            <a-form-item label="名称">
-              <a-input v-model:value="formState.name"/>
+          <p>
+            <a-form layout="inline" :model="param">
+              <a-form-item>
+                <a-button type="primary" @click="handleSave">
+                  保存
+                </a-button>
+              </a-form-item>
+            </a-form>
+          </p>
+          <a-form :model="formState" layout="vertical">
+            <a-form-item>
+              <a-input v-model:value="formState.name" placeholder="请输入名称"/>
             </a-form-item>
-            <a-form-item label="父文档">
+            <a-form-item >
               <a-tree-select
                   v-model:value="formState.parent"
                   style="width: 100%"
                   :dropdown-style="{ maxHeight: '400px', overflow: 'auto' }"
                   :tree-data="treeSelectData"
-                  placeholder="Please select"
+                  placeholder="请选择父文档"
                   tree-default-expand-all
                   :replaceFields="{title: 'name', key: 'id', value: 'id'}"
               >
 
               </a-tree-select>
             </a-form-item>
-            <a-form-item label="排序">
-              <a-input v-model:value="formState.sort"/>
+            <a-form-item >
+              <a-input v-model:value="formState.sort" placeholder="请输入顺序"/>
             </a-form-item>
-            <a-form-item label="内容">
+            <a-form-item>
               <Wang_Editor/>
             </a-form-item>
           </a-form>
@@ -117,16 +127,8 @@ export default defineComponent({
     const columns = [
       {
         title: '名称',
-        dataIndex: 'name'
-      },
-      {
-        title: '父文档',
-        key: 'parent',
-        dataIndex: 'parent'
-      },
-      {
-        title: '顺序',
-        dataIndex: 'sort'
+        dataIndex: 'name',
+        slots: {customRender: 'name'}
       },
       {
         title: 'Action',
@@ -212,7 +214,7 @@ export default defineComponent({
       });
     };
 
-    const handleOk = () => {
+    const handleSave = () => {
       console.log('123', formState.value);
       confirmLoading.value = true;
       axios.post(process.env.VUE_APP_SERVER + "/doc/save", formState.value
@@ -319,7 +321,7 @@ export default defineComponent({
       visible,
       confirmLoading,
       showModal,
-      handleOk,
+      handleSave,
       formState,
       add,
       handleDelete,

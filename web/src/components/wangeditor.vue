@@ -18,6 +18,7 @@ export default {
     let instance;
     onMounted(() => {
       instance = new WangEditor(editor.value);
+      instance.config.zIndex = 0;
       Object.assign(instance.config, {
         onchange() {
           console.log('change');
