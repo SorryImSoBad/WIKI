@@ -49,29 +49,30 @@
       :confirm-loading="confirmLoading"
       @ok="handleOk"
   >
-    <p>
-      <a-form :model="formState" :label-col="{ span: 6 }" :wrapper-col="{ span: 18}">
-        <a-form-item label="名称">
-          <a-input v-model:value="formState.name"/>
-        </a-form-item>
-        <a-form-item label="父文档">
-          <a-tree-select
-              v-model:value="formState.parent"
-              style="width: 100%"
-              :dropdown-style="{ maxHeight: '400px', overflow: 'auto' }"
-              :tree-data="treeSelectData"
-              placeholder="Please select"
-              tree-default-expand-all
-              :replaceFields="{title: 'name', key: 'id', value: 'id'}"
-          >
+    <a-form :model="formState" :label-col="{ span: 6 }" :wrapper-col="{ span: 18}">
+      <a-form-item label="名称">
+        <a-input v-model:value="formState.name"/>
+      </a-form-item>
+      <a-form-item label="父文档">
+        <a-tree-select
+            v-model:value="formState.parent"
+            style="width: 100%"
+            :dropdown-style="{ maxHeight: '400px', overflow: 'auto' }"
+            :tree-data="treeSelectData"
+            placeholder="Please select"
+            tree-default-expand-all
+            :replaceFields="{title: 'name', key: 'id', value: 'id'}"
+        >
 
-          </a-tree-select>
-        </a-form-item>
-        <a-form-item label="排序">
-          <a-input v-model:value="formState.sort"/>
-        </a-form-item>
-      </a-form>
-    </p>
+        </a-tree-select>
+      </a-form-item>
+      <a-form-item label="排序">
+        <a-input v-model:value="formState.sort"/>
+      </a-form-item>
+      <a-form-item label="内容">
+        <Wang_Editor/>
+      </a-form-item>
+    </a-form>
   </a-modal>
   <a-modal
       title="确认"
@@ -89,9 +90,13 @@ import axios from 'axios';
 import {message} from 'ant-design-vue';
 import {Tool} from "@/util/tool";
 import {useRoute} from 'vue-router';
+import Wang_Editor from "@/components/wangeditor.vue";
 
 export default defineComponent({
   name: 'AdminDoc',
+  components:{
+    Wang_Editor,
+  },
   setup() {
     const route = useRoute();
     console.log("路由", route);
