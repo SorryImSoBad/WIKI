@@ -26,7 +26,7 @@
               :defaultExpandAllRows="true"
           >
             <template #name="{ text, record }">
-              {{record.sort}} {{text}}
+              {{ record.sort }} {{ text }}
             </template>
             <template v-slot:action="{ text, record }">
               <a-space size="small">
@@ -61,7 +61,7 @@
             <a-form-item>
               <a-input v-model:value="formState.name" placeholder="请输入名称"/>
             </a-form-item>
-            <a-form-item >
+            <a-form-item>
               <a-tree-select
                   v-model:value="formState.parent"
                   style="width: 100%"
@@ -74,7 +74,7 @@
 
               </a-tree-select>
             </a-form-item>
-            <a-form-item >
+            <a-form-item>
               <a-input v-model:value="formState.sort" placeholder="请输入顺序"/>
             </a-form-item>
             <a-form-item>
@@ -86,13 +86,13 @@
 
     </a-layout-content>
   </a-layout>
-<!--  <a-modal-->
-<!--      title="文档表单"-->
-<!--      v-model:visible="visible"-->
-<!--      :confirm-loading="confirmLoading"-->
-<!--      @ok="handleOk"-->
-<!--  >-->
-<!--  </a-modal>-->
+  <!--  <a-modal-->
+  <!--      title="文档表单"-->
+  <!--      v-model:visible="visible"-->
+  <!--      :confirm-loading="confirmLoading"-->
+  <!--      @ok="handleOk"-->
+  <!--  >-->
+  <!--  </a-modal>-->
   <a-modal
       title="确认"
       v-model:visible="Cvisible"
@@ -114,7 +114,7 @@ import Wang_Editor from "@/components/wangeditor.vue";
 
 export default defineComponent({
   name: 'AdminDoc',
-  components:{
+  components: {
     Wang_Editor,
   },
   setup() {
@@ -148,7 +148,8 @@ export default defineComponent({
     const handleQuery = () => {
       loading.value = true;
       level1.value = [];
-      axios.get(process.env.VUE_APP_SERVER + "/doc/all").then((response) => {
+      axios.get(process.env.VUE_APP_SERVER + "/doc/all/" + route.query.ebookId
+      ).then((response) => {
         loading.value = false;
         const data = response.data;
         if (data.success) {

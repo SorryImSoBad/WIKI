@@ -39,7 +39,7 @@ export default defineComponent({
      **/
     const handleQuery = () => {
       level1.value = [];
-      axios.get(process.env.VUE_APP_SERVER + "/doc/all").then((response) => {
+      axios.get(process.env.VUE_APP_SERVER + "/doc/all/" + route.query.ebookId).then((response) => {
         const data = response.data;
         if (data.success) {
           docs.value = data.content;

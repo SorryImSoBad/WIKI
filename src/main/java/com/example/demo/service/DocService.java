@@ -36,8 +36,9 @@ public class DocService {
     private SnowFlake snowFlake;
 
     //查询
-    public List<DocQueryResp> all() {
+    public List<DocQueryResp> all(Long ebookId) {
         DocExample docExample = new DocExample();
+        docExample.createCriteria().andEbookIdEqualTo(ebookId);
         docExample.setOrderByClause("sort asc");
         List<Doc> docList = docMapper.selectByExample(docExample);
 
@@ -88,7 +89,7 @@ public class DocService {
         } else {
             docMapper.updateByPrimaryKey(doc);
             int count = contentMapper.updateByPrimaryKeyWithBLOBs(content);
-            if (count == 0){
+            if (count == 0) {
                 contentMapper.insert(content);
             }
         }
@@ -106,7 +107,7 @@ public class DocService {
         docMapper.deleteByExample(docExample);
     }
 
-    public String findContent(Long id){
+    public String findContent(Long id) {
         Content content = contentMapper.selectByPrimaryKey(id);
         return content.getContent();
     }
