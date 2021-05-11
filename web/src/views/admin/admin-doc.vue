@@ -198,6 +198,8 @@ export default defineComponent({
 
     //编辑
     const showModal = (record: any) => {
+      //清空富文本框
+      instance.txt.html("");
       visible.value = true;
       formState.value = Tool.copy(record);
       handleQueryContent();
@@ -212,6 +214,8 @@ export default defineComponent({
 
     //新增
     const add = () => {
+      //清空富文本框
+      instance.txt.html("");
       visible.value = true;
       formState.value = {
         ebookId: route.query.ebookId,
@@ -250,7 +254,8 @@ export default defineComponent({
         const data = response.data;
         confirmLoading.value = false;
         if (data.success) {
-          visible.value = false;
+          //visible.value = false;
+          message.success("保存成功！")
 
           //重新加载列表
           handleQuery();
