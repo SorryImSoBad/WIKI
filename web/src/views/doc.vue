@@ -13,6 +13,7 @@
           </a-tree>
         </a-col>
         <a-col :span="18">
+          <div :innerHTML='content.html'></div>
         </a-col>
       </a-row>
     </a-layout-content>
@@ -33,6 +34,10 @@ export default defineComponent({
     const docs = ref();
     const level1 = ref();
     level1.value = [];
+    const content = reactive({
+      html: '',
+      text: '',
+    });
 
     /**
      * 数据查询
@@ -55,12 +60,37 @@ export default defineComponent({
       });
     };
 
+    /**
+     * 内容查询
+     **/
+    const handleQueryContent = (id: number) => {
+      axios.get(process.env.VUE_APP_SERVER + "/doc/find-content/" + id
+      ).then((response) => {
+        const data = response.data;
+        if (data.success) {
+          content.html = data.content;
+        } else {
+          message.error(data.message);
+        }
+
+      });
+    };
+
+    const onSelect = (selectedKeys: any, info: any) => {
+      console.log('selected', selectedKeys, info);
+      if (Tool.isNotEmpty(selectedKeys)) {
+        handleQueryContent(selectedKeys[0])
+      }
+    }
+
     onMounted(() => {
       handleQuery();
     });
 
     return {
       level1,
+      onSelect,
+      content,
     }
   }
 });
