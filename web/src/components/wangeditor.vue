@@ -33,6 +33,7 @@ export default {
     });
     const syncHTML = () => {
       content.html = instance.txt.html();
+      this.$emit("content", content.html);
     };
     return {
       syncHTML,

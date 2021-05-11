@@ -1,7 +1,9 @@
 package com.example.demo.service;
 
+import com.example.demo.domain.Content;
 import com.example.demo.domain.Doc;
 import com.example.demo.domain.DocExample;
+import com.example.demo.mapper.ContentMapper;
 import com.example.demo.mapper.DocMapper;
 import com.example.demo.req.DocQueryReq;
 import com.example.demo.req.DocSaveReq;
@@ -26,6 +28,9 @@ public class DocService {
 
     @Resource
     private DocMapper docMapper;
+
+    @Resource
+    private ContentMapper contentMapper;
 
     @Resource
     private SnowFlake snowFlake;
@@ -73,11 +78,19 @@ public class DocService {
     //保存
     public void save(DocSaveReq req) {
         Doc doc = CopyUtil.copy(req, Doc.class);
+        Content content = CopyUtil.copy(req, Content.class);
         if (ObjectUtils.isEmpty(req.getId())) {
             doc.setId(snowFlake.nextId());
             docMapper.insert(doc);
+
+            content.setId(doc.getId());
+            contentMapper.insert(content);
         } else {
             docMapper.updateByPrimaryKey(doc);
+            int count = contentMapper.updateByPrimaryKeyWithBLOBs(content);
+            if (count == 0){
+                contentMapper.insert(content);
+            }
         }
     }
 

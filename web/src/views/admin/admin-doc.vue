@@ -78,7 +78,7 @@
               <a-input v-model:value="formState.sort" placeholder="请输入顺序"/>
             </a-form-item>
             <a-form-item>
-              <Wang_Editor/>
+              <div ref='editor'></div>
             </a-form-item>
           </a-form>
         </a-col>
@@ -104,7 +104,8 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted, ref} from 'vue';
+import WangEditor from "wangeditor";
+import {defineComponent, onMounted, reactive, ref} from 'vue';
 import axios from 'axios';
 import {message} from 'ant-design-vue';
 import {Tool} from "@/util/tool";
@@ -121,7 +122,8 @@ export default defineComponent({
     console.log("路由", route);
     const param = ref();
     param.value = {};
-    const docs = ref({});
+    const docs = ref();
+    docs.value = {};
     const level1 = ref();
     level1.value = [];
     const loading = ref(false);
@@ -169,6 +171,11 @@ export default defineComponent({
 
     //---------表单---------
     const formState = ref();
+
+    const editor = ref();
+    let instance: WangEditor;
+
+
     formState.value = {
       ebookId: route.query.ebookId,
     };
@@ -220,6 +227,7 @@ export default defineComponent({
     const handleSave = () => {
       console.log('123', formState.value);
       confirmLoading.value = true;
+      formState.value.content = instance.txt.html();
       axios.post(process.env.VUE_APP_SERVER + "/doc/save", formState.value
       ).then((response) => {
         const data = response.data;
@@ -314,9 +322,13 @@ export default defineComponent({
 
     onMounted(() => {
       handleQuery();
+      instance = new WangEditor(editor.value);
+      instance.config.zIndex = 0;
+      instance.create();
     });
 
     return {
+      editor,
       docs,
       level1,
       columns,
