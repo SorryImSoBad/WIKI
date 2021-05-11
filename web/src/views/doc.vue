@@ -28,7 +28,7 @@ import {useRoute} from 'vue-router';
 
 export default defineComponent({
   name: 'Doc',
-  setup(){
+  setup() {
     const route = useRoute();
     const docs = ref();
     const level1 = ref();
@@ -59,7 +59,7 @@ export default defineComponent({
       handleQuery();
     });
 
-    return{
+    return {
       level1,
     }
   }

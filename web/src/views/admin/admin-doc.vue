@@ -159,6 +159,12 @@ export default defineComponent({
           level1.value = [];
           level1.value = Tool.array2Tree(docs.value, 0);
           console.log('树形数组', docs.value);
+
+          //不能选择当前节点及子孙节点，作为父节点，会使树断开
+          treeSelectData.value = Tool.copy(level1.value);
+
+          //为选择添加一个无
+          treeSelectData.value.unshift({id: 0, name: '无'});
         } else {
           message.error(data.message);
         }
