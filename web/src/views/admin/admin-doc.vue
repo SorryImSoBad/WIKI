@@ -165,6 +165,22 @@ export default defineComponent({
       });
     };
 
+    /**
+     * 内容查询
+     **/
+    const handleQueryContent = () => {
+      axios.get(process.env.VUE_APP_SERVER + "/doc/find-content/" + formState.value.id
+      ).then((response) => {
+        const data = response.data;
+        if (data.success) {
+          instance.txt.html(data.content)
+        } else {
+          message.error(data.message);
+        }
+
+      });
+    };
+
     //---------表单---------
     const visible = ref<boolean>(false);
     const confirmLoading = ref<boolean>(false);
@@ -184,6 +200,7 @@ export default defineComponent({
     const showModal = (record: any) => {
       visible.value = true;
       formState.value = Tool.copy(record);
+      handleQueryContent();
 
       //不能选择当前节点及子孙节点，作为父节点，会使树断开
       treeSelectData.value = Tool.copy(level1.value);
