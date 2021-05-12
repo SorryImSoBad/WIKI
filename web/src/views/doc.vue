@@ -8,7 +8,8 @@
               :tree-data="level1"
               @select="onSelect"
               :replaceFields="{title:'name', key:'id', value:'id'}"
-              :defaultExpandAllRows="true"
+              :defaultExpandAll="true"
+              :selectedKeys="selectedKeys"
           >
           </a-tree>
         </a-col>
@@ -38,6 +39,24 @@ export default defineComponent({
       html: '',
       text: '',
     });
+    const selectedKeys = ref();
+    selectedKeys.value = [];
+
+    /**
+     * 内容查询
+     **/
+    const handleQueryContent = (id: number) => {
+      axios.get(process.env.VUE_APP_SERVER + "/doc/find-content/" + id
+      ).then((response) => {
+        const data = response.data;
+        if (data.success) {
+          content.html = data.content;
+        } else {
+          message.error(data.message);
+        }
+
+      });
+    };
 
     /**
      * 数据查询
@@ -53,22 +72,11 @@ export default defineComponent({
           level1.value = [];
           level1.value = Tool.array2Tree(docs.value, 0);
           console.log('树形数组', docs.value);
-        } else {
-          message.error(data.message);
-        }
 
-      });
-    };
-
-    /**
-     * 内容查询
-     **/
-    const handleQueryContent = (id: number) => {
-      axios.get(process.env.VUE_APP_SERVER + "/doc/find-content/" + id
-      ).then((response) => {
-        const data = response.data;
-        if (data.success) {
-          content.html = data.content;
+          if (Tool.isNotEmpty(level1)){
+            selectedKeys.value = [level1.value[0].id];
+            handleQueryContent(level1.value[0].id);
+          }
         } else {
           message.error(data.message);
         }
@@ -91,6 +99,7 @@ export default defineComponent({
       level1,
       onSelect,
       content,
+      selectedKeys,
     }
   }
 });
