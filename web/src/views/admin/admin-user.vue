@@ -34,7 +34,7 @@
       >
         <template v-slot:action="{ text, record }">
           <a-space size="small">
-            <a-button type="primary">
+            <a-button type="primary" @click="resetshowModal(record)">
               重置密码
             </a-button>
             <a-button type="primary" @click="showModal(record)">
@@ -71,6 +71,21 @@
           <a-input v-model:value="formState.name"/>
         </a-form-item>
         <a-form-item label="密码" v-show="!formState.id">
+          <a-input v-model:value="formState.password" />
+        </a-form-item>
+      </a-form>
+    </p>
+  </a-modal>
+
+  <a-modal
+      title="重置密码"
+      v-model:visible="resetvisible"
+      :confirm-loading="resetconfirmLoading"
+      @ok="handleResetOk"
+  >
+    <p>
+      <a-form :model="formState" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }">
+        <a-form-item label="新密码">
           <a-input v-model:value="formState.password" />
         </a-form-item>
       </a-form>
@@ -221,6 +236,42 @@ export default defineComponent({
       });
     };
 
+    //---------重置密码---------
+    const resetvisible = ref<boolean>(false);
+    const resetconfirmLoading = ref<boolean>(false);
+
+    //编辑
+    const resetshowModal = (record: any) => {
+      resetvisible.value = true;
+      formState.value = Tool.copy(record);
+      formState.value.password = null
+    };
+
+    const handleResetOk = () => {
+      console.log('resethandleOk', formState.value);
+      resetconfirmLoading.value = true;
+
+      formState.value.password = hexMd5(formState.value.password + KEY)
+
+      axios.post(process.env.VUE_APP_SERVER + "/user/reset-password", formState.value
+      ).then((response) => {
+        const data = response.data;
+        resetconfirmLoading.value = false;
+        if (data.success) {
+          resetvisible.value = false;
+
+          //重新加载列表
+          handleQuery({
+            page: pagination.value.current,
+            size: pagination.value.pageSize,
+          });
+        } else {
+          message.error(data.message);
+
+        }
+      });
+    };
+
 
     onMounted(() => {
       handleQuery({
@@ -247,6 +298,10 @@ export default defineComponent({
       param,
       categoryIds,
       level1,
+      resetvisible,
+      resetconfirmLoading,
+      resetshowModal,
+      handleResetOk,
     };
   },
 });

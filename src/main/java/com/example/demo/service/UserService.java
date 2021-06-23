@@ -6,9 +6,10 @@ import com.example.demo.exception.BusinessException;
 import com.example.demo.exception.BusinessExceptionCode;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.req.UserQueryReq;
+import com.example.demo.req.UserResetPassword;
 import com.example.demo.req.UserSaveReq;
-import com.example.demo.resp.UserQueryResp;
 import com.example.demo.resp.PageResp;
+import com.example.demo.resp.UserQueryResp;
 import com.example.demo.util.CopyUtil;
 import com.example.demo.util.SnowFlake;
 import com.github.pagehelper.PageHelper;
@@ -96,5 +97,11 @@ public class UserService {
         if (CollectionUtils.isEmpty(userList))
             return null;
         else return userList.get(0);
+    }
+
+    //修改密码
+    public void resetPassword(UserResetPassword req){
+        User user = CopyUtil.copy(req, User.class);
+        userMapper.updateByPrimaryKeySelective(user);
     }
 }
