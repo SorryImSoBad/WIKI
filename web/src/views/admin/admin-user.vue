@@ -65,7 +65,7 @@
     <p>
       <a-form :model="formState" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }">
         <a-form-item label="登陆名">
-          <a-input v-model:value="formState.loginName"/>
+          <a-input v-model:value="formState.loginName" :disabled="!!formState.id"/>
         </a-form-item>
         <a-form-item label="名称">
           <a-input v-model:value="formState.name"/>

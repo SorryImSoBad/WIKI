@@ -2,6 +2,8 @@ package com.example.demo.service;
 
 import com.example.demo.domain.User;
 import com.example.demo.domain.UserExample;
+import com.example.demo.exception.BusinessException;
+import com.example.demo.exception.BusinessExceptionCode;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.req.UserQueryReq;
 import com.example.demo.req.UserSaveReq;
@@ -14,6 +16,7 @@ import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 
 import javax.annotation.Resource;
@@ -64,15 +67,33 @@ public class UserService {
     public void save(UserSaveReq req){
         User user = CopyUtil.copy(req, User.class);
         if(ObjectUtils.isEmpty(req.getId())){
-            user.setId(snowFlake.nextId());
-            userMapper.insert(user);
+            if (ObjectUtils.isEmpty(selectByLoginName(req.getLoginName()))) {
+                user.setId(snowFlake.nextId());
+                userMapper.insert(user);
+            }
+            else {
+                //用户名已存在
+                throw new BusinessException(BusinessExceptionCode.USER_LOGIN_NAME_EXIST);
+            }
         }else {
-            userMapper.updateByPrimaryKey(user);
+            //更新
+            user.setLoginName(null);
+            userMapper.updateByPrimaryKeySelective(user);
         }
     }
 
     //删除
     public void delete(Long id){
         userMapper.deleteByPrimaryKey(id);
+    }
+
+    public User selectByLoginName(String LoginName) {
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andLoginNameEqualTo(LoginName);
+        List<User> userList = userMapper.selectByExample(userExample);
+        if (CollectionUtils.isEmpty(userList))
+            return null;
+        else return userList.get(0);
     }
 }
