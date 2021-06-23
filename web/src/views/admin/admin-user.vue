@@ -70,8 +70,8 @@
         <a-form-item label="名称">
           <a-input v-model:value="formState.name"/>
         </a-form-item>
-        <a-form-item label="密码">
-          <a-input v-model:value="formState.password"/>
+        <a-form-item label="密码" v-show="!formState.id">
+          <a-input v-model:value="formState.password" />
         </a-form-item>
       </a-form>
     </p>
