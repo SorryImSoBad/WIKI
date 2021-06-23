@@ -84,6 +84,9 @@ import axios from 'axios';
 import {message} from 'ant-design-vue';
 import {Tool} from "@/util/tool";
 
+declare let hexMd5: any
+declare let KEY: any
+
 export default defineComponent({
   name: 'AdminEbook',
   setup: function () {
@@ -196,6 +199,9 @@ export default defineComponent({
     const handleOk = () => {
       console.log('handleOk', formState.value);
       confirmLoading.value = true;
+
+      formState.value.password = hexMd5(formState.value.password + KEY)
+
       axios.post(process.env.VUE_APP_SERVER + "/user/save", formState.value
       ).then((response) => {
         const data = response.data;
