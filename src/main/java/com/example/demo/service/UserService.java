@@ -5,10 +5,12 @@ import com.example.demo.domain.UserExample;
 import com.example.demo.exception.BusinessException;
 import com.example.demo.exception.BusinessExceptionCode;
 import com.example.demo.mapper.UserMapper;
+import com.example.demo.req.UserLoginReq;
 import com.example.demo.req.UserQueryReq;
 import com.example.demo.req.UserResetPassword;
 import com.example.demo.req.UserSaveReq;
 import com.example.demo.resp.PageResp;
+import com.example.demo.resp.UserLoginResp;
 import com.example.demo.resp.UserQueryResp;
 import com.example.demo.util.CopyUtil;
 import com.example.demo.util.SnowFlake;
@@ -89,6 +91,7 @@ public class UserService {
         userMapper.deleteByPrimaryKey(id);
     }
 
+    //用户名查找
     public User selectByLoginName(String LoginName) {
         UserExample userExample = new UserExample();
         UserExample.Criteria criteria = userExample.createCriteria();
@@ -103,5 +106,25 @@ public class UserService {
     public void resetPassword(UserResetPassword req){
         User user = CopyUtil.copy(req, User.class);
         userMapper.updateByPrimaryKeySelective(user);
+    }
+
+    //登录
+    public UserLoginResp login(UserLoginReq req){
+        User userDb = selectByLoginName(req.getLoginName());
+        if (ObjectUtils.isEmpty(userDb)){
+            //用户名不存在
+            LOG.info("用户名不存在, {}", req.getLoginName());
+            throw new BusinessException(BusinessExceptionCode.LOGIN_USER_ERROR);
+        } else {
+            if (userDb.getPassword().equals(req.getPassword())) {
+                //登陆成功
+                UserLoginResp userLoginResp = CopyUtil.copy(userDb, UserLoginResp.class);
+                return userLoginResp;
+            } else {
+                //登陆失败
+                LOG.info("密码不正确, 输入密码: {}, 数据库密码: {}", req.getPassword(), userDb.getPassword());
+                throw new BusinessException(BusinessExceptionCode.LOGIN_USER_ERROR);
+            }
+        }
     }
 }
