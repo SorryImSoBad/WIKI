@@ -32,15 +32,67 @@
           关于我们
         </router-link>
       </a-menu-item>
+      <a class="login-menu" @click="showLoginModal">
+        <span>登录</span>
+      </a>
     </a-menu>
+
+    <a-modal
+        title="登录"
+        v-model:visible="loginModalVisible"
+        :confirm-loading="loginModalLoading"
+        @ok="login"
+    >
+      <p>
+        <a-form :model="loginUser" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }">
+          <a-form-item label="登陆名">
+            <a-input v-model:value="loginUser.loginName" />
+          </a-form-item>
+          <a-form-item label="密码">
+            <a-input v-model:value="loginUser.password" type="password"/>
+          </a-form-item>
+        </a-form>
+      </p>
+    </a-modal>
   </a-layout-header>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import {defineComponent, ref} from 'vue';
+import {Tool} from "@/util/tool";
 
 export default defineComponent({
   name: 'the-header',
+  setup: function () {
+    //---------表单---------
+    const loginModalVisible = ref<boolean>(false);
+    const loginModalLoading = ref<boolean>(false);
+
+    //---------表单---------
+    const loginUser = ref({
+      loginName : "test",
+      password : "test12346"
+    });
+
+    //编辑
+    const showLoginModal = (record: any) => {
+      loginModalVisible.value = true;
+    };
+
+    //登录
+    const login = () => {
+      console.log("开始登录")
+
+    }
+
+    return {
+      loginModalVisible,
+      loginModalLoading,
+      loginUser,
+      showLoginModal,
+      login
+    }
+  }
 });
 </script>
 
@@ -60,5 +112,10 @@ export default defineComponent({
 
 .site-layout-background {
   background: #fff;
+}
+
+.login-menu {
+  float: right;
+  color: white;
 }
 </style>
