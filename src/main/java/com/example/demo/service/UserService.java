@@ -114,7 +114,7 @@ public class UserService {
         if (ObjectUtils.isEmpty(userDb)){
             //用户名不存在
             LOG.info("用户名不存在, {}", req.getLoginName());
-            throw new BusinessException(BusinessExceptionCode.LOGIN_USER_ERROR);
+            throw new BusinessException(BusinessExceptionCode.USER_LOGIN_NAME_EXIST);
         } else {
             if (userDb.getPassword().equals(req.getPassword())) {
                 //登陆成功
@@ -123,7 +123,7 @@ public class UserService {
             } else {
                 //登陆失败
                 LOG.info("密码不正确, 输入密码: {}, 数据库密码: {}", req.getPassword(), userDb.getPassword());
-                throw new BusinessException(BusinessExceptionCode.LOGIN_USER_ERROR);
+                throw new BusinessException(BusinessExceptionCode.USER_LOGIN_NAME_EXIST);
             }
         }
     }

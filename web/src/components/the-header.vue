@@ -46,7 +46,7 @@
       <p>
         <a-form :model="loginUser" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }">
           <a-form-item label="登陆名">
-            <a-input v-model:value="loginUser.loginName" />
+            <a-input v-model:value="loginUser.loginName"/>
           </a-form-item>
           <a-form-item label="密码">
             <a-input v-model:value="loginUser.password" type="password"/>
@@ -59,7 +59,11 @@
 
 <script lang="ts">
 import {defineComponent, ref} from 'vue';
-import {Tool} from "@/util/tool";
+import axios from 'axios';
+import {message} from 'ant-design-vue';
+
+declare let hexMd5: any
+declare let KEY: any
 
 export default defineComponent({
   name: 'the-header',
@@ -70,8 +74,8 @@ export default defineComponent({
 
     //---------表单---------
     const loginUser = ref({
-      loginName : "test",
-      password : "test12346"
+      loginName: "test",
+      password: "test123"
     });
 
     //编辑
@@ -82,8 +86,21 @@ export default defineComponent({
     //登录
     const login = () => {
       console.log("开始登录")
+      loginModalLoading.value = true
+      loginUser.value.password = hexMd5(loginUser.value.password + KEY)
 
-    }
+      axios.post(process.env.VUE_APP_SERVER + "/user/login", loginUser.value
+      ).then((response) => {
+        const data = response.data;
+        loginModalLoading.value = false;
+        if (data.success) {
+          loginModalVisible.value = false;
+          message.success("登陆成功");
+        } else {
+          message.error(data.message);
+        }
+      });
+    };
 
     return {
       loginModalVisible,

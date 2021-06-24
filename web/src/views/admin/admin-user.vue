@@ -71,7 +71,7 @@
           <a-input v-model:value="formState.name"/>
         </a-form-item>
         <a-form-item label="密码" v-show="!formState.id">
-          <a-input v-model:value="formState.password" />
+          <a-input v-model:value="formState.password"/>
         </a-form-item>
       </a-form>
     </p>
@@ -86,7 +86,7 @@
     <p>
       <a-form :model="formState" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }">
         <a-form-item label="新密码">
-          <a-input v-model:value="formState.password" />
+          <a-input v-model:value="formState.password"/>
         </a-form-item>
       </a-form>
     </p>
