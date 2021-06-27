@@ -5,6 +5,7 @@ import com.example.demo.domain.Doc;
 import com.example.demo.domain.DocExample;
 import com.example.demo.mapper.ContentMapper;
 import com.example.demo.mapper.DocMapper;
+import com.example.demo.mapper.DocMapperCust;
 import com.example.demo.req.DocQueryReq;
 import com.example.demo.req.DocSaveReq;
 import com.example.demo.resp.DocQueryResp;
@@ -28,6 +29,9 @@ public class DocService {
 
     @Resource
     private DocMapper docMapper;
+
+    @Resource
+    private DocMapperCust docMapperCust;
 
     @Resource
     private ContentMapper contentMapper;
@@ -82,6 +86,8 @@ public class DocService {
         Content content = CopyUtil.copy(req, Content.class);
         if (ObjectUtils.isEmpty(req.getId())) {
             doc.setId(snowFlake.nextId());
+            doc.setViewCount(0);
+            doc.setVoteCount(0);
             docMapper.insert(doc);
 
             content.setId(doc.getId());
@@ -109,6 +115,8 @@ public class DocService {
 
     public String findContent(Long id) {
         Content content = contentMapper.selectByPrimaryKey(id);
+        //文档阅读数加一
+        docMapperCust.increasesViewCount(id);
         if (ObjectUtils.isEmpty(content)){
             return "";
         } else {
