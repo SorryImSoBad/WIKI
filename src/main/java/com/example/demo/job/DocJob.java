@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 
 @Component
- public class DocJob {
+public class DocJob {
 
     private static final Logger LOG = LoggerFactory.getLogger(DocJob.class);
 
@@ -22,8 +22,11 @@ import javax.annotation.Resource;
      * 每30秒更新电子书信息
      */
     @Scheduled(cron = "0/30 * * * * ?")
-    public void cron(){
+    public void cron() {
+        LOG.info("更新电子书下的文档开始");
+        long start = System.currentTimeMillis();
         docService.updateEbookInfo();
+        LOG.info("更新电子书下的文档结束，耗时: {}毫秒", System.currentTimeMillis() - start);
     }
 
- }
+}
