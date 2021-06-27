@@ -10,12 +10,12 @@
               @select="onSelect"
               :replaceFields="{title:'name', key:'id', value:'id'}"
               :defaultExpandAll="true"
-              :selectedKeys="selectedKeys"
+              :defaultSelectedKeys="defaultSelectedKeys"
           >
           </a-tree>
         </a-col>
         <a-col :span="18">
-          <div class="wangeditor" :innerHTML='content.html'></div>
+          <div class="wangeditor" :innerHTML='html'></div>
         </a-col>
       </a-row>
     </a-layout-content>
@@ -36,12 +36,12 @@ export default defineComponent({
     const docs = ref();
     const level1 = ref();
     level1.value = [];
-    const content = reactive({
-      html: '',
-      text: '',
-    });
-    const selectedKeys = ref();
-    selectedKeys.value = [];
+    const html = ref();
+    const defaultSelectedKeys = ref();
+    defaultSelectedKeys.value = [];
+    // 当前选中的文档
+    const doc = ref();
+    doc.value = {};
 
     /**
      * 内容查询
@@ -51,7 +51,7 @@ export default defineComponent({
       ).then((response) => {
         const data = response.data;
         if (data.success) {
-          content.html = data.content;
+          html.value = data.content;
         } else {
           message.error(data.message);
         }
@@ -75,8 +75,10 @@ export default defineComponent({
           console.log('树形数组', docs.value);
 
           if (Tool.isNotEmpty(level1)){
-            selectedKeys.value = [level1.value[0].id];
+            defaultSelectedKeys.value = [level1.value[0].id];
             handleQueryContent(level1.value[0].id);
+            // 初始显示文档信息
+            doc.value = level1.value[0];
           }
         } else {
           message.error(data.message);
@@ -88,7 +90,10 @@ export default defineComponent({
     const onSelect = (selectedKeys: any, info: any) => {
       console.log('selected', selectedKeys, info);
       if (Tool.isNotEmpty(selectedKeys)) {
-        handleQueryContent(selectedKeys[0])
+        // 选中某一节点时，加载该节点的文档信息
+        doc.value = info.selectedNodes[0].props;
+        // 加载内容
+        handleQueryContent(selectedKeys[0]);
       }
     }
 
@@ -99,8 +104,9 @@ export default defineComponent({
     return {
       level1,
       onSelect,
-      content,
-      selectedKeys,
+      html,
+      defaultSelectedKeys,
+      doc,
     }
   }
 });
