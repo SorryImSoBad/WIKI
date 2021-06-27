@@ -3,6 +3,8 @@ package com.example.demo.service;
 import com.example.demo.domain.Content;
 import com.example.demo.domain.Doc;
 import com.example.demo.domain.DocExample;
+import com.example.demo.exception.BusinessException;
+import com.example.demo.exception.BusinessExceptionCode;
 import com.example.demo.mapper.ContentMapper;
 import com.example.demo.mapper.DocMapper;
 import com.example.demo.mapper.DocMapperCust;
@@ -11,6 +13,8 @@ import com.example.demo.req.DocSaveReq;
 import com.example.demo.resp.DocQueryResp;
 import com.example.demo.resp.PageResp;
 import com.example.demo.util.CopyUtil;
+import com.example.demo.util.RedisUtil;
+import com.example.demo.util.RequestContext;
 import com.example.demo.util.SnowFlake;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -38,6 +42,9 @@ public class DocService {
 
     @Resource
     private SnowFlake snowFlake;
+
+    @Resource
+    private RedisUtil redisUtil;
 
     //查询
     public List<DocQueryResp> all(Long ebookId) {
@@ -117,7 +124,7 @@ public class DocService {
         Content content = contentMapper.selectByPrimaryKey(id);
         //文档阅读数加一
         docMapperCust.increasesViewCount(id);
-        if (ObjectUtils.isEmpty(content)){
+        if (ObjectUtils.isEmpty(content)) {
             return "";
         } else {
             return content.getContent();
@@ -126,6 +133,10 @@ public class DocService {
 
     //点赞
     public void vote(Long id) {
-        docMapperCust.increasesVoteCount(id);
+        String ip = RequestContext.getRemoteAddr();
+        if (redisUtil.validateRepeat("DOC_VOTE_" + id + "_" + ip, 3600 * 24))
+            docMapperCust.increasesVoteCount(id);
+        else
+            throw new BusinessException(BusinessExceptionCode.VOTE_REPEAT);
     }
 }

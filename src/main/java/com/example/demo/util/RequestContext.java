@@ -1,0 +1,17 @@
+package com.example.demo.util;
+
+import java.io.Serializable;
+
+public class RequestContext implements Serializable {
+
+    //远程地址ip
+    private static ThreadLocal<String> remoteAddr = new ThreadLocal<>();
+
+    public static String getRemoteAddr() {
+        return remoteAddr.get();
+    }
+
+    public static void setRemoteAddr(String remoteAddr) {
+        RequestContext.remoteAddr.set(remoteAddr);
+    }
+}
