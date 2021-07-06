@@ -16,6 +16,7 @@ import com.example.demo.util.CopyUtil;
 import com.example.demo.util.RedisUtil;
 import com.example.demo.util.RequestContext;
 import com.example.demo.util.SnowFlake;
+import com.example.demo.websocket.WebSocketServer;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
@@ -45,6 +46,9 @@ public class DocService {
 
     @Resource
     private RedisUtil redisUtil;
+
+    @Resource
+    private WebSocketServer webSocketServer;
 
     //查询
     public List<DocQueryResp> all(Long ebookId) {
@@ -138,6 +142,10 @@ public class DocService {
             docMapperCust.increasesVoteCount(id);
         else
             throw new BusinessException(BusinessExceptionCode.VOTE_REPEAT);
+
+        //推送信息
+        Doc docDB = docMapper.selectByPrimaryKey(id);
+        webSocketServer.sendInfo("【" + docDB.getName() + "】被点赞!");
     }
 
     public void updateEbookInfo() {
