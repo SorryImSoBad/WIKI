@@ -1,259 +1,78 @@
-2021-06-27 19:48:25.952 INFO  com.example.demo.config.DemoApplication           :55   [32m                  [0;39m Starting DemoApplication using Java 1.8.0_241 on DESKTOP-J2FV0P4 with PID 19552 (D:\javaobj\demo\target\classes started by 82070 in D:\javaobj\demo)
-2021-06-27 19:48:25.953 INFO  com.example.demo.config.DemoApplication           :662  [32m                  [0;39m No active profile set, falling back to default profiles: default
-2021-06-27 19:48:26.150 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-06-27 19:48:26.150 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-06-27 19:48:26.152 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
-2021-06-27 19:48:26.310 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8880 (http)
-2021-06-27 19:48:26.312 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
-2021-06-27 19:48:26.312 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.44]
-2021-06-27 19:48:26.313 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2021-06-27 19:48:26.313 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-06-27 19:48:26.313 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-06-27 19:48:26.313 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2021-06-27 19:48:26.337 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
-2021-06-27 19:48:26.337 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 382 ms
-2021-06-27 19:48:26.796 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
-2021-06-27 19:48:27.157 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :181  [32m                  [0;39m Initializing ExecutorService 'taskScheduler'
-2021-06-27 19:48:27.197 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
-2021-06-27 19:48:27.222 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8880 (http) with context path ''
-2021-06-27 19:48:27.229 INFO  com.example.demo.config.DemoApplication           :61   [32m                  [0;39m Started DemoApplication in 1.581 seconds (JVM running for 2070.439)
-2021-06-27 19:48:27.232 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
-2021-06-27 19:48:27.232 INFO  com.example.demo.config.DemoApplication           :22   [32m                  [0;39m 启动成功！
-2021-06-27 19:48:27.233 INFO  com.example.demo.config.DemoApplication           :23   [32m                  [0;39m 地址：	http://127.0.0.1:8880
-2021-06-27 19:48:30.010 INFO  com.example.demo.job.DocJob                       :26   [32m                  [0;39m 更新电子书下的文档开始
-2021-06-27 19:48:30.012 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-7 - Starting...
-2021-06-27 19:48:30.121 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-7 - Start completed.
-2021-06-27 19:48:30.121 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
-2021-06-27 19:48:30.122 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==> Parameters: 
-2021-06-27 19:48:30.141 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m <==    Updates: 2
-2021-06-27 19:48:30.142 INFO  com.example.demo.job.DocJob                       :29   [32m                  [0;39m 更新电子书下的文档结束，耗时: 130毫秒
-2021-06-27 19:49:00.009 INFO  com.example.demo.job.DocJob                       :26   [32m                  [0;39m 更新电子书下的文档开始
-2021-06-27 19:49:00.018 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
-2021-06-27 19:49:00.018 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==> Parameters: 
-2021-06-27 19:49:00.038 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m <==    Updates: 2
-2021-06-27 19:49:00.038 INFO  com.example.demo.job.DocJob                       :29   [32m                  [0;39m 更新电子书下的文档结束，耗时: 29毫秒
-2021-06-27 19:49:30.014 INFO  com.example.demo.job.DocJob                       :26   [32m                  [0;39m 更新电子书下的文档开始
-2021-06-27 19:49:30.023 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
-2021-06-27 19:49:30.023 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==> Parameters: 
-2021-06-27 19:49:30.042 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m <==    Updates: 2
-2021-06-27 19:49:30.043 INFO  com.example.demo.job.DocJob                       :29   [32m                  [0;39m 更新电子书下的文档结束，耗时: 29毫秒
-2021-06-27 19:50:00.002 INFO  com.example.demo.job.DocJob                       :26   [32m                  [0;39m 更新电子书下的文档开始
-2021-06-27 19:50:00.011 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
-2021-06-27 19:50:00.012 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==> Parameters: 
-2021-06-27 19:50:00.031 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m <==    Updates: 2
-2021-06-27 19:50:00.032 INFO  com.example.demo.job.DocJob                       :29   [32m                  [0;39m 更新电子书下的文档结束，耗时: 30毫秒
-2021-06-27 19:50:11.622 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :218  [32m                  [0;39m Shutting down ExecutorService 'taskScheduler'
-2021-06-27 19:50:11.623 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
-2021-06-27 19:50:11.623 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-7 - Shutdown initiated...
-2021-06-27 19:50:11.628 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-7 - Shutdown completed.
-2021-06-27 19:50:11.877 INFO  com.example.demo.config.DemoApplication           :55   [32m                  [0;39m Starting DemoApplication using Java 1.8.0_241 on DESKTOP-J2FV0P4 with PID 19552 (D:\javaobj\demo\target\classes started by 82070 in D:\javaobj\demo)
-2021-06-27 19:50:11.878 INFO  com.example.demo.config.DemoApplication           :662  [32m                  [0;39m No active profile set, falling back to default profiles: default
-2021-06-27 19:50:12.265 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-06-27 19:50:12.265 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-06-27 19:50:12.266 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
-2021-06-27 19:50:12.383 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8880 (http)
-2021-06-27 19:50:12.383 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
-2021-06-27 19:50:12.384 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.44]
-2021-06-27 19:50:12.384 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2021-06-27 19:50:12.384 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-06-27 19:50:12.385 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-06-27 19:50:12.385 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2021-06-27 19:50:12.401 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
-2021-06-27 19:50:12.401 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 520 ms
-2021-06-27 19:50:12.584 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
-2021-06-27 19:50:12.672 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :181  [32m                  [0;39m Initializing ExecutorService 'taskScheduler'
-2021-06-27 19:50:12.689 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
-2021-06-27 19:50:12.706 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8880 (http) with context path ''
-2021-06-27 19:50:12.713 INFO  com.example.demo.config.DemoApplication           :61   [32m                  [0;39m Started DemoApplication in 0.878 seconds (JVM running for 2175.922)
-2021-06-27 19:50:12.715 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
-2021-06-27 19:50:12.716 INFO  com.example.demo.config.DemoApplication           :22   [32m                  [0;39m 启动成功！
-2021-06-27 19:50:12.716 INFO  com.example.demo.config.DemoApplication           :23   [32m                  [0;39m 地址：	http://127.0.0.1:8880
-2021-06-27 19:50:30.013 INFO  com.example.demo.job.DocJob                       :26   [32m                  [0;39m 更新电子书下的文档开始
-2021-06-27 19:50:30.014 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-8 - Starting...
-2021-06-27 19:50:30.432 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-8 - Start completed.
-2021-06-27 19:50:30.432 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
-2021-06-27 19:50:30.433 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==> Parameters: 
-2021-06-27 19:50:30.449 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m <==    Updates: 2
-2021-06-27 19:50:30.450 INFO  com.example.demo.job.DocJob                       :29   [32m                  [0;39m 更新电子书下的文档结束，耗时: 436毫秒
-2021-06-27 19:51:00.007 INFO  com.example.demo.job.DocJob                       :26   [32m                  [0;39m 更新电子书下的文档开始
-2021-06-27 19:51:00.015 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
-2021-06-27 19:51:00.016 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==> Parameters: 
-2021-06-27 19:51:00.033 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m <==    Updates: 2
-2021-06-27 19:51:00.033 INFO  com.example.demo.job.DocJob                       :29   [32m                  [0;39m 更新电子书下的文档结束，耗时: 26毫秒
-2021-06-27 19:51:30.006 INFO  com.example.demo.job.DocJob                       :26   [32m                  [0;39m 更新电子书下的文档开始
-2021-06-27 19:51:30.014 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
-2021-06-27 19:51:30.015 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==> Parameters: 
-2021-06-27 19:51:30.031 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m <==    Updates: 2
-2021-06-27 19:51:30.032 INFO  com.example.demo.job.DocJob                       :29   [32m                  [0;39m 更新电子书下的文档结束，耗时: 26毫秒
-2021-06-27 19:52:00.008 INFO  com.example.demo.job.DocJob                       :26   [32m                  [0;39m 更新电子书下的文档开始
-2021-06-27 19:52:00.016 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
-2021-06-27 19:52:00.017 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==> Parameters: 
-2021-06-27 19:52:00.034 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m <==    Updates: 2
-2021-06-27 19:52:00.034 INFO  com.example.demo.job.DocJob                       :29   [32m                  [0;39m 更新电子书下的文档结束，耗时: 26毫秒
-2021-06-27 19:52:11.333 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :218  [32m                  [0;39m Shutting down ExecutorService 'taskScheduler'
-2021-06-27 19:52:11.334 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
-2021-06-27 19:52:11.334 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-8 - Shutdown initiated...
-2021-06-27 19:52:11.336 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-8 - Shutdown completed.
-2021-06-27 19:52:11.621 INFO  com.example.demo.config.DemoApplication           :55   [32m                  [0;39m Starting DemoApplication using Java 1.8.0_241 on DESKTOP-J2FV0P4 with PID 19552 (D:\javaobj\demo\target\classes started by 82070 in D:\javaobj\demo)
-2021-06-27 19:52:11.621 INFO  com.example.demo.config.DemoApplication           :662  [32m                  [0;39m No active profile set, falling back to default profiles: default
-2021-06-27 19:52:12.123 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-06-27 19:52:12.123 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-06-27 19:52:12.126 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
-2021-06-27 19:52:12.311 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8880 (http)
-2021-06-27 19:52:12.312 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
-2021-06-27 19:52:12.312 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.44]
-2021-06-27 19:52:12.313 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2021-06-27 19:52:12.313 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-06-27 19:52:12.313 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-06-27 19:52:12.314 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2021-06-27 19:52:12.340 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
-2021-06-27 19:52:12.340 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 715 ms
-2021-06-27 19:52:13.643 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
-2021-06-27 19:52:14.641 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :181  [32m                  [0;39m Initializing ExecutorService 'taskScheduler'
-2021-06-27 19:52:14.724 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
-2021-06-27 19:52:14.776 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8880 (http) with context path ''
-2021-06-27 19:52:14.789 INFO  com.example.demo.config.DemoApplication           :61   [32m                  [0;39m Started DemoApplication in 3.217 seconds (JVM running for 2298.0)
-2021-06-27 19:52:14.792 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
-2021-06-27 19:52:14.793 INFO  com.example.demo.config.DemoApplication           :22   [32m                  [0;39m 启动成功！
-2021-06-27 19:52:14.793 INFO  com.example.demo.config.DemoApplication           :23   [32m                  [0;39m 地址：	http://127.0.0.1:8880
-2021-06-27 19:52:30.015 INFO  com.example.demo.job.DocJob                       :26   [32m                  [0;39m 更新电子书下的文档开始
-2021-06-27 19:52:30.016 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-9 - Starting...
-2021-06-27 19:52:30.101 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-9 - Start completed.
-2021-06-27 19:52:30.102 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
-2021-06-27 19:52:30.102 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==> Parameters: 
-2021-06-27 19:52:30.114 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m <==    Updates: 2
-2021-06-27 19:52:30.114 INFO  com.example.demo.job.DocJob                       :29   [32m                  [0;39m 更新电子书下的文档结束，耗时: 98毫秒
-2021-06-27 19:52:31.516 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :218  [32m                  [0;39m Shutting down ExecutorService 'taskScheduler'
-2021-06-27 19:52:31.517 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
-2021-06-27 19:52:31.518 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-9 - Shutdown initiated...
-2021-06-27 19:52:31.524 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-9 - Shutdown completed.
-2021-06-27 19:52:31.742 INFO  com.example.demo.config.DemoApplication           :55   [32m                  [0;39m Starting DemoApplication using Java 1.8.0_241 on DESKTOP-J2FV0P4 with PID 19552 (D:\javaobj\demo\target\classes started by 82070 in D:\javaobj\demo)
-2021-06-27 19:52:31.742 INFO  com.example.demo.config.DemoApplication           :662  [32m                  [0;39m No active profile set, falling back to default profiles: default
-2021-06-27 19:52:31.972 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-06-27 19:52:31.972 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-06-27 19:52:31.975 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
-2021-06-27 19:52:32.130 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8880 (http)
-2021-06-27 19:52:32.131 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
-2021-06-27 19:52:32.131 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.44]
-2021-06-27 19:52:32.131 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2021-06-27 19:52:32.132 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-06-27 19:52:32.132 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-06-27 19:52:32.132 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2021-06-27 19:52:32.151 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
-2021-06-27 19:52:32.151 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 406 ms
-2021-06-27 19:52:32.512 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
-2021-06-27 19:52:32.781 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :181  [32m                  [0;39m Initializing ExecutorService 'taskScheduler'
-2021-06-27 19:52:32.810 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
-2021-06-27 19:52:32.824 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8880 (http) with context path ''
-2021-06-27 19:52:32.828 INFO  com.example.demo.config.DemoApplication           :61   [32m                  [0;39m Started DemoApplication in 1.125 seconds (JVM running for 2316.038)
-2021-06-27 19:52:32.830 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
-2021-06-27 19:52:32.830 INFO  com.example.demo.config.DemoApplication           :22   [32m                  [0;39m 启动成功！
-2021-06-27 19:52:32.830 INFO  com.example.demo.config.DemoApplication           :23   [32m                  [0;39m 地址：	http://127.0.0.1:8880
-2021-06-27 19:52:40.397 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-06-27 19:52:40.398 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
-2021-06-27 19:52:40.399 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 1 ms
-2021-06-27 19:52:40.403 INFO  com.example.demo.aspect.LogAspect                 :53   [32m64322002336485376 [0;39m ------------- 开始 -------------
-2021-06-27 19:52:40.404 INFO  com.example.demo.aspect.LogAspect                 :54   [32m64322002336485376 [0;39m 请求地址: http://127.0.0.1:8880/doc/all/1 GET
-2021-06-27 19:52:40.404 INFO  com.example.demo.aspect.LogAspect                 :55   [32m64322002336485376 [0;39m 类名方法: com.example.demo.controller.DocController.all
-2021-06-27 19:52:40.405 INFO  com.example.demo.aspect.LogAspect                 :56   [32m64322002336485376 [0;39m 远程地址: 127.0.0.1
-2021-06-27 19:52:40.407 INFO  com.example.demo.aspect.LogAspect                 :78   [32m64322002336485376 [0;39m 请求参数: [1]
-2021-06-27 19:52:40.416 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m64322002336485376 [0;39m HikariPool-10 - Starting...
-2021-06-27 19:52:40.755 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m64322002336485376 [0;39m HikariPool-10 - Start completed.
-2021-06-27 19:52:40.756 DEBUG com.example.demo.mapper.DocMapper.selectByExample :137  [32m64322002336485376 [0;39m ==>  Preparing: select id, ebook_id, parent, `name`, sort, view_count, vote_count from doc WHERE ( ebook_id = ? ) order by sort asc
-2021-06-27 19:52:40.756 DEBUG com.example.demo.mapper.DocMapper.selectByExample :137  [32m64322002336485376 [0;39m ==> Parameters: 1(Long)
-2021-06-27 19:52:40.768 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m64322002336485376 [0;39m <==    Columns: id, ebook_id, parent, name, sort, view_count, vote_count
-2021-06-27 19:52:40.768 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m64322002336485376 [0;39m <==        Row: 1, 1, 0, 文档1, 1, 34, 1
-2021-06-27 19:52:40.769 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m64322002336485376 [0;39m <==        Row: 2, 1, 1, 文档1.1, 1, 22, 0
-2021-06-27 19:52:40.770 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m64322002336485376 [0;39m <==        Row: 4, 1, 3, 文档2.1, 1, 2, 0
-2021-06-27 19:52:40.770 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m64322002336485376 [0;39m <==        Row: 6, 1, 5, 文档2.2.1, 1, 0, 0
-2021-06-27 19:52:40.770 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m64322002336485376 [0;39m <==        Row: 47229159042322432, 1, 2, 文档1.1.1, 1, 6, 0
-2021-06-27 19:52:40.771 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m64322002336485376 [0;39m <==        Row: 47229314177044480, 1, 47229220182691840, 文档1.1.2.1, 1, 0, 0
-2021-06-27 19:52:40.771 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m64322002336485376 [0;39m <==        Row: 3, 1, 0, 文档2, 2, 4, 0
-2021-06-27 19:52:40.771 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m64322002336485376 [0;39m <==        Row: 5, 1, 3, 文档2.2, 2, 1, 0
-2021-06-27 19:52:40.772 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m64322002336485376 [0;39m <==        Row: 47229220182691840, 1, 2, 文档1.1.2, 2, 0, 0
-2021-06-27 19:52:40.772 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m64322002336485376 [0;39m <==        Row: 47615547273252864, 1, 0, test, 3, 1, 0
-2021-06-27 19:52:40.772 DEBUG com.example.demo.mapper.DocMapper.selectByExample :137  [32m64322002336485376 [0;39m <==      Total: 10
-2021-06-27 19:52:40.780 INFO  com.example.demo.aspect.LogAspect                 :90   [32m64322002336485376 [0;39m 返回结果: {"content":[{"ebookId":1,"id":1,"name":"文档1","parent":0,"sort":1,"viewCount":34,"voteCount":1},{"ebookId":1,"id":2,"name":"文档1.1","parent":1,"sort":1,"viewCount":22,"voteCount":0},{"ebookId":1,"id":4,"name":"文档2.1","parent":3,"sort":1,"viewCount":2,"voteCount":0},{"ebookId":1,"id":6,"name":"文档2.2.1","parent":5,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":47229159042322432,"name":"文档1.1.1","parent":2,"sort":1,"viewCount":6,"voteCount":0},{"ebookId":1,"id":47229314177044480,"name":"文档1.1.2.1","parent":47229220182691840,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":3,"name":"文档2","parent":0,"sort":2,"viewCount":4,"voteCount":0},{"ebookId":1,"id":5,"name":"文档2.2","parent":3,"sort":2,"viewCount":1,"voteCount":0},{"ebookId":1,"id":47229220182691840,"name":"文档1.1.2","parent":2,"sort":2,"viewCount":0,"voteCount":0},{"ebookId":1,"id":47615547273252864,"name":"test","parent":0,"sort":3,"viewCount":1,"voteCount":0}],"success":true}
-2021-06-27 19:52:40.780 INFO  com.example.demo.aspect.LogAspect                 :91   [32m64322002336485376 [0;39m ------------- 结束 耗时：378 ms -------------
-2021-06-27 19:52:40.825 INFO  com.example.demo.aspect.LogAspect                 :53   [32m64322004110675968 [0;39m ------------- 开始 -------------
-2021-06-27 19:52:40.825 INFO  com.example.demo.aspect.LogAspect                 :54   [32m64322004110675968 [0;39m 请求地址: http://127.0.0.1:8880/doc/find-content/1 GET
-2021-06-27 19:52:40.825 INFO  com.example.demo.aspect.LogAspect                 :55   [32m64322004110675968 [0;39m 类名方法: com.example.demo.controller.DocController.findContent
-2021-06-27 19:52:40.826 INFO  com.example.demo.aspect.LogAspect                 :56   [32m64322004110675968 [0;39m 远程地址: 127.0.0.1
-2021-06-27 19:52:40.826 INFO  com.example.demo.aspect.LogAspect                 :78   [32m64322004110675968 [0;39m 请求参数: [1]
-2021-06-27 19:52:40.827 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m64322004110675968 [0;39m ==>  Preparing: select id , content from content where id = ?
-2021-06-27 19:52:40.827 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m64322004110675968 [0;39m ==> Parameters: 1(Long)
-2021-06-27 19:52:40.839 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m64322004110675968 [0;39m <==    Columns: id, content
-2021-06-27 19:52:40.839 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m64322004110675968 [0;39m <==        Row: 1, <<BLOB>>
-2021-06-27 19:52:40.840 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m64322004110675968 [0;39m <==      Total: 1
-2021-06-27 19:52:40.841 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m64322004110675968 [0;39m ==>  Preparing: update doc set view_count = view_count + 1 where id = ?
-2021-06-27 19:52:40.842 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m64322004110675968 [0;39m ==> Parameters: 1(Long)
-2021-06-27 19:52:40.864 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m64322004110675968 [0;39m <==    Updates: 1
-2021-06-27 19:52:40.865 INFO  com.example.demo.aspect.LogAspect                 :90   [32m64322004110675968 [0;39m 返回结果: {"content":"<p>文档1</p>","success":true}
-2021-06-27 19:52:40.865 INFO  com.example.demo.aspect.LogAspect                 :91   [32m64322004110675968 [0;39m ------------- 结束 耗时：40 ms -------------
-2021-06-27 19:53:00.004 INFO  com.example.demo.job.DocJob                       :26   [32m                  [0;39m 更新电子书下的文档开始
-2021-06-27 19:53:00.015 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
-2021-06-27 19:53:00.016 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==> Parameters: 
-2021-06-27 19:53:00.038 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m <==    Updates: 2
-2021-06-27 19:53:00.038 INFO  com.example.demo.job.DocJob                       :29   [32m                  [0;39m 更新电子书下的文档结束，耗时: 34毫秒
-2021-06-27 19:53:30.010 INFO  com.example.demo.job.DocJob                       :26   [32m                  [0;39m 更新电子书下的文档开始
-2021-06-27 19:53:30.020 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
-2021-06-27 19:53:30.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m ==> Parameters: 
-2021-06-27 19:53:30.042 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m                  [0;39m <==    Updates: 2
-2021-06-27 19:53:30.043 INFO  com.example.demo.job.DocJob                       :29   [32m                  [0;39m 更新电子书下的文档结束，耗时: 33毫秒
-2021-06-27 19:53:58.805 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :218  [32m                  [0;39m Shutting down ExecutorService 'taskScheduler'
-2021-06-27 19:53:58.806 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
-2021-06-27 19:53:58.807 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-10 - Shutdown initiated...
-2021-06-27 19:53:58.812 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-10 - Shutdown completed.
-2021-06-27 19:53:59.015 INFO  com.example.demo.config.DemoApplication           :55   [32m                  [0;39m Starting DemoApplication using Java 1.8.0_241 on DESKTOP-J2FV0P4 with PID 19552 (D:\javaobj\demo\target\classes started by 82070 in D:\javaobj\demo)
-2021-06-27 19:53:59.015 INFO  com.example.demo.config.DemoApplication           :662  [32m                  [0;39m No active profile set, falling back to default profiles: default
-2021-06-27 19:53:59.324 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-06-27 19:53:59.325 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-06-27 19:53:59.327 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
-2021-06-27 19:53:59.617 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8880 (http)
-2021-06-27 19:53:59.618 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
-2021-06-27 19:53:59.618 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.44]
-2021-06-27 19:53:59.619 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2021-06-27 19:53:59.619 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-06-27 19:53:59.619 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-06-27 19:53:59.620 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2021-06-27 19:53:59.643 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
-2021-06-27 19:53:59.643 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 624 ms
-2021-06-27 19:54:00.180 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
-2021-06-27 19:54:00.752 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :181  [32m                  [0;39m Initializing ExecutorService 'taskScheduler'
-2021-06-27 19:54:00.818 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
-2021-06-27 19:54:00.854 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8880 (http) with context path ''
-2021-06-27 19:54:00.865 INFO  com.example.demo.config.DemoApplication           :61   [32m                  [0;39m Started DemoApplication in 1.882 seconds (JVM running for 2404.075)
-2021-06-27 19:54:00.868 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
-2021-06-27 19:54:00.895 INFO  com.example.demo.config.DemoApplication           :22   [32m                  [0;39m 启动成功！
-2021-06-27 19:54:00.896 INFO  com.example.demo.config.DemoApplication           :23   [32m                  [0;39m 地址：	http://127.0.0.1:8880
-2021-06-27 19:54:17.647 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :218  [32m                  [0;39m Shutting down ExecutorService 'taskScheduler'
-2021-06-27 19:54:17.648 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
-2021-06-27 19:54:17.831 INFO  com.example.demo.config.DemoApplication           :55   [32m                  [0;39m Starting DemoApplication using Java 1.8.0_241 on DESKTOP-J2FV0P4 with PID 19552 (D:\javaobj\demo\target\classes started by 82070 in D:\javaobj\demo)
-2021-06-27 19:54:17.832 INFO  com.example.demo.config.DemoApplication           :662  [32m                  [0;39m No active profile set, falling back to default profiles: default
-2021-06-27 19:54:18.027 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-06-27 19:54:18.027 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-06-27 19:54:18.029 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
-2021-06-27 19:54:18.242 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8880 (http)
-2021-06-27 19:54:18.243 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
-2021-06-27 19:54:18.245 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.44]
-2021-06-27 19:54:18.245 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2021-06-27 19:54:18.245 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-06-27 19:54:18.245 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-06-27 19:54:18.245 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2021-06-27 19:54:18.274 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
-2021-06-27 19:54:18.275 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 441 ms
-2021-06-27 19:54:18.848 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
-2021-06-27 19:54:19.494 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :181  [32m                  [0;39m Initializing ExecutorService 'taskScheduler'
-2021-06-27 19:54:19.537 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
-2021-06-27 19:54:19.557 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8880 (http) with context path ''
-2021-06-27 19:54:19.563 INFO  com.example.demo.config.DemoApplication           :61   [32m                  [0;39m Started DemoApplication in 1.772 seconds (JVM running for 2422.772)
-2021-06-27 19:54:19.565 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
-2021-06-27 19:54:19.565 INFO  com.example.demo.config.DemoApplication           :22   [32m                  [0;39m 启动成功！
-2021-06-27 19:54:19.565 INFO  com.example.demo.config.DemoApplication           :23   [32m                  [0;39m 地址：	http://127.0.0.1:8880
-2021-06-27 19:54:30.009 INFO  com.example.demo.job.DocJob                       :33   [32m64322462061563904 [0;39m 更新电子书下的文档开始
-2021-06-27 19:54:30.010 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m64322462061563904 [0;39m HikariPool-11 - Starting...
-2021-06-27 19:54:30.420 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m64322462061563904 [0;39m HikariPool-11 - Start completed.
-2021-06-27 19:54:30.420 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m64322462061563904 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
-2021-06-27 19:54:30.421 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m64322462061563904 [0;39m ==> Parameters: 
-2021-06-27 19:54:30.436 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m64322462061563904 [0;39m <==    Updates: 2
-2021-06-27 19:54:30.437 INFO  com.example.demo.job.DocJob                       :36   [32m64322462061563904 [0;39m 更新电子书下的文档结束，耗时: 427毫秒
+2021-07-06 15:56:55.101 INFO  org.hibernate.validator.internal.util.Version     :21   [32m                  [0;39m HV000001: Hibernate Validator 6.1.7.Final
+2021-07-06 15:56:55.107 INFO  com.example.demo.config.DemoApplication           :55   [32m                  [0;39m Starting DemoApplication using Java 1.8.0_241 on DESKTOP-J2FV0P4 with PID 10504 (D:\javaobj\demo\target\classes started by 82070 in D:\javaobj\demo)
+2021-07-06 15:56:55.108 INFO  com.example.demo.config.DemoApplication           :662  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-06 15:56:55.190 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-06 15:56:55.191 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-06 15:56:56.338 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-06 15:56:56.342 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-06 15:56:56.386 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-07-06 15:56:57.432 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8880 (http)
+2021-07-06 15:56:57.461 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8880"]
+2021-07-06 15:56:57.462 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-06 15:56:57.462 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-07-06 15:56:57.467 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-07-06 15:56:57.468 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-06 15:56:57.468 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-06 15:56:57.477 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-07-06 15:56:57.603 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-06 15:56:57.604 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 2412 ms
+2021-07-06 15:56:58.991 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-06 15:56:59.545 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :181  [32m                  [0;39m Initializing ExecutorService 'taskScheduler'
+2021-07-06 15:56:59.627 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-06 15:56:59.662 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8880"]
+2021-07-06 15:56:59.685 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8880 (http) with context path ''
+2021-07-06 15:56:59.701 INFO  com.example.demo.config.DemoApplication           :61   [32m                  [0;39m Started DemoApplication in 5.138 seconds (JVM running for 8.222)
+2021-07-06 15:56:59.705 INFO  com.example.demo.config.DemoApplication           :22   [32m                  [0;39m 启动成功！
+2021-07-06 15:56:59.705 INFO  com.example.demo.config.DemoApplication           :23   [32m                  [0;39m 地址：	http://127.0.0.1:8880
+2021-07-06 15:57:00.013 INFO  com.example.demo.job.DocJob                       :33   [32m67524184032546816 [0;39m 更新电子书下的文档开始
+2021-07-06 15:57:00.065 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m67524184032546816 [0;39m HikariPool-1 - Starting...
+2021-07-06 15:57:00.382 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m67524184032546816 [0;39m HikariPool-1 - Start completed.
+2021-07-06 15:57:00.389 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524184032546816 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 15:57:00.408 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524184032546816 [0;39m ==> Parameters: 
+2021-07-06 15:57:00.432 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524184032546816 [0;39m <==    Updates: 2
+2021-07-06 15:57:00.434 INFO  com.example.demo.job.DocJob                       :36   [32m67524184032546816 [0;39m 更新电子书下的文档结束，耗时: 420毫秒
+2021-07-06 15:57:30.011 INFO  com.example.demo.job.DocJob                       :33   [32m67524309857472512 [0;39m 更新电子书下的文档开始
+2021-07-06 15:57:30.024 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524309857472512 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 15:57:30.024 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524309857472512 [0;39m ==> Parameters: 
+2021-07-06 15:57:30.048 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524309857472512 [0;39m <==    Updates: 2
+2021-07-06 15:57:30.048 INFO  com.example.demo.job.DocJob                       :36   [32m67524309857472512 [0;39m 更新电子书下的文档结束，耗时: 36毫秒
+2021-07-06 15:58:00.012 INFO  com.example.demo.job.DocJob                       :33   [32m67524435690786816 [0;39m 更新电子书下的文档开始
+2021-07-06 15:58:00.024 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524435690786816 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 15:58:00.025 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524435690786816 [0;39m ==> Parameters: 
+2021-07-06 15:58:00.049 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524435690786816 [0;39m <==    Updates: 2
+2021-07-06 15:58:00.049 INFO  com.example.demo.job.DocJob                       :36   [32m67524435690786816 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 15:58:30.008 INFO  com.example.demo.job.DocJob                       :33   [32m67524561503129600 [0;39m 更新电子书下的文档开始
+2021-07-06 15:58:30.020 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524561503129600 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 15:58:30.020 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524561503129600 [0;39m ==> Parameters: 
+2021-07-06 15:58:30.047 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524561503129600 [0;39m <==    Updates: 2
+2021-07-06 15:58:30.047 INFO  com.example.demo.job.DocJob                       :36   [32m67524561503129600 [0;39m 更新电子书下的文档结束，耗时: 39毫秒
+2021-07-06 15:59:00.014 INFO  com.example.demo.job.DocJob                       :33   [32m67524687357415424 [0;39m 更新电子书下的文档开始
+2021-07-06 15:59:00.026 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524687357415424 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 15:59:00.027 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524687357415424 [0;39m ==> Parameters: 
+2021-07-06 15:59:00.051 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524687357415424 [0;39m <==    Updates: 2
+2021-07-06 15:59:00.052 INFO  com.example.demo.job.DocJob                       :36   [32m67524687357415424 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 15:59:30.010 INFO  com.example.demo.job.DocJob                       :33   [32m67524813169758208 [0;39m 更新电子书下的文档开始
+2021-07-06 15:59:30.022 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524813169758208 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 15:59:30.022 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524813169758208 [0;39m ==> Parameters: 
+2021-07-06 15:59:30.048 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524813169758208 [0;39m <==    Updates: 2
+2021-07-06 15:59:30.048 INFO  com.example.demo.job.DocJob                       :36   [32m67524813169758208 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:00:00.016 INFO  com.example.demo.job.DocJob                       :33   [32m67524939024044032 [0;39m 更新电子书下的文档开始
+2021-07-06 16:00:00.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524939024044032 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:00:00.029 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524939024044032 [0;39m ==> Parameters: 
+2021-07-06 16:00:00.053 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67524939024044032 [0;39m <==    Updates: 2
+2021-07-06 16:00:00.054 INFO  com.example.demo.job.DocJob                       :36   [32m67524939024044032 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:00:30.010 INFO  com.example.demo.job.DocJob                       :33   [32m67525064827998208 [0;39m 更新电子书下的文档开始
+2021-07-06 16:00:30.022 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525064827998208 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:00:30.023 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525064827998208 [0;39m ==> Parameters: 
+2021-07-06 16:00:30.047 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525064827998208 [0;39m <==    Updates: 2
+2021-07-06 16:00:30.047 INFO  com.example.demo.job.DocJob                       :36   [32m67525064827998208 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:01:00.011 INFO  com.example.demo.job.DocJob                       :33   [32m67525190661312512 [0;39m 更新电子书下的文档开始
+2021-07-06 16:01:00.025 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525190661312512 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:01:00.025 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525190661312512 [0;39m ==> Parameters: 
+2021-07-06 16:01:00.049 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525190661312512 [0;39m <==    Updates: 2
+2021-07-06 16:01:00.049 INFO  com.example.demo.job.DocJob                       :36   [32m67525190661312512 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:01:30.010 INFO  com.example.demo.job.DocJob                       :33   [32m67525316486238208 [0;39m 更新电子书下的文档开始
+2021-07-06 16:01:30.022 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525316486238208 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:01:30.023 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525316486238208 [0;39m ==> Parameters: 
+2021-07-06 16:01:30.048 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525316486238208 [0;39m <==    Updates: 2
+2021-07-06 16:01:30.048 INFO  com.example.demo.job.DocJob                       :36   [32m67525316486238208 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
