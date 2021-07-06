@@ -539,3 +539,511 @@
 2021-07-06 16:10:30.015 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527581381038080 [0;39m ==> Parameters: 
 2021-07-06 16:10:30.041 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527581381038080 [0;39m <==    Updates: 2
 2021-07-06 16:10:30.041 INFO  com.example.demo.job.DocJob                       :36   [32m67527581381038080 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:11:00.003 INFO  com.example.demo.job.DocJob                       :33   [32m67527707210158080 [0;39m 更新电子书下的文档开始
+2021-07-06 16:11:00.016 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527707210158080 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:11:00.017 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527707210158080 [0;39m ==> Parameters: 
+2021-07-06 16:11:00.183 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527707210158080 [0;39m <==    Updates: 2
+2021-07-06 16:11:00.184 INFO  com.example.demo.job.DocJob                       :36   [32m67527707210158080 [0;39m 更新电子书下的文档结束，耗时: 180毫秒
+2021-07-06 16:11:30.012 INFO  com.example.demo.job.DocJob                       :33   [32m67527833077026816 [0;39m 更新电子书下的文档开始
+2021-07-06 16:11:30.024 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527833077026816 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:11:30.024 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527833077026816 [0;39m ==> Parameters: 
+2021-07-06 16:11:30.050 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527833077026816 [0;39m <==    Updates: 2
+2021-07-06 16:11:30.050 INFO  com.example.demo.job.DocJob                       :36   [32m67527833077026816 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:12:00.006 INFO  com.example.demo.job.DocJob                       :33   [32m67527958880980992 [0;39m 更新电子书下的文档开始
+2021-07-06 16:12:00.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527958880980992 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:12:00.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527958880980992 [0;39m ==> Parameters: 
+2021-07-06 16:12:00.046 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527958880980992 [0;39m <==    Updates: 2
+2021-07-06 16:12:00.046 INFO  com.example.demo.job.DocJob                       :36   [32m67527958880980992 [0;39m 更新电子书下的文档结束，耗时: 39毫秒
+2021-07-06 16:12:30.004 INFO  com.example.demo.job.DocJob                       :33   [32m67528084701712384 [0;39m 更新电子书下的文档开始
+2021-07-06 16:12:30.018 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528084701712384 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:12:30.019 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528084701712384 [0;39m ==> Parameters: 
+2021-07-06 16:12:30.044 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528084701712384 [0;39m <==    Updates: 2
+2021-07-06 16:12:30.045 INFO  com.example.demo.job.DocJob                       :36   [32m67528084701712384 [0;39m 更新电子书下的文档结束，耗时: 41毫秒
+2021-07-06 16:13:00.012 INFO  com.example.demo.job.DocJob                       :33   [32m67528210564386816 [0;39m 更新电子书下的文档开始
+2021-07-06 16:13:00.060 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528210564386816 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:13:00.061 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528210564386816 [0;39m ==> Parameters: 
+2021-07-06 16:13:00.133 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528210564386816 [0;39m <==    Updates: 2
+2021-07-06 16:13:00.134 INFO  com.example.demo.job.DocJob                       :36   [32m67528210564386816 [0;39m 更新电子书下的文档结束，耗时: 122毫秒
+2021-07-06 16:13:30.015 INFO  com.example.demo.job.DocJob                       :33   [32m67528336406089728 [0;39m 更新电子书下的文档开始
+2021-07-06 16:13:30.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528336406089728 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:13:30.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528336406089728 [0;39m ==> Parameters: 
+2021-07-06 16:13:30.053 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528336406089728 [0;39m <==    Updates: 2
+2021-07-06 16:13:30.053 INFO  com.example.demo.job.DocJob                       :36   [32m67528336406089728 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:14:00.010 INFO  com.example.demo.job.DocJob                       :33   [32m67528462214238208 [0;39m 更新电子书下的文档开始
+2021-07-06 16:14:00.027 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528462214238208 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:14:00.027 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528462214238208 [0;39m ==> Parameters: 
+2021-07-06 16:14:00.114 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528462214238208 [0;39m <==    Updates: 2
+2021-07-06 16:14:00.114 INFO  com.example.demo.job.DocJob                       :36   [32m67528462214238208 [0;39m 更新电子书下的文档结束，耗时: 104毫秒
+2021-07-06 16:14:30.001 INFO  com.example.demo.job.DocJob                       :33   [32m67528588005609472 [0;39m 更新电子书下的文档开始
+2021-07-06 16:14:30.018 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528588005609472 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:14:30.019 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528588005609472 [0;39m ==> Parameters: 
+2021-07-06 16:14:30.123 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528588005609472 [0;39m <==    Updates: 2
+2021-07-06 16:14:30.124 INFO  com.example.demo.job.DocJob                       :36   [32m67528588005609472 [0;39m 更新电子书下的文档结束，耗时: 123毫秒
+2021-07-06 16:15:00.009 INFO  com.example.demo.job.DocJob                       :33   [32m67528713868283904 [0;39m 更新电子书下的文档开始
+2021-07-06 16:15:00.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528713868283904 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:15:00.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528713868283904 [0;39m ==> Parameters: 
+2021-07-06 16:15:00.046 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528713868283904 [0;39m <==    Updates: 2
+2021-07-06 16:15:00.046 INFO  com.example.demo.job.DocJob                       :36   [32m67528713868283904 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:15:30.016 INFO  com.example.demo.job.DocJob                       :33   [32m67528839726764032 [0;39m 更新电子书下的文档开始
+2021-07-06 16:15:30.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528839726764032 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:15:30.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528839726764032 [0;39m ==> Parameters: 
+2021-07-06 16:15:30.053 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528839726764032 [0;39m <==    Updates: 2
+2021-07-06 16:15:30.053 INFO  com.example.demo.job.DocJob                       :36   [32m67528839726764032 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:16:00.007 INFO  com.example.demo.job.DocJob                       :33   [32m67528965518135296 [0;39m 更新电子书下的文档开始
+2021-07-06 16:16:00.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528965518135296 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:16:00.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528965518135296 [0;39m ==> Parameters: 
+2021-07-06 16:16:00.130 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67528965518135296 [0;39m <==    Updates: 2
+2021-07-06 16:16:00.130 INFO  com.example.demo.job.DocJob                       :36   [32m67528965518135296 [0;39m 更新电子书下的文档结束，耗时: 122毫秒
+2021-07-06 16:16:30.014 INFO  com.example.demo.job.DocJob                       :33   [32m67529091376615424 [0;39m 更新电子书下的文档开始
+2021-07-06 16:16:30.026 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529091376615424 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:16:30.026 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529091376615424 [0;39m ==> Parameters: 
+2021-07-06 16:16:30.051 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529091376615424 [0;39m <==    Updates: 2
+2021-07-06 16:16:30.051 INFO  com.example.demo.job.DocJob                       :36   [32m67529091376615424 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:17:00.006 INFO  com.example.demo.job.DocJob                       :33   [32m67529217172180992 [0;39m 更新电子书下的文档开始
+2021-07-06 16:17:00.025 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529217172180992 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:17:00.025 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529217172180992 [0;39m ==> Parameters: 
+2021-07-06 16:17:00.142 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529217172180992 [0;39m <==    Updates: 2
+2021-07-06 16:17:00.142 INFO  com.example.demo.job.DocJob                       :36   [32m67529217172180992 [0;39m 更新电子书下的文档结束，耗时: 134毫秒
+2021-07-06 16:17:30.001 INFO  com.example.demo.job.DocJob                       :33   [32m67529342980329472 [0;39m 更新电子书下的文档开始
+2021-07-06 16:17:30.017 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529342980329472 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:17:30.017 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529342980329472 [0;39m ==> Parameters: 
+2021-07-06 16:17:30.044 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529342980329472 [0;39m <==    Updates: 2
+2021-07-06 16:17:30.044 INFO  com.example.demo.job.DocJob                       :36   [32m67529342980329472 [0;39m 更新电子书下的文档结束，耗时: 43毫秒
+2021-07-06 16:18:00.008 INFO  com.example.demo.job.DocJob                       :33   [32m67529468838809600 [0;39m 更新电子书下的文档开始
+2021-07-06 16:18:00.024 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529468838809600 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:18:00.024 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529468838809600 [0;39m ==> Parameters: 
+2021-07-06 16:18:00.049 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529468838809600 [0;39m <==    Updates: 2
+2021-07-06 16:18:00.049 INFO  com.example.demo.job.DocJob                       :36   [32m67529468838809600 [0;39m 更新电子书下的文档结束，耗时: 41毫秒
+2021-07-06 16:18:30.013 INFO  com.example.demo.job.DocJob                       :33   [32m67529594688901120 [0;39m 更新电子书下的文档开始
+2021-07-06 16:18:30.252 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529594688901120 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:18:30.252 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529594688901120 [0;39m ==> Parameters: 
+2021-07-06 16:18:30.278 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529594688901120 [0;39m <==    Updates: 2
+2021-07-06 16:18:30.278 INFO  com.example.demo.job.DocJob                       :36   [32m67529594688901120 [0;39m 更新电子书下的文档结束，耗时: 265毫秒
+2021-07-06 16:19:00.003 INFO  com.example.demo.job.DocJob                       :33   [32m67529720476078080 [0;39m 更新电子书下的文档开始
+2021-07-06 16:19:00.016 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529720476078080 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:19:00.017 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529720476078080 [0;39m ==> Parameters: 
+2021-07-06 16:19:00.070 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529720476078080 [0;39m <==    Updates: 2
+2021-07-06 16:19:00.071 INFO  com.example.demo.job.DocJob                       :36   [32m67529720476078080 [0;39m 更新电子书下的文档结束，耗时: 68毫秒
+2021-07-06 16:19:30.007 INFO  com.example.demo.job.DocJob                       :33   [32m67529846321975296 [0;39m 更新电子书下的文档开始
+2021-07-06 16:19:30.019 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529846321975296 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:19:30.019 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529846321975296 [0;39m ==> Parameters: 
+2021-07-06 16:19:30.043 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529846321975296 [0;39m <==    Updates: 2
+2021-07-06 16:19:30.043 INFO  com.example.demo.job.DocJob                       :36   [32m67529846321975296 [0;39m 更新电子书下的文档结束，耗时: 36毫秒
+2021-07-06 16:20:00.015 INFO  com.example.demo.job.DocJob                       :33   [32m67529972184649728 [0;39m 更新电子书下的文档开始
+2021-07-06 16:20:00.029 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529972184649728 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:20:00.029 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529972184649728 [0;39m ==> Parameters: 
+2021-07-06 16:20:00.053 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67529972184649728 [0;39m <==    Updates: 2
+2021-07-06 16:20:00.053 INFO  com.example.demo.job.DocJob                       :36   [32m67529972184649728 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:20:30.006 INFO  com.example.demo.job.DocJob                       :33   [32m67530097976020992 [0;39m 更新电子书下的文档开始
+2021-07-06 16:20:30.019 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530097976020992 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:20:30.020 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530097976020992 [0;39m ==> Parameters: 
+2021-07-06 16:20:30.100 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530097976020992 [0;39m <==    Updates: 2
+2021-07-06 16:20:30.101 INFO  com.example.demo.job.DocJob                       :36   [32m67530097976020992 [0;39m 更新电子书下的文档结束，耗时: 94毫秒
+2021-07-06 16:21:00.006 INFO  com.example.demo.job.DocJob                       :33   [32m67530223805140992 [0;39m 更新电子书下的文档开始
+2021-07-06 16:21:00.019 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530223805140992 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:21:00.020 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530223805140992 [0;39m ==> Parameters: 
+2021-07-06 16:21:00.045 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530223805140992 [0;39m <==    Updates: 2
+2021-07-06 16:21:00.045 INFO  com.example.demo.job.DocJob                       :36   [32m67530223805140992 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:21:30.013 INFO  com.example.demo.job.DocJob                       :33   [32m67530349663621120 [0;39m 更新电子书下的文档开始
+2021-07-06 16:21:30.025 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530349663621120 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:21:30.025 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530349663621120 [0;39m ==> Parameters: 
+2021-07-06 16:21:30.050 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530349663621120 [0;39m <==    Updates: 2
+2021-07-06 16:21:30.050 INFO  com.example.demo.job.DocJob                       :36   [32m67530349663621120 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:22:00.014 INFO  com.example.demo.job.DocJob                       :33   [32m67530475496935424 [0;39m 更新电子书下的文档开始
+2021-07-06 16:22:00.026 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530475496935424 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:22:00.026 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530475496935424 [0;39m ==> Parameters: 
+2021-07-06 16:22:00.052 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530475496935424 [0;39m <==    Updates: 2
+2021-07-06 16:22:00.052 INFO  com.example.demo.job.DocJob                       :36   [32m67530475496935424 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:22:30.004 INFO  com.example.demo.job.DocJob                       :33   [32m67530601284112384 [0;39m 更新电子书下的文档开始
+2021-07-06 16:22:30.016 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530601284112384 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:22:30.017 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530601284112384 [0;39m ==> Parameters: 
+2021-07-06 16:22:30.042 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530601284112384 [0;39m <==    Updates: 2
+2021-07-06 16:22:30.042 INFO  com.example.demo.job.DocJob                       :36   [32m67530601284112384 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:23:00.007 INFO  com.example.demo.job.DocJob                       :33   [32m67530727125815296 [0;39m 更新电子书下的文档开始
+2021-07-06 16:23:00.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530727125815296 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:23:00.022 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530727125815296 [0;39m ==> Parameters: 
+2021-07-06 16:23:00.046 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530727125815296 [0;39m <==    Updates: 2
+2021-07-06 16:23:00.047 INFO  com.example.demo.job.DocJob                       :36   [32m67530727125815296 [0;39m 更新电子书下的文档结束，耗时: 39毫秒
+2021-07-06 16:23:30.001 INFO  com.example.demo.job.DocJob                       :33   [32m67530852929769472 [0;39m 更新电子书下的文档开始
+2021-07-06 16:23:30.014 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530852929769472 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:23:30.015 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530852929769472 [0;39m ==> Parameters: 
+2021-07-06 16:23:30.040 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530852929769472 [0;39m <==    Updates: 2
+2021-07-06 16:23:30.041 INFO  com.example.demo.job.DocJob                       :36   [32m67530852929769472 [0;39m 更新电子书下的文档结束，耗时: 40毫秒
+2021-07-06 16:24:00.006 INFO  com.example.demo.job.DocJob                       :33   [32m67530978779860992 [0;39m 更新电子书下的文档开始
+2021-07-06 16:24:00.024 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530978779860992 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:24:00.024 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530978779860992 [0;39m ==> Parameters: 
+2021-07-06 16:24:00.049 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67530978779860992 [0;39m <==    Updates: 2
+2021-07-06 16:24:00.049 INFO  com.example.demo.job.DocJob                       :36   [32m67530978779860992 [0;39m 更新电子书下的文档结束，耗时: 42毫秒
+2021-07-06 16:24:30.010 INFO  com.example.demo.job.DocJob                       :33   [32m67531104625758208 [0;39m 更新电子书下的文档开始
+2021-07-06 16:24:30.027 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531104625758208 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:24:30.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531104625758208 [0;39m ==> Parameters: 
+2021-07-06 16:24:30.084 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531104625758208 [0;39m <==    Updates: 2
+2021-07-06 16:24:30.085 INFO  com.example.demo.job.DocJob                       :36   [32m67531104625758208 [0;39m 更新电子书下的文档结束，耗时: 75毫秒
+2021-07-06 16:25:00.007 INFO  com.example.demo.job.DocJob                       :33   [32m67531230442295296 [0;39m 更新电子书下的文档开始
+2021-07-06 16:25:00.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531230442295296 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:25:00.022 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531230442295296 [0;39m ==> Parameters: 
+2021-07-06 16:25:00.053 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531230442295296 [0;39m <==    Updates: 2
+2021-07-06 16:25:00.053 INFO  com.example.demo.job.DocJob                       :36   [32m67531230442295296 [0;39m 更新电子书下的文档结束，耗时: 45毫秒
+2021-07-06 16:25:30.003 INFO  com.example.demo.job.DocJob                       :33   [32m67531356254638080 [0;39m 更新电子书下的文档开始
+2021-07-06 16:25:30.020 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531356254638080 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:25:30.020 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531356254638080 [0;39m ==> Parameters: 
+2021-07-06 16:25:30.045 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531356254638080 [0;39m <==    Updates: 2
+2021-07-06 16:25:30.046 INFO  com.example.demo.job.DocJob                       :36   [32m67531356254638080 [0;39m 更新电子书下的文档结束，耗时: 43毫秒
+2021-07-06 16:26:00.011 INFO  com.example.demo.job.DocJob                       :33   [32m67531482117312512 [0;39m 更新电子书下的文档开始
+2021-07-06 16:26:00.029 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531482117312512 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:26:00.029 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531482117312512 [0;39m ==> Parameters: 
+2021-07-06 16:26:00.056 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531482117312512 [0;39m <==    Updates: 2
+2021-07-06 16:26:00.056 INFO  com.example.demo.job.DocJob                       :36   [32m67531482117312512 [0;39m 更新电子书下的文档结束，耗时: 45毫秒
+2021-07-06 16:26:30.012 INFO  com.example.demo.job.DocJob                       :33   [32m67531607950626816 [0;39m 更新电子书下的文档开始
+2021-07-06 16:26:30.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531607950626816 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:26:30.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531607950626816 [0;39m ==> Parameters: 
+2021-07-06 16:26:30.281 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531607950626816 [0;39m <==    Updates: 2
+2021-07-06 16:26:30.281 INFO  com.example.demo.job.DocJob                       :36   [32m67531607950626816 [0;39m 更新电子书下的文档结束，耗时: 269毫秒
+2021-07-06 16:27:00.015 INFO  com.example.demo.job.DocJob                       :33   [32m67531733792329728 [0;39m 更新电子书下的文档开始
+2021-07-06 16:27:00.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531733792329728 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:27:00.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531733792329728 [0;39m ==> Parameters: 
+2021-07-06 16:27:00.053 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67531733792329728 [0;39m <==    Updates: 2
+2021-07-06 16:27:00.053 INFO  com.example.demo.job.DocJob                       :36   [32m67531733792329728 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:27:25.616 INFO  com.example.demo.websocket.WebSocketServer        :41   [32m                  [0;39m 连接关闭，token：bso5PYUIz5，session id：3！当前连接数：0
+2021-07-06 16:27:25.629 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :218  [32m                  [0;39m Shutting down ExecutorService 'taskScheduler'
+2021-07-06 16:27:25.630 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-06 16:27:25.631 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-1 - Shutdown initiated...
+2021-07-06 16:27:25.637 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-1 - Shutdown completed.
+2021-07-06 16:27:26.126 INFO  com.example.demo.config.DemoApplication           :55   [32m                  [0;39m Starting DemoApplication using Java 1.8.0_241 on DESKTOP-J2FV0P4 with PID 10504 (D:\javaobj\demo\target\classes started by 82070 in D:\javaobj\demo)
+2021-07-06 16:27:26.127 INFO  com.example.demo.config.DemoApplication           :662  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-06 16:27:26.345 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-06 16:27:26.345 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-06 16:27:26.347 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2021-07-06 16:27:26.563 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8880 (http)
+2021-07-06 16:27:26.564 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8880"]
+2021-07-06 16:27:26.564 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-06 16:27:26.564 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-07-06 16:27:26.565 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-07-06 16:27:26.565 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-06 16:27:26.565 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-06 16:27:26.566 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-07-06 16:27:26.594 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-06 16:27:26.594 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 460 ms
+2021-07-06 16:27:27.067 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-06 16:27:27.391 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :181  [32m                  [0;39m Initializing ExecutorService 'taskScheduler'
+2021-07-06 16:27:27.424 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-06 16:27:27.436 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Stopping service [Tomcat]
+2021-07-06 16:27:27.442 INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener:136  [32m                  [0;39m 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-06 16:27:27.519 ERROR org.springframework.boot.SpringApplication        :858  [32m                  [0;39m Application run failed
+java.lang.IllegalStateException: Failed to register @ServerEndpoint class: class com.example.demo.websocket.WebSocketServer$$EnhancerBySpringCGLIB$$4e2ec5fc
+	at org.springframework.web.socket.server.standard.ServerEndpointExporter.registerEndpoint(ServerEndpointExporter.java:159)
+	at org.springframework.web.socket.server.standard.ServerEndpointExporter.registerEndpoints(ServerEndpointExporter.java:134)
+	at org.springframework.web.socket.server.standard.ServerEndpointExporter.afterSingletonsInstantiated(ServerEndpointExporter.java:112)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:963)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
+	at com.example.demo.config.DemoApplication.main(DemoApplication.java:23)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: javax.websocket.DeploymentException: Cannot deploy POJO class [com.example.demo.websocket.WebSocketServer$$EnhancerBySpringCGLIB$$4e2ec5fc] as it is not annotated with @ServerEndpoint
+	at org.apache.tomcat.websocket.server.WsServerContainer.addEndpoint(WsServerContainer.java:245)
+	at org.apache.tomcat.websocket.server.WsServerContainer.addEndpoint(WsServerContainer.java:228)
+	at org.springframework.web.socket.server.standard.ServerEndpointExporter.registerEndpoint(ServerEndpointExporter.java:156)
+	... 18 common frames omitted
+2021-07-06 16:27:27.537 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :218  [32m                  [0;39m Shutting down ExecutorService 'taskScheduler'
+2021-07-06 16:27:27.537 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-06 16:28:46.773 INFO  com.example.demo.config.DemoApplication           :55   [32m                  [0;39m Starting DemoApplication using Java 1.8.0_241 on DESKTOP-J2FV0P4 with PID 10504 (D:\javaobj\demo\target\classes started by 82070 in D:\javaobj\demo)
+2021-07-06 16:28:46.773 INFO  com.example.demo.config.DemoApplication           :662  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-06 16:28:47.006 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-06 16:28:47.007 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-06 16:28:47.008 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2021-07-06 16:28:47.168 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8880 (http)
+2021-07-06 16:28:47.168 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8880"]
+2021-07-06 16:28:47.169 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-06 16:28:47.169 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-07-06 16:28:47.169 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-07-06 16:28:47.169 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-06 16:28:47.169 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-06 16:28:47.170 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-07-06 16:28:47.246 INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/]  :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-06 16:28:47.246 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 470 ms
+2021-07-06 16:28:47.648 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-06 16:28:47.932 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :181  [32m                  [0;39m Initializing ExecutorService 'taskScheduler'
+2021-07-06 16:28:47.965 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-06 16:28:47.979 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8880"]
+2021-07-06 16:28:47.986 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8880 (http) with context path ''
+2021-07-06 16:28:47.990 INFO  com.example.demo.config.DemoApplication           :61   [32m                  [0;39m Started DemoApplication in 1.256 seconds (JVM running for 1916.51)
+2021-07-06 16:28:47.992 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-07-06 16:28:47.992 INFO  com.example.demo.config.DemoApplication           :24   [32m                  [0;39m 启动成功！
+2021-07-06 16:28:47.993 INFO  com.example.demo.config.DemoApplication           :25   [32m                  [0;39m 地址：	http://127.0.0.1:8880
+2021-07-06 16:29:00.006 INFO  com.example.demo.job.DocJob                       :33   [32m67532237066866688 [0;39m 更新电子书下的文档开始
+2021-07-06 16:29:00.009 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m67532237066866688 [0;39m HikariPool-2 - Starting...
+2021-07-06 16:29:00.129 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m67532237066866688 [0;39m HikariPool-2 - Start completed.
+2021-07-06 16:29:00.129 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532237066866688 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:29:00.129 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532237066866688 [0;39m ==> Parameters: 
+2021-07-06 16:29:00.149 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532237066866688 [0;39m <==    Updates: 2
+2021-07-06 16:29:00.149 INFO  com.example.demo.job.DocJob                       :36   [32m67532237066866688 [0;39m 更新电子书下的文档结束，耗时: 140毫秒
+2021-07-06 16:29:30.011 INFO  com.example.demo.job.DocJob                       :33   [32m67532362921152512 [0;39m 更新电子书下的文档开始
+2021-07-06 16:29:30.030 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532362921152512 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:29:30.030 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532362921152512 [0;39m ==> Parameters: 
+2021-07-06 16:29:30.055 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532362921152512 [0;39m <==    Updates: 2
+2021-07-06 16:29:30.056 INFO  com.example.demo.job.DocJob                       :36   [32m67532362921152512 [0;39m 更新电子书下的文档结束，耗时: 45毫秒
+2021-07-06 16:30:00.004 INFO  com.example.demo.job.DocJob                       :33   [32m67532488720912384 [0;39m 更新电子书下的文档开始
+2021-07-06 16:30:00.015 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532488720912384 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:30:00.016 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532488720912384 [0;39m ==> Parameters: 
+2021-07-06 16:30:00.036 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532488720912384 [0;39m <==    Updates: 2
+2021-07-06 16:30:00.036 INFO  com.example.demo.job.DocJob                       :36   [32m67532488720912384 [0;39m 更新电子书下的文档结束，耗时: 31毫秒
+2021-07-06 16:30:30.013 INFO  com.example.demo.job.DocJob                       :33   [32m67532614587781120 [0;39m 更新电子书下的文档开始
+2021-07-06 16:30:30.035 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532614587781120 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:30:30.036 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532614587781120 [0;39m ==> Parameters: 
+2021-07-06 16:30:30.055 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532614587781120 [0;39m <==    Updates: 2
+2021-07-06 16:30:30.056 INFO  com.example.demo.job.DocJob                       :36   [32m67532614587781120 [0;39m 更新电子书下的文档结束，耗时: 43毫秒
+2021-07-06 16:31:00.007 INFO  com.example.demo.job.DocJob                       :33   [32m67532740391735296 [0;39m 更新电子书下的文档开始
+2021-07-06 16:31:00.020 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532740391735296 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:31:00.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532740391735296 [0;39m ==> Parameters: 
+2021-07-06 16:31:00.042 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532740391735296 [0;39m <==    Updates: 2
+2021-07-06 16:31:00.043 INFO  com.example.demo.job.DocJob                       :36   [32m67532740391735296 [0;39m 更新电子书下的文档结束，耗时: 35毫秒
+2021-07-06 16:31:10.104 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :218  [32m                  [0;39m Shutting down ExecutorService 'taskScheduler'
+2021-07-06 16:31:10.105 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-06 16:31:10.105 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-2 - Shutdown initiated...
+2021-07-06 16:31:10.110 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-2 - Shutdown completed.
+2021-07-06 16:31:10.323 INFO  com.example.demo.config.DemoApplication           :55   [32m                  [0;39m Starting DemoApplication using Java 1.8.0_241 on DESKTOP-J2FV0P4 with PID 10504 (D:\javaobj\demo\target\classes started by 82070 in D:\javaobj\demo)
+2021-07-06 16:31:10.323 INFO  com.example.demo.config.DemoApplication           :662  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-06 16:31:10.490 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-06 16:31:10.490 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-06 16:31:10.492 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2021-07-06 16:31:10.649 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8880 (http)
+2021-07-06 16:31:10.650 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8880"]
+2021-07-06 16:31:10.650 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-06 16:31:10.650 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-07-06 16:31:10.650 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-07-06 16:31:10.651 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-06 16:31:10.651 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-06 16:31:10.651 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-07-06 16:31:10.671 INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/]  :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-06 16:31:10.672 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 347 ms
+2021-07-06 16:31:11.005 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-06 16:31:11.300 INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler :181  [32m                  [0;39m Initializing ExecutorService 'taskScheduler'
+2021-07-06 16:31:11.330 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-06 16:31:11.341 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8880"]
+2021-07-06 16:31:11.344 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8880 (http) with context path ''
+2021-07-06 16:31:11.348 INFO  com.example.demo.config.DemoApplication           :61   [32m                  [0;39m Started DemoApplication in 1.058 seconds (JVM running for 2059.869)
+2021-07-06 16:31:11.349 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-07-06 16:31:11.350 INFO  com.example.demo.config.DemoApplication           :24   [32m                  [0;39m 启动成功！
+2021-07-06 16:31:11.350 INFO  com.example.demo.config.DemoApplication           :25   [32m                  [0;39m 地址：	http://127.0.0.1:8880
+2021-07-06 16:31:30.002 INFO  com.example.demo.job.DocJob                       :33   [32m67532866199883776 [0;39m 更新电子书下的文档开始
+2021-07-06 16:31:30.006 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m67532866199883776 [0;39m HikariPool-3 - Starting...
+2021-07-06 16:31:30.158 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m67532866199883776 [0;39m HikariPool-3 - Start completed.
+2021-07-06 16:31:30.159 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532866199883776 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:31:30.160 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532866199883776 [0;39m ==> Parameters: 
+2021-07-06 16:31:30.186 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532866199883776 [0;39m <==    Updates: 2
+2021-07-06 16:31:30.188 INFO  com.example.demo.job.DocJob                       :36   [32m67532866199883776 [0;39m 更新电子书下的文档结束，耗时: 185毫秒
+2021-07-06 16:32:00.014 INFO  com.example.demo.job.DocJob                       :33   [32m67532992079335424 [0;39m 更新电子书下的文档开始
+2021-07-06 16:32:00.029 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532992079335424 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:32:00.029 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532992079335424 [0;39m ==> Parameters: 
+2021-07-06 16:32:00.053 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67532992079335424 [0;39m <==    Updates: 2
+2021-07-06 16:32:00.053 INFO  com.example.demo.job.DocJob                       :36   [32m67532992079335424 [0;39m 更新电子书下的文档结束，耗时: 39毫秒
+2021-07-06 16:32:30.013 INFO  com.example.demo.job.DocJob                       :33   [32m67533117904261120 [0;39m 更新电子书下的文档开始
+2021-07-06 16:32:30.025 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533117904261120 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:32:30.025 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533117904261120 [0;39m ==> Parameters: 
+2021-07-06 16:32:30.050 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533117904261120 [0;39m <==    Updates: 2
+2021-07-06 16:32:30.050 INFO  com.example.demo.job.DocJob                       :36   [32m67533117904261120 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:33:00.001 INFO  com.example.demo.job.DocJob                       :33   [32m67533243683049472 [0;39m 更新电子书下的文档开始
+2021-07-06 16:33:00.017 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533243683049472 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:33:00.017 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533243683049472 [0;39m ==> Parameters: 
+2021-07-06 16:33:00.142 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533243683049472 [0;39m <==    Updates: 2
+2021-07-06 16:33:00.143 INFO  com.example.demo.job.DocJob                       :36   [32m67533243683049472 [0;39m 更新电子书下的文档结束，耗时: 142毫秒
+2021-07-06 16:33:30.001 INFO  com.example.demo.job.DocJob                       :33   [32m67533369512169472 [0;39m 更新电子书下的文档开始
+2021-07-06 16:33:30.014 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533369512169472 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:33:30.015 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533369512169472 [0;39m ==> Parameters: 
+2021-07-06 16:33:30.040 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533369512169472 [0;39m <==    Updates: 2
+2021-07-06 16:33:30.041 INFO  com.example.demo.job.DocJob                       :36   [32m67533369512169472 [0;39m 更新电子书下的文档结束，耗时: 40毫秒
+2021-07-06 16:33:49.348 INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/]  :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-06 16:33:49.348 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-07-06 16:33:49.350 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 2 ms
+2021-07-06 16:33:49.353 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67533450680340480 [0;39m ------------- 开始 -------------
+2021-07-06 16:33:49.354 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67533450680340480 [0;39m 请求地址: http://127.0.0.1:8880/doc/find-content/1 GET
+2021-07-06 16:33:49.354 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67533450680340480 [0;39m 类名方法: com.example.demo.controller.DocController.findContent
+2021-07-06 16:33:49.355 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67533450680340480 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:33:49.356 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67533450680340480 [0;39m 请求参数: [1]
+2021-07-06 16:33:49.384 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67533450680340480 [0;39m ==>  Preparing: select id , content from content where id = ?
+2021-07-06 16:33:49.385 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67533450680340480 [0;39m ==> Parameters: 1(Long)
+2021-07-06 16:33:49.398 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67533450680340480 [0;39m <==    Columns: id, content
+2021-07-06 16:33:49.399 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67533450680340480 [0;39m <==        Row: 1, <<BLOB>>
+2021-07-06 16:33:49.400 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67533450680340480 [0;39m <==      Total: 1
+2021-07-06 16:33:49.401 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67533450680340480 [0;39m ==>  Preparing: update doc set view_count = view_count + 1 where id = ?
+2021-07-06 16:33:49.402 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67533450680340480 [0;39m ==> Parameters: 1(Long)
+2021-07-06 16:33:49.428 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67533450680340480 [0;39m <==    Updates: 1
+2021-07-06 16:33:49.430 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67533450680340480 [0;39m 返回结果: {"content":"<p>文档1</p>","success":true}
+2021-07-06 16:33:49.431 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67533450680340480 [0;39m ------------- 结束 耗时：78 ms -------------
+2021-07-06 16:33:49.850 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67533452764909568 [0;39m ------------- 开始 -------------
+2021-07-06 16:33:49.851 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67533452764909568 [0;39m 请求地址: http://127.0.0.1:8880/doc/find-content/2 GET
+2021-07-06 16:33:49.851 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67533452764909568 [0;39m 类名方法: com.example.demo.controller.DocController.findContent
+2021-07-06 16:33:49.851 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67533452764909568 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:33:49.852 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67533452764909568 [0;39m 请求参数: [2]
+2021-07-06 16:33:49.852 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67533452764909568 [0;39m ==>  Preparing: select id , content from content where id = ?
+2021-07-06 16:33:49.853 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67533452764909568 [0;39m ==> Parameters: 2(Long)
+2021-07-06 16:33:49.866 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67533452764909568 [0;39m <==    Columns: id, content
+2021-07-06 16:33:49.866 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67533452764909568 [0;39m <==        Row: 2, <<BLOB>>
+2021-07-06 16:33:49.867 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67533452764909568 [0;39m <==      Total: 1
+2021-07-06 16:33:49.868 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67533452764909568 [0;39m ==>  Preparing: update doc set view_count = view_count + 1 where id = ?
+2021-07-06 16:33:49.869 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67533452764909568 [0;39m ==> Parameters: 2(Long)
+2021-07-06 16:33:49.893 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67533452764909568 [0;39m <==    Updates: 1
+2021-07-06 16:33:49.894 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67533452764909568 [0;39m 返回结果: {"content":"<p>文档1.1<br/></p>","success":true}
+2021-07-06 16:33:49.894 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67533452764909568 [0;39m ------------- 结束 耗时：44 ms -------------
+2021-07-06 16:33:50.562 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67533455751254016 [0;39m ------------- 开始 -------------
+2021-07-06 16:33:50.562 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67533455751254016 [0;39m 请求地址: http://127.0.0.1:8880/doc/vote/2 GET
+2021-07-06 16:33:50.563 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67533455751254016 [0;39m 类名方法: com.example.demo.controller.DocController.vote
+2021-07-06 16:33:50.563 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67533455751254016 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:33:50.563 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67533455751254016 [0;39m 请求参数: [2]
+2021-07-06 16:33:50.578 INFO  com.example.demo.util.RedisUtil                   :28   [32m67533455751254016 [0;39m key已存在：DOC_VOTE_2_127.0.0.1
+2021-07-06 16:33:50.579 WARN  c.e.demo.controller.ControllerExceptionHandler    :44   [32m67533455751254016 [0;39m 业务异常：您已点赞过
+2021-07-06 16:33:50.580 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver   :207  [32m67533455751254016 [0;39m Resolved [com.example.demo.exception.BusinessException: 您已点赞过]
+2021-07-06 16:33:51.916 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67533461430341632 [0;39m ------------- 开始 -------------
+2021-07-06 16:33:51.916 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67533461430341632 [0;39m 请求地址: http://127.0.0.1:8880/doc/find-content/47229159042322432 GET
+2021-07-06 16:33:51.917 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67533461430341632 [0;39m 类名方法: com.example.demo.controller.DocController.findContent
+2021-07-06 16:33:51.917 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67533461430341632 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:33:51.917 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67533461430341632 [0;39m 请求参数: [47229159042322432]
+2021-07-06 16:33:51.931 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67533461430341632 [0;39m ==>  Preparing: select id , content from content where id = ?
+2021-07-06 16:33:51.931 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67533461430341632 [0;39m ==> Parameters: 47229159042322432(Long)
+2021-07-06 16:33:51.944 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67533461430341632 [0;39m <==    Columns: id, content
+2021-07-06 16:33:51.944 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67533461430341632 [0;39m <==        Row: 47229159042322432, <<BLOB>>
+2021-07-06 16:33:51.944 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67533461430341632 [0;39m <==      Total: 1
+2021-07-06 16:33:51.945 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67533461430341632 [0;39m ==>  Preparing: update doc set view_count = view_count + 1 where id = ?
+2021-07-06 16:33:51.945 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67533461430341632 [0;39m ==> Parameters: 47229159042322432(Long)
+2021-07-06 16:33:51.970 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67533461430341632 [0;39m <==    Updates: 1
+2021-07-06 16:33:51.971 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67533461430341632 [0;39m 返回结果: {"content":"<p>文档1.1.1<br/></p>","success":true}
+2021-07-06 16:33:51.971 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67533461430341632 [0;39m ------------- 结束 耗时：56 ms -------------
+2021-07-06 16:33:53.426 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67533467763740672 [0;39m ------------- 开始 -------------
+2021-07-06 16:33:53.426 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67533467763740672 [0;39m 请求地址: http://127.0.0.1:8880/doc/vote/47229159042322432 GET
+2021-07-06 16:33:53.427 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67533467763740672 [0;39m 类名方法: com.example.demo.controller.DocController.vote
+2021-07-06 16:33:53.427 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67533467763740672 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:33:53.427 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67533467763740672 [0;39m 请求参数: [47229159042322432]
+2021-07-06 16:33:53.429 INFO  com.example.demo.util.RedisUtil                   :31   [32m67533467763740672 [0;39m key不存在，放入：DOC_VOTE_47229159042322432_127.0.0.1，过期 86400 秒
+2021-07-06 16:33:53.443 DEBUG c.e.demo.mapper.DocMapperCust.increasesVoteCount  :137  [32m67533467763740672 [0;39m ==>  Preparing: update doc set vote_count = vote_count + 1 where id = ?
+2021-07-06 16:33:53.444 DEBUG c.e.demo.mapper.DocMapperCust.increasesVoteCount  :137  [32m67533467763740672 [0;39m ==> Parameters: 47229159042322432(Long)
+2021-07-06 16:33:53.469 DEBUG c.e.demo.mapper.DocMapperCust.increasesVoteCount  :137  [32m67533467763740672 [0;39m <==    Updates: 1
+2021-07-06 16:33:53.469 DEBUG c.example.demo.mapper.DocMapper.selectByPrimaryKey:137  [32m67533467763740672 [0;39m ==>  Preparing: select id, ebook_id, parent, `name`, sort, view_count, vote_count from doc where id = ?
+2021-07-06 16:33:53.470 DEBUG c.example.demo.mapper.DocMapper.selectByPrimaryKey:137  [32m67533467763740672 [0;39m ==> Parameters: 47229159042322432(Long)
+2021-07-06 16:33:53.485 TRACE c.example.demo.mapper.DocMapper.selectByPrimaryKey:143  [32m67533467763740672 [0;39m <==    Columns: id, ebook_id, parent, name, sort, view_count, vote_count
+2021-07-06 16:33:53.485 TRACE c.example.demo.mapper.DocMapper.selectByPrimaryKey:143  [32m67533467763740672 [0;39m <==        Row: 47229159042322432, 1, 2, 文档1.1.1, 1, 7, 1
+2021-07-06 16:33:53.486 DEBUG c.example.demo.mapper.DocMapper.selectByPrimaryKey:137  [32m67533467763740672 [0;39m <==      Total: 1
+2021-07-06 16:33:53.487 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67533467763740672 [0;39m 返回结果: {"success":true}
+2021-07-06 16:33:53.487 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67533467763740672 [0;39m ------------- 结束 耗时：61 ms -------------
+2021-07-06 16:34:00.002 INFO  com.example.demo.job.DocJob                       :33   [32m67533495345483776 [0;39m 更新电子书下的文档开始
+2021-07-06 16:34:00.019 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533495345483776 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:34:00.020 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533495345483776 [0;39m ==> Parameters: 
+2021-07-06 16:34:00.149 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533495345483776 [0;39m <==    Updates: 2
+2021-07-06 16:34:00.150 INFO  com.example.demo.job.DocJob                       :36   [32m67533495345483776 [0;39m 更新电子书下的文档结束，耗时: 147毫秒
+2021-07-06 16:34:30.003 INFO  com.example.demo.job.DocJob                       :33   [32m67533621178798080 [0;39m 更新电子书下的文档开始
+2021-07-06 16:34:30.015 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533621178798080 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:34:30.015 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533621178798080 [0;39m ==> Parameters: 
+2021-07-06 16:34:30.040 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533621178798080 [0;39m <==    Updates: 2
+2021-07-06 16:34:30.041 INFO  com.example.demo.job.DocJob                       :36   [32m67533621178798080 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:35:00.013 INFO  com.example.demo.job.DocJob                       :33   [32m67533747049861120 [0;39m 更新电子书下的文档开始
+2021-07-06 16:35:00.025 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533747049861120 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:35:00.025 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533747049861120 [0;39m ==> Parameters: 
+2021-07-06 16:35:00.049 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533747049861120 [0;39m <==    Updates: 2
+2021-07-06 16:35:00.050 INFO  com.example.demo.job.DocJob                       :36   [32m67533747049861120 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:35:30.012 INFO  com.example.demo.job.DocJob                       :33   [32m67533872874786816 [0;39m 更新电子书下的文档开始
+2021-07-06 16:35:30.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533872874786816 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:35:30.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533872874786816 [0;39m ==> Parameters: 
+2021-07-06 16:35:30.158 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533872874786816 [0;39m <==    Updates: 2
+2021-07-06 16:35:30.158 INFO  com.example.demo.job.DocJob                       :36   [32m67533872874786816 [0;39m 更新电子书下的文档结束，耗时: 146毫秒
+2021-07-06 16:36:00.008 INFO  com.example.demo.job.DocJob                       :33   [32m67533998687129600 [0;39m 更新电子书下的文档开始
+2021-07-06 16:36:00.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533998687129600 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:36:00.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533998687129600 [0;39m ==> Parameters: 
+2021-07-06 16:36:00.046 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67533998687129600 [0;39m <==    Updates: 2
+2021-07-06 16:36:00.047 INFO  com.example.demo.job.DocJob                       :36   [32m67533998687129600 [0;39m 更新电子书下的文档结束，耗时: 39毫秒
+2021-07-06 16:36:30.011 INFO  com.example.demo.job.DocJob                       :33   [32m67534124528832512 [0;39m 更新电子书下的文档开始
+2021-07-06 16:36:30.024 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534124528832512 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:36:30.025 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534124528832512 [0;39m ==> Parameters: 
+2021-07-06 16:36:30.050 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534124528832512 [0;39m <==    Updates: 2
+2021-07-06 16:36:30.051 INFO  com.example.demo.job.DocJob                       :36   [32m67534124528832512 [0;39m 更新电子书下的文档结束，耗时: 40毫秒
+2021-07-06 16:37:00.009 INFO  com.example.demo.job.DocJob                       :33   [32m67534250349563904 [0;39m 更新电子书下的文档开始
+2021-07-06 16:37:00.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534250349563904 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:37:00.022 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534250349563904 [0;39m ==> Parameters: 
+2021-07-06 16:37:00.046 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534250349563904 [0;39m <==    Updates: 2
+2021-07-06 16:37:00.046 INFO  com.example.demo.job.DocJob                       :36   [32m67534250349563904 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:37:30.003 INFO  com.example.demo.job.DocJob                       :33   [32m67534376153518080 [0;39m 更新电子书下的文档开始
+2021-07-06 16:37:30.020 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534376153518080 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:37:30.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534376153518080 [0;39m ==> Parameters: 
+2021-07-06 16:37:30.172 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534376153518080 [0;39m <==    Updates: 2
+2021-07-06 16:37:30.173 INFO  com.example.demo.job.DocJob                       :36   [32m67534376153518080 [0;39m 更新电子书下的文档结束，耗时: 170毫秒
+2021-07-06 16:38:00.010 INFO  com.example.demo.job.DocJob                       :33   [32m67534502011998208 [0;39m 更新电子书下的文档开始
+2021-07-06 16:38:00.023 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534502011998208 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:38:00.023 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534502011998208 [0;39m ==> Parameters: 
+2021-07-06 16:38:00.046 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534502011998208 [0;39m <==    Updates: 2
+2021-07-06 16:38:00.047 INFO  com.example.demo.job.DocJob                       :36   [32m67534502011998208 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:38:30.006 INFO  com.example.demo.job.DocJob                       :33   [32m67534627824340992 [0;39m 更新电子书下的文档开始
+2021-07-06 16:38:30.019 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534627824340992 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:38:30.020 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534627824340992 [0;39m ==> Parameters: 
+2021-07-06 16:38:30.080 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534627824340992 [0;39m <==    Updates: 2
+2021-07-06 16:38:30.080 INFO  com.example.demo.job.DocJob                       :36   [32m67534627824340992 [0;39m 更新电子书下的文档结束，耗时: 73毫秒
+2021-07-06 16:39:00.008 INFO  com.example.demo.job.DocJob                       :33   [32m67534753661849600 [0;39m 更新电子书下的文档开始
+2021-07-06 16:39:00.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534753661849600 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:39:00.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534753661849600 [0;39m ==> Parameters: 
+2021-07-06 16:39:00.046 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534753661849600 [0;39m <==    Updates: 2
+2021-07-06 16:39:00.046 INFO  com.example.demo.job.DocJob                       :36   [32m67534753661849600 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:39:30.014 INFO  com.example.demo.job.DocJob                       :33   [32m67534879516135424 [0;39m 更新电子书下的文档开始
+2021-07-06 16:39:30.026 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534879516135424 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:39:30.026 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534879516135424 [0;39m ==> Parameters: 
+2021-07-06 16:39:30.053 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67534879516135424 [0;39m <==    Updates: 2
+2021-07-06 16:39:30.053 INFO  com.example.demo.job.DocJob                       :36   [32m67534879516135424 [0;39m 更新电子书下的文档结束，耗时: 39毫秒
+2021-07-06 16:40:00.010 INFO  com.example.demo.job.DocJob                       :33   [32m67535005328478208 [0;39m 更新电子书下的文档开始
+2021-07-06 16:40:00.022 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535005328478208 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:40:00.023 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535005328478208 [0;39m ==> Parameters: 
+2021-07-06 16:40:00.047 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535005328478208 [0;39m <==    Updates: 2
+2021-07-06 16:40:00.048 INFO  com.example.demo.job.DocJob                       :36   [32m67535005328478208 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:40:30.005 INFO  com.example.demo.job.DocJob                       :33   [32m67535131136626688 [0;39m 更新电子书下的文档开始
+2021-07-06 16:40:30.017 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535131136626688 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:40:30.018 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535131136626688 [0;39m ==> Parameters: 
+2021-07-06 16:40:30.043 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535131136626688 [0;39m <==    Updates: 2
+2021-07-06 16:40:30.044 INFO  com.example.demo.job.DocJob                       :36   [32m67535131136626688 [0;39m 更新电子书下的文档结束，耗时: 39毫秒
+2021-07-06 16:41:00.011 INFO  com.example.demo.job.DocJob                       :33   [32m67535256990912512 [0;39m 更新电子书下的文档开始
+2021-07-06 16:41:00.023 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535256990912512 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:41:00.023 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535256990912512 [0;39m ==> Parameters: 
+2021-07-06 16:41:00.048 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535256990912512 [0;39m <==    Updates: 2
+2021-07-06 16:41:00.049 INFO  com.example.demo.job.DocJob                       :36   [32m67535256990912512 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:41:30.005 INFO  com.example.demo.job.DocJob                       :33   [32m67535382794866688 [0;39m 更新电子书下的文档开始
+2021-07-06 16:41:30.017 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535382794866688 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:41:30.018 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535382794866688 [0;39m ==> Parameters: 
+2021-07-06 16:41:30.045 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535382794866688 [0;39m <==    Updates: 2
+2021-07-06 16:41:30.046 INFO  com.example.demo.job.DocJob                       :36   [32m67535382794866688 [0;39m 更新电子书下的文档结束，耗时: 41毫秒
+2021-07-06 16:42:00.008 INFO  com.example.demo.job.DocJob                       :33   [32m67535508636569600 [0;39m 更新电子书下的文档开始
+2021-07-06 16:42:00.020 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535508636569600 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:42:00.020 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535508636569600 [0;39m ==> Parameters: 
+2021-07-06 16:42:00.045 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535508636569600 [0;39m <==    Updates: 2
+2021-07-06 16:42:00.045 INFO  com.example.demo.job.DocJob                       :36   [32m67535508636569600 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:42:30.013 INFO  com.example.demo.job.DocJob                       :33   [32m67535634486661120 [0;39m 更新电子书下的文档开始
+2021-07-06 16:42:30.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535634486661120 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:42:30.029 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535634486661120 [0;39m ==> Parameters: 
+2021-07-06 16:42:30.054 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535634486661120 [0;39m <==    Updates: 2
+2021-07-06 16:42:30.054 INFO  com.example.demo.job.DocJob                       :36   [32m67535634486661120 [0;39m 更新电子书下的文档结束，耗时: 41毫秒
+2021-07-06 16:43:00.017 INFO  com.example.demo.job.DocJob                       :33   [32m67535760332558336 [0;39m 更新电子书下的文档开始
+2021-07-06 16:43:00.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535760332558336 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:43:00.030 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535760332558336 [0;39m ==> Parameters: 
+2021-07-06 16:43:00.054 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535760332558336 [0;39m <==    Updates: 2
+2021-07-06 16:43:00.054 INFO  com.example.demo.job.DocJob                       :36   [32m67535760332558336 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:43:30.013 INFO  com.example.demo.job.DocJob                       :33   [32m67535886144901120 [0;39m 更新电子书下的文档开始
+2021-07-06 16:43:30.026 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535886144901120 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:43:30.027 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535886144901120 [0;39m ==> Parameters: 
+2021-07-06 16:43:30.052 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67535886144901120 [0;39m <==    Updates: 2
+2021-07-06 16:43:30.052 INFO  com.example.demo.job.DocJob                       :36   [32m67535886144901120 [0;39m 更新电子书下的文档结束，耗时: 39毫秒
+2021-07-06 16:44:00.016 INFO  com.example.demo.job.DocJob                       :33   [32m67536011986604032 [0;39m 更新电子书下的文档开始
+2021-07-06 16:44:00.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67536011986604032 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:44:00.029 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67536011986604032 [0;39m ==> Parameters: 
+2021-07-06 16:44:00.054 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67536011986604032 [0;39m <==    Updates: 2
+2021-07-06 16:44:00.054 INFO  com.example.demo.job.DocJob                       :36   [32m67536011986604032 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:44:30.006 INFO  com.example.demo.job.DocJob                       :33   [32m67536137773780992 [0;39m 更新电子书下的文档开始
+2021-07-06 16:44:30.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67536137773780992 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:44:30.022 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67536137773780992 [0;39m ==> Parameters: 
+2021-07-06 16:44:30.047 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67536137773780992 [0;39m <==    Updates: 2
+2021-07-06 16:44:30.048 INFO  com.example.demo.job.DocJob                       :36   [32m67536137773780992 [0;39m 更新电子书下的文档结束，耗时: 42毫秒
