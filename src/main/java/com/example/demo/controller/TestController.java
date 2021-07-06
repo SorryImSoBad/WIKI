@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 @RestController
 public class TestController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(UserController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(TestController.class);
 
     @Resource
     private TestService testService;
