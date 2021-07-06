@@ -76,3 +76,466 @@
 2021-07-06 16:01:30.023 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525316486238208 [0;39m ==> Parameters: 
 2021-07-06 16:01:30.048 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525316486238208 [0;39m <==    Updates: 2
 2021-07-06 16:01:30.048 INFO  com.example.demo.job.DocJob                       :36   [32m67525316486238208 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:01:41.322 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-06 16:01:41.323 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-07-06 16:01:41.324 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 1 ms
+2021-07-06 16:01:41.435 INFO  com.example.demo.websocket.WebSocketServer        :32   [32m                  [0;39m 有新连接：token：VjSCvb4pec，session id：0，当前连接数：1
+2021-07-06 16:01:41.458 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67525364498436096 [0;39m ------------- 开始 -------------
+2021-07-06 16:01:41.459 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67525364498436096 [0;39m 请求地址: http://127.0.0.1:8880/category/all GET
+2021-07-06 16:01:41.459 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67525364498436096 [0;39m 类名方法: com.example.demo.controller.CategoryController.all
+2021-07-06 16:01:41.460 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67525364498436096 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:01:41.513 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67525364498436096 [0;39m 请求参数: []
+2021-07-06 16:01:41.547 DEBUG c.e.demo.mapper.CategoryMapper.selectByExample    :137  [32m67525364498436096 [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-07-06 16:01:41.548 DEBUG c.e.demo.mapper.CategoryMapper.selectByExample    :137  [32m67525364498436096 [0;39m ==> Parameters: 
+2021-07-06 16:01:41.603 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67525364498436096 [0;39m <==    Columns: id, parent, name, sort
+2021-07-06 16:01:41.604 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67525364498436096 [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-07-06 16:01:41.605 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67525364498436096 [0;39m <==        Row: 101, 100, Vue, 101
+2021-07-06 16:01:41.606 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67525364498436096 [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-07-06 16:01:41.606 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67525364498436096 [0;39m <==        Row: 200, 0, Java, 200
+2021-07-06 16:01:41.607 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67525364498436096 [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-07-06 16:01:41.607 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67525364498436096 [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-07-06 16:01:41.607 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67525364498436096 [0;39m <==        Row: 300, 0, Python, 300
+2021-07-06 16:01:41.608 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67525364498436096 [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-07-06 16:01:41.608 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67525364498436096 [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-07-06 16:01:41.609 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67525364498436096 [0;39m <==        Row: 400, 0, 数据库, 400
+2021-07-06 16:01:41.609 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67525364498436096 [0;39m <==        Row: 401, 400, MySQL, 401
+2021-07-06 16:01:41.610 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67525364498436096 [0;39m <==        Row: 500, 0, 其它, 500
+2021-07-06 16:01:41.610 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67525364498436096 [0;39m <==        Row: 501, 500, 服务器, 501
+2021-07-06 16:01:41.611 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67525364498436096 [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-07-06 16:01:41.611 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67525364498436096 [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-07-06 16:01:41.612 DEBUG c.e.demo.mapper.CategoryMapper.selectByExample    :137  [32m67525364498436096 [0;39m <==      Total: 15
+2021-07-06 16:01:41.639 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67525364498436096 [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-07-06 16:01:41.639 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67525364498436096 [0;39m ------------- 结束 耗时：182 ms -------------
+2021-07-06 16:01:51.370 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67525406076571648 [0;39m ------------- 开始 -------------
+2021-07-06 16:01:51.370 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67525406076571648 [0;39m 请求地址: http://127.0.0.1:8880/user/login POST
+2021-07-06 16:01:51.370 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67525406076571648 [0;39m 类名方法: com.example.demo.controller.UserController.login
+2021-07-06 16:01:51.371 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67525406076571648 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:01:51.373 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67525406076571648 [0;39m 请求参数: [{"loginName":"test"}]
+2021-07-06 16:01:51.429 DEBUG com.example.demo.mapper.UserMapper.selectByExample:137  [32m67525406076571648 [0;39m ==>  Preparing: select id, login_name, `name`, `password` from user WHERE ( login_name = ? )
+2021-07-06 16:01:51.430 DEBUG com.example.demo.mapper.UserMapper.selectByExample:137  [32m67525406076571648 [0;39m ==> Parameters: test(String)
+2021-07-06 16:01:51.443 TRACE com.example.demo.mapper.UserMapper.selectByExample:143  [32m67525406076571648 [0;39m <==    Columns: id, login_name, name, password
+2021-07-06 16:01:51.444 TRACE com.example.demo.mapper.UserMapper.selectByExample:143  [32m67525406076571648 [0;39m <==        Row: 1, test, 测试, 7354a1d413535a6c0dc5c209e198d799
+2021-07-06 16:01:51.445 DEBUG com.example.demo.mapper.UserMapper.selectByExample:137  [32m67525406076571648 [0;39m <==      Total: 1
+2021-07-06 16:01:51.451 INFO  com.example.demo.controller.UserController        :77   [32m67525406076571648 [0;39m 生成单点登录token: 67525406412115968,并放入redis
+2021-07-06 16:01:55.531 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67525406076571648 [0;39m 返回结果: {"content":{"id":1,"loginName":"test","name":"测试","token":"67525406412115968"},"success":true}
+2021-07-06 16:01:55.531 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67525406076571648 [0;39m ------------- 结束 耗时：4161 ms -------------
+2021-07-06 16:02:00.013 INFO  com.example.demo.job.DocJob                       :33   [32m67525442327941120 [0;39m 更新电子书下的文档开始
+2021-07-06 16:02:00.026 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525442327941120 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:02:00.026 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525442327941120 [0;39m ==> Parameters: 
+2021-07-06 16:02:00.050 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525442327941120 [0;39m <==    Updates: 2
+2021-07-06 16:02:00.050 INFO  com.example.demo.job.DocJob                       :36   [32m67525442327941120 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:02:07.636 INFO  com.example.demo.interceptor.LoginInterceptor     :30   [32m                  [0;39m ------------- LoginInterceptor 开始 -------------
+2021-07-06 16:02:07.637 INFO  com.example.demo.interceptor.LoginInterceptor     :66   [32m                  [0;39m ------------- LoginInterceptor 结束 耗时：0 ms -------------
+2021-07-06 16:02:07.647 INFO  com.example.demo.interceptor.LoginInterceptor     :30   [32m                  [0;39m ------------- LoginInterceptor 开始 -------------
+2021-07-06 16:02:07.647 INFO  com.example.demo.interceptor.LoginInterceptor     :41   [32m                  [0;39m 接口登录拦截：，path：http://127.0.0.1:8880/user/logout/67525406412115968
+2021-07-06 16:02:07.647 INFO  com.example.demo.interceptor.LoginInterceptor     :45   [32m                  [0;39m 登录校验开始，token：67525406412115968
+2021-07-06 16:02:07.652 INFO  com.example.demo.interceptor.LoginInterceptor     :57   [32m                  [0;39m 已登录：{"id":1,"loginName":"test","name":"测试","token":"67525406412115968"}
+2021-07-06 16:02:07.756 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67525474804436992 [0;39m ------------- 开始 -------------
+2021-07-06 16:02:07.757 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67525474804436992 [0;39m 请求地址: http://127.0.0.1:8880/user/logout/67525406412115968 GET
+2021-07-06 16:02:07.757 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67525474804436992 [0;39m 类名方法: com.example.demo.controller.UserController.logout
+2021-07-06 16:02:07.758 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67525474804436992 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:02:07.758 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67525474804436992 [0;39m 请求参数: ["67525406412115968"]
+2021-07-06 16:02:07.777 INFO  com.example.demo.controller.UserController        :89   [32m67525474804436992 [0;39m 从redis中删除token：67525406412115968
+2021-07-06 16:02:07.778 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67525474804436992 [0;39m 返回结果: {"success":true}
+2021-07-06 16:02:07.779 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67525474804436992 [0;39m ------------- 结束 耗时：23 ms -------------
+2021-07-06 16:02:07.785 INFO  com.example.demo.interceptor.LoginInterceptor     :66   [32m67525474804436992 [0;39m ------------- LoginInterceptor 结束 耗时：138 ms -------------
+2021-07-06 16:02:09.971 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67525484094820352 [0;39m ------------- 开始 -------------
+2021-07-06 16:02:09.972 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67525484094820352 [0;39m 请求地址: http://127.0.0.1:8880/ebook/list GET
+2021-07-06 16:02:09.972 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67525484094820352 [0;39m 类名方法: com.example.demo.controller.EbookController.list
+2021-07-06 16:02:09.973 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67525484094820352 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:02:09.975 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67525484094820352 [0;39m 请求参数: [{"categoryId2":101,"page":1,"size":1000}]
+2021-07-06 16:02:10.031 DEBUG c.e.demo.mapper.EbookMapper.selectByExample_COUNT :137  [32m67525484094820352 [0;39m ==>  Preparing: SELECT count(0) FROM ebook WHERE (category2_id = ?)
+2021-07-06 16:02:10.032 DEBUG c.e.demo.mapper.EbookMapper.selectByExample_COUNT :137  [32m67525484094820352 [0;39m ==> Parameters: 101(Long)
+2021-07-06 16:02:10.045 TRACE c.e.demo.mapper.EbookMapper.selectByExample_COUNT :143  [32m67525484094820352 [0;39m <==    Columns: count(0)
+2021-07-06 16:02:10.046 TRACE c.e.demo.mapper.EbookMapper.selectByExample_COUNT :143  [32m67525484094820352 [0;39m <==        Row: 1
+2021-07-06 16:02:10.047 DEBUG c.e.demo.mapper.EbookMapper.selectByExample_COUNT :137  [32m67525484094820352 [0;39m <==      Total: 1
+2021-07-06 16:02:10.049 DEBUG c.example.demo.mapper.EbookMapper.selectByExample :137  [32m67525484094820352 [0;39m ==>  Preparing: select id , `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook WHERE ( category2_id = ? ) LIMIT ?
+2021-07-06 16:02:10.050 DEBUG c.example.demo.mapper.EbookMapper.selectByExample :137  [32m67525484094820352 [0;39m ==> Parameters: 101(Long), 1000(Integer)
+2021-07-06 16:02:10.062 TRACE c.example.demo.mapper.EbookMapper.selectByExample :143  [32m67525484094820352 [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-06 16:02:10.063 TRACE c.example.demo.mapper.EbookMapper.selectByExample :143  [32m67525484094820352 [0;39m <==        Row: 2, Vue 入门教程, 100, 101, 零基础入门Vue, /image/cover2.png, 2, 28, 4
+2021-07-06 16:02:10.063 DEBUG c.example.demo.mapper.EbookMapper.selectByExample :137  [32m67525484094820352 [0;39m <==      Total: 1
+2021-07-06 16:02:10.065 INFO  com.example.demo.service.EbookService             :45   [32m67525484094820352 [0;39m 总行数：1
+2021-07-06 16:02:10.065 INFO  com.example.demo.service.EbookService             :46   [32m67525484094820352 [0;39m 总页数：1
+2021-07-06 16:02:10.077 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67525484094820352 [0;39m 返回结果: {"content":{"list":[{"category1Id":100,"category2Id":101,"cover":"/image/cover2.png","description":"零基础入门Vue","docCount":2,"id":2,"name":"Vue 入门教程","viewCount":28,"voteCount":4}],"total":1},"success":true}
+2021-07-06 16:02:10.077 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67525484094820352 [0;39m ------------- 结束 耗时：106 ms -------------
+2021-07-06 16:02:10.691 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67525487114719232 [0;39m ------------- 开始 -------------
+2021-07-06 16:02:10.691 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67525487114719232 [0;39m 请求地址: http://127.0.0.1:8880/doc/all/2 GET
+2021-07-06 16:02:10.692 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67525487114719232 [0;39m 类名方法: com.example.demo.controller.DocController.all
+2021-07-06 16:02:10.693 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67525487114719232 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:02:10.694 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67525487114719232 [0;39m 请求参数: [2]
+2021-07-06 16:02:10.715 DEBUG com.example.demo.mapper.DocMapper.selectByExample :137  [32m67525487114719232 [0;39m ==>  Preparing: select id, ebook_id, parent, `name`, sort, view_count, vote_count from doc WHERE ( ebook_id = ? ) order by sort asc
+2021-07-06 16:02:10.716 DEBUG com.example.demo.mapper.DocMapper.selectByExample :137  [32m67525487114719232 [0;39m ==> Parameters: 2(Long)
+2021-07-06 16:02:10.729 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67525487114719232 [0;39m <==    Columns: id, ebook_id, parent, name, sort, view_count, vote_count
+2021-07-06 16:02:10.730 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67525487114719232 [0;39m <==        Row: 64260071458213888, 2, 0, test1, 1, 20, 3
+2021-07-06 16:02:10.731 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67525487114719232 [0;39m <==        Row: 64260284474331136, 2, 0, test2, 2, 8, 1
+2021-07-06 16:02:10.731 DEBUG com.example.demo.mapper.DocMapper.selectByExample :137  [32m67525487114719232 [0;39m <==      Total: 2
+2021-07-06 16:02:10.743 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67525487114719232 [0;39m 返回结果: {"content":[{"ebookId":2,"id":64260071458213888,"name":"test1","parent":0,"sort":1,"viewCount":20,"voteCount":3},{"ebookId":2,"id":64260284474331136,"name":"test2","parent":0,"sort":2,"viewCount":8,"voteCount":1}],"success":true}
+2021-07-06 16:02:10.744 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67525487114719232 [0;39m ------------- 结束 耗时：53 ms -------------
+2021-07-06 16:02:10.772 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67525487454457856 [0;39m ------------- 开始 -------------
+2021-07-06 16:02:10.773 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67525487454457856 [0;39m 请求地址: http://127.0.0.1:8880/doc/find-content/64260071458213888 GET
+2021-07-06 16:02:10.774 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67525487454457856 [0;39m 类名方法: com.example.demo.controller.DocController.findContent
+2021-07-06 16:02:10.774 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67525487454457856 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:02:10.774 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67525487454457856 [0;39m 请求参数: [64260071458213888]
+2021-07-06 16:02:10.776 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67525487454457856 [0;39m ==>  Preparing: select id , content from content where id = ?
+2021-07-06 16:02:10.777 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67525487454457856 [0;39m ==> Parameters: 64260071458213888(Long)
+2021-07-06 16:02:10.791 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67525487454457856 [0;39m <==    Columns: id, content
+2021-07-06 16:02:10.792 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67525487454457856 [0;39m <==        Row: 64260071458213888, <<BLOB>>
+2021-07-06 16:02:10.792 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67525487454457856 [0;39m <==      Total: 1
+2021-07-06 16:02:10.794 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67525487454457856 [0;39m ==>  Preparing: update doc set view_count = view_count + 1 where id = ?
+2021-07-06 16:02:10.795 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67525487454457856 [0;39m ==> Parameters: 64260071458213888(Long)
+2021-07-06 16:02:10.819 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67525487454457856 [0;39m <==    Updates: 1
+2021-07-06 16:02:10.820 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67525487454457856 [0;39m 返回结果: {"content":"<p>test1</p>","success":true}
+2021-07-06 16:02:10.820 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67525487454457856 [0;39m ------------- 结束 耗时：48 ms -------------
+2021-07-06 16:02:30.004 INFO  com.example.demo.job.DocJob                       :33   [32m67525568119312384 [0;39m 更新电子书下的文档开始
+2021-07-06 16:02:30.015 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525568119312384 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:02:30.016 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525568119312384 [0;39m ==> Parameters: 
+2021-07-06 16:02:30.042 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525568119312384 [0;39m <==    Updates: 2
+2021-07-06 16:02:30.043 INFO  com.example.demo.job.DocJob                       :36   [32m67525568119312384 [0;39m 更新电子书下的文档结束，耗时: 39毫秒
+2021-07-06 16:02:37.425 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67525599245242368 [0;39m ------------- 开始 -------------
+2021-07-06 16:02:37.425 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67525599245242368 [0;39m 请求地址: http://127.0.0.1:8880/doc/vote/64260071458213888 GET
+2021-07-06 16:02:37.426 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67525599245242368 [0;39m 类名方法: com.example.demo.controller.DocController.vote
+2021-07-06 16:02:37.426 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67525599245242368 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:02:37.426 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67525599245242368 [0;39m 请求参数: [64260071458213888]
+2021-07-06 16:02:37.428 INFO  com.example.demo.util.RedisUtil                   :31   [32m67525599245242368 [0;39m key不存在，放入：DOC_VOTE_64260071458213888_127.0.0.1，过期 86400 秒
+2021-07-06 16:02:37.442 DEBUG c.e.demo.mapper.DocMapperCust.increasesVoteCount  :137  [32m67525599245242368 [0;39m ==>  Preparing: update doc set vote_count = vote_count + 1 where id = ?
+2021-07-06 16:02:37.443 DEBUG c.e.demo.mapper.DocMapperCust.increasesVoteCount  :137  [32m67525599245242368 [0;39m ==> Parameters: 64260071458213888(Long)
+2021-07-06 16:02:37.468 DEBUG c.e.demo.mapper.DocMapperCust.increasesVoteCount  :137  [32m67525599245242368 [0;39m <==    Updates: 1
+2021-07-06 16:02:37.469 DEBUG c.example.demo.mapper.DocMapper.selectByPrimaryKey:137  [32m67525599245242368 [0;39m ==>  Preparing: select id, ebook_id, parent, `name`, sort, view_count, vote_count from doc where id = ?
+2021-07-06 16:02:37.469 DEBUG c.example.demo.mapper.DocMapper.selectByPrimaryKey:137  [32m67525599245242368 [0;39m ==> Parameters: 64260071458213888(Long)
+2021-07-06 16:02:37.482 TRACE c.example.demo.mapper.DocMapper.selectByPrimaryKey:143  [32m67525599245242368 [0;39m <==    Columns: id, ebook_id, parent, name, sort, view_count, vote_count
+2021-07-06 16:02:37.482 TRACE c.example.demo.mapper.DocMapper.selectByPrimaryKey:143  [32m67525599245242368 [0;39m <==        Row: 64260071458213888, 2, 0, test1, 1, 21, 4
+2021-07-06 16:02:37.484 DEBUG c.example.demo.mapper.DocMapper.selectByPrimaryKey:137  [32m67525599245242368 [0;39m <==      Total: 1
+2021-07-06 16:02:37.586 INFO  com.example.demo.websocket.WebSocketServer        :71   [32m67525599245242368 [0;39m 推送消息：VjSCvb4pec，内容：【test1】被点赞!
+2021-07-06 16:02:37.587 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67525599245242368 [0;39m 返回结果: {"success":true}
+2021-07-06 16:02:37.588 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67525599245242368 [0;39m ------------- 结束 耗时：163 ms -------------
+2021-07-06 16:02:57.476 INFO  com.example.demo.websocket.WebSocketServer        :32   [32m                  [0;39m 有新连接：token：GkqJmCPn20，session id：1，当前连接数：2
+2021-07-06 16:03:00.004 INFO  com.example.demo.job.DocJob                       :33   [32m67525693948432384 [0;39m 更新电子书下的文档开始
+2021-07-06 16:03:00.017 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525693948432384 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:03:00.018 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525693948432384 [0;39m ==> Parameters: 
+2021-07-06 16:03:00.043 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525693948432384 [0;39m <==    Updates: 2
+2021-07-06 16:03:00.043 INFO  com.example.demo.job.DocJob                       :36   [32m67525693948432384 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:03:30.016 INFO  com.example.demo.job.DocJob                       :33   [32m67525819827884032 [0;39m 更新电子书下的文档开始
+2021-07-06 16:03:30.030 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525819827884032 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:03:30.031 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525819827884032 [0;39m ==> Parameters: 
+2021-07-06 16:03:30.058 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525819827884032 [0;39m <==    Updates: 2
+2021-07-06 16:03:30.059 INFO  com.example.demo.job.DocJob                       :36   [32m67525819827884032 [0;39m 更新电子书下的文档结束，耗时: 42毫秒
+2021-07-06 16:03:45.433 INFO  com.example.demo.websocket.WebSocketServer        :32   [32m                  [0;39m 有新连接：token：v4L89OILuo，session id：2，当前连接数：3
+2021-07-06 16:04:00.014 INFO  com.example.demo.job.DocJob                       :33   [32m67525945648615424 [0;39m 更新电子书下的文档开始
+2021-07-06 16:04:00.027 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525945648615424 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:04:00.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525945648615424 [0;39m ==> Parameters: 
+2021-07-06 16:04:00.052 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67525945648615424 [0;39m <==    Updates: 2
+2021-07-06 16:04:00.052 INFO  com.example.demo.job.DocJob                       :36   [32m67525945648615424 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:04:30.014 INFO  com.example.demo.job.DocJob                       :33   [32m67526071477735424 [0;39m 更新电子书下的文档开始
+2021-07-06 16:04:30.028 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526071477735424 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:04:30.029 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526071477735424 [0;39m ==> Parameters: 
+2021-07-06 16:04:30.056 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526071477735424 [0;39m <==    Updates: 2
+2021-07-06 16:04:30.057 INFO  com.example.demo.job.DocJob                       :36   [32m67526071477735424 [0;39m 更新电子书下的文档结束，耗时: 42毫秒
+2021-07-06 16:05:00.014 INFO  com.example.demo.job.DocJob                       :33   [32m67526197306855424 [0;39m 更新电子书下的文档开始
+2021-07-06 16:05:00.026 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526197306855424 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:05:00.026 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526197306855424 [0;39m ==> Parameters: 
+2021-07-06 16:05:00.050 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526197306855424 [0;39m <==    Updates: 2
+2021-07-06 16:05:00.050 INFO  com.example.demo.job.DocJob                       :36   [32m67526197306855424 [0;39m 更新电子书下的文档结束，耗时: 36毫秒
+2021-07-06 16:05:30.012 INFO  com.example.demo.job.DocJob                       :33   [32m67526323127586816 [0;39m 更新电子书下的文档开始
+2021-07-06 16:05:30.023 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526323127586816 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:05:30.024 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526323127586816 [0;39m ==> Parameters: 
+2021-07-06 16:05:30.048 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526323127586816 [0;39m <==    Updates: 2
+2021-07-06 16:05:30.048 INFO  com.example.demo.job.DocJob                       :36   [32m67526323127586816 [0;39m 更新电子书下的文档结束，耗时: 36毫秒
+2021-07-06 16:06:00.002 INFO  com.example.demo.job.DocJob                       :33   [32m67526448914763776 [0;39m 更新电子书下的文档开始
+2021-07-06 16:06:00.014 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526448914763776 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:06:00.015 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526448914763776 [0;39m ==> Parameters: 
+2021-07-06 16:06:00.039 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526448914763776 [0;39m <==    Updates: 2
+2021-07-06 16:06:00.039 INFO  com.example.demo.job.DocJob                       :36   [32m67526448914763776 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:06:01.555 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67526455428517888 [0;39m ------------- 开始 -------------
+2021-07-06 16:06:01.556 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67526455428517888 [0;39m 请求地址: http://127.0.0.1:8880/doc/vote/64260071458213888 GET
+2021-07-06 16:06:01.556 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67526455428517888 [0;39m 类名方法: com.example.demo.controller.DocController.vote
+2021-07-06 16:06:01.557 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67526455428517888 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:06:01.557 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67526455428517888 [0;39m 请求参数: [64260071458213888]
+2021-07-06 16:06:01.559 INFO  com.example.demo.util.RedisUtil                   :28   [32m67526455428517888 [0;39m key已存在：DOC_VOTE_64260071458213888_127.0.0.1
+2021-07-06 16:06:01.563 WARN  c.e.demo.controller.ControllerExceptionHandler    :44   [32m67526455428517888 [0;39m 业务异常：您已点赞过
+2021-07-06 16:06:01.567 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver   :207  [32m67526455428517888 [0;39m Resolved [com.example.demo.exception.BusinessException: 您已点赞过]
+2021-07-06 16:06:10.496 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67526492929789952 [0;39m ------------- 开始 -------------
+2021-07-06 16:06:10.496 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67526492929789952 [0;39m 请求地址: http://127.0.0.1:8880/doc/find-content/64260284474331136 GET
+2021-07-06 16:06:10.497 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67526492929789952 [0;39m 类名方法: com.example.demo.controller.DocController.findContent
+2021-07-06 16:06:10.497 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67526492929789952 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:06:10.498 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67526492929789952 [0;39m 请求参数: [64260284474331136]
+2021-07-06 16:06:10.511 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67526492929789952 [0;39m ==>  Preparing: select id , content from content where id = ?
+2021-07-06 16:06:10.511 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67526492929789952 [0;39m ==> Parameters: 64260284474331136(Long)
+2021-07-06 16:06:10.527 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67526492929789952 [0;39m <==    Columns: id, content
+2021-07-06 16:06:10.527 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67526492929789952 [0;39m <==        Row: 64260284474331136, <<BLOB>>
+2021-07-06 16:06:10.528 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67526492929789952 [0;39m <==      Total: 1
+2021-07-06 16:06:10.529 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67526492929789952 [0;39m ==>  Preparing: update doc set view_count = view_count + 1 where id = ?
+2021-07-06 16:06:10.530 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67526492929789952 [0;39m ==> Parameters: 64260284474331136(Long)
+2021-07-06 16:06:10.558 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67526492929789952 [0;39m <==    Updates: 1
+2021-07-06 16:06:10.559 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67526492929789952 [0;39m 返回结果: {"content":"","success":true}
+2021-07-06 16:06:10.559 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67526492929789952 [0;39m ------------- 结束 耗时：63 ms -------------
+2021-07-06 16:06:13.417 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67526505181351936 [0;39m ------------- 开始 -------------
+2021-07-06 16:06:13.417 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67526505181351936 [0;39m 请求地址: http://127.0.0.1:8880/doc/vote/64260284474331136 GET
+2021-07-06 16:06:13.417 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67526505181351936 [0;39m 类名方法: com.example.demo.controller.DocController.vote
+2021-07-06 16:06:13.418 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67526505181351936 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:06:13.418 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67526505181351936 [0;39m 请求参数: [64260284474331136]
+2021-07-06 16:06:13.420 INFO  com.example.demo.util.RedisUtil                   :31   [32m67526505181351936 [0;39m key不存在，放入：DOC_VOTE_64260284474331136_127.0.0.1，过期 86400 秒
+2021-07-06 16:06:13.434 DEBUG c.e.demo.mapper.DocMapperCust.increasesVoteCount  :137  [32m67526505181351936 [0;39m ==>  Preparing: update doc set vote_count = vote_count + 1 where id = ?
+2021-07-06 16:06:13.435 DEBUG c.e.demo.mapper.DocMapperCust.increasesVoteCount  :137  [32m67526505181351936 [0;39m ==> Parameters: 64260284474331136(Long)
+2021-07-06 16:06:13.461 DEBUG c.e.demo.mapper.DocMapperCust.increasesVoteCount  :137  [32m67526505181351936 [0;39m <==    Updates: 1
+2021-07-06 16:06:13.461 DEBUG c.example.demo.mapper.DocMapper.selectByPrimaryKey:137  [32m67526505181351936 [0;39m ==>  Preparing: select id, ebook_id, parent, `name`, sort, view_count, vote_count from doc where id = ?
+2021-07-06 16:06:13.462 DEBUG c.example.demo.mapper.DocMapper.selectByPrimaryKey:137  [32m67526505181351936 [0;39m ==> Parameters: 64260284474331136(Long)
+2021-07-06 16:06:13.474 TRACE c.example.demo.mapper.DocMapper.selectByPrimaryKey:143  [32m67526505181351936 [0;39m <==    Columns: id, ebook_id, parent, name, sort, view_count, vote_count
+2021-07-06 16:06:13.475 TRACE c.example.demo.mapper.DocMapper.selectByPrimaryKey:143  [32m67526505181351936 [0;39m <==        Row: 64260284474331136, 2, 0, test2, 2, 9, 2
+2021-07-06 16:06:13.476 DEBUG c.example.demo.mapper.DocMapper.selectByPrimaryKey:137  [32m67526505181351936 [0;39m <==      Total: 1
+2021-07-06 16:06:13.478 INFO  com.example.demo.websocket.WebSocketServer        :71   [32m67526505181351936 [0;39m 推送消息：VjSCvb4pec，内容：【test2】被点赞!
+2021-07-06 16:06:13.479 INFO  com.example.demo.websocket.WebSocketServer        :71   [32m67526505181351936 [0;39m 推送消息：v4L89OILuo，内容：【test2】被点赞!
+2021-07-06 16:06:13.480 INFO  com.example.demo.websocket.WebSocketServer        :71   [32m67526505181351936 [0;39m 推送消息：GkqJmCPn20，内容：【test2】被点赞!
+2021-07-06 16:06:13.481 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67526505181351936 [0;39m 返回结果: {"success":true}
+2021-07-06 16:06:13.481 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67526505181351936 [0;39m ------------- 结束 耗时：64 ms -------------
+2021-07-06 16:06:30.006 INFO  com.example.demo.job.DocJob                       :33   [32m67526574760660992 [0;39m 更新电子书下的文档开始
+2021-07-06 16:06:30.018 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526574760660992 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:06:30.019 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526574760660992 [0;39m ==> Parameters: 
+2021-07-06 16:06:30.045 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526574760660992 [0;39m <==    Updates: 2
+2021-07-06 16:06:30.046 INFO  com.example.demo.job.DocJob                       :36   [32m67526574760660992 [0;39m 更新电子书下的文档结束，耗时: 40毫秒
+2021-07-06 16:07:00.009 INFO  com.example.demo.job.DocJob                       :33   [32m67526700602363904 [0;39m 更新电子书下的文档开始
+2021-07-06 16:07:00.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526700602363904 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:07:00.021 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526700602363904 [0;39m ==> Parameters: 
+2021-07-06 16:07:00.045 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526700602363904 [0;39m <==    Updates: 2
+2021-07-06 16:07:00.046 INFO  com.example.demo.job.DocJob                       :36   [32m67526700602363904 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:07:01.355 INFO  com.example.demo.websocket.WebSocketServer        :41   [32m67525487454457856 [0;39m 连接关闭，token：GkqJmCPn20，session id：1！当前连接数：1
+2021-07-06 16:07:01.355 INFO  com.example.demo.websocket.WebSocketServer        :41   [32m67525487114719232 [0;39m 连接关闭，token：VjSCvb4pec，session id：0！当前连接数：1
+2021-07-06 16:07:01.355 INFO  com.example.demo.websocket.WebSocketServer        :41   [32m67525484094820352 [0;39m 连接关闭，token：v4L89OILuo，session id：2！当前连接数：0
+2021-07-06 16:07:03.898 INFO  com.example.demo.websocket.WebSocketServer        :32   [32m67525599245242368 [0;39m 有新连接：token：bso5PYUIz5，session id：3，当前连接数：1
+2021-07-06 16:07:04.031 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67526717471854592 [0;39m ------------- 开始 -------------
+2021-07-06 16:07:04.031 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67526717471854592 [0;39m 请求地址: http://127.0.0.1:8880/doc/all/2 GET
+2021-07-06 16:07:04.032 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67526717471854592 [0;39m 类名方法: com.example.demo.controller.DocController.all
+2021-07-06 16:07:04.032 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67526717471854592 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:07:04.033 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67526717471854592 [0;39m 请求参数: [2]
+2021-07-06 16:07:04.046 DEBUG com.example.demo.mapper.DocMapper.selectByExample :137  [32m67526717471854592 [0;39m ==>  Preparing: select id, ebook_id, parent, `name`, sort, view_count, vote_count from doc WHERE ( ebook_id = ? ) order by sort asc
+2021-07-06 16:07:04.046 DEBUG com.example.demo.mapper.DocMapper.selectByExample :137  [32m67526717471854592 [0;39m ==> Parameters: 2(Long)
+2021-07-06 16:07:04.059 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67526717471854592 [0;39m <==    Columns: id, ebook_id, parent, name, sort, view_count, vote_count
+2021-07-06 16:07:04.059 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67526717471854592 [0;39m <==        Row: 64260071458213888, 2, 0, test1, 1, 21, 4
+2021-07-06 16:07:04.060 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67526717471854592 [0;39m <==        Row: 64260284474331136, 2, 0, test2, 2, 9, 2
+2021-07-06 16:07:04.060 DEBUG com.example.demo.mapper.DocMapper.selectByExample :137  [32m67526717471854592 [0;39m <==      Total: 2
+2021-07-06 16:07:04.061 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67526717471854592 [0;39m 返回结果: {"content":[{"ebookId":2,"id":64260071458213888,"name":"test1","parent":0,"sort":1,"viewCount":21,"voteCount":4},{"ebookId":2,"id":64260284474331136,"name":"test2","parent":0,"sort":2,"viewCount":9,"voteCount":2}],"success":true}
+2021-07-06 16:07:04.061 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67526717471854592 [0;39m ------------- 结束 耗时：30 ms -------------
+2021-07-06 16:07:04.188 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67526718130360320 [0;39m ------------- 开始 -------------
+2021-07-06 16:07:04.188 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67526718130360320 [0;39m 请求地址: http://127.0.0.1:8880/doc/find-content/64260071458213888 GET
+2021-07-06 16:07:04.189 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67526718130360320 [0;39m 类名方法: com.example.demo.controller.DocController.findContent
+2021-07-06 16:07:04.189 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67526718130360320 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:07:04.189 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67526718130360320 [0;39m 请求参数: [64260071458213888]
+2021-07-06 16:07:04.190 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67526718130360320 [0;39m ==>  Preparing: select id , content from content where id = ?
+2021-07-06 16:07:04.191 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67526718130360320 [0;39m ==> Parameters: 64260071458213888(Long)
+2021-07-06 16:07:04.203 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67526718130360320 [0;39m <==    Columns: id, content
+2021-07-06 16:07:04.204 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67526718130360320 [0;39m <==        Row: 64260071458213888, <<BLOB>>
+2021-07-06 16:07:04.204 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67526718130360320 [0;39m <==      Total: 1
+2021-07-06 16:07:04.205 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67526718130360320 [0;39m ==>  Preparing: update doc set view_count = view_count + 1 where id = ?
+2021-07-06 16:07:04.205 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67526718130360320 [0;39m ==> Parameters: 64260071458213888(Long)
+2021-07-06 16:07:04.230 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67526718130360320 [0;39m <==    Updates: 1
+2021-07-06 16:07:04.231 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67526718130360320 [0;39m 返回结果: {"content":"<p>test1</p>","success":true}
+2021-07-06 16:07:04.231 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67526718130360320 [0;39m ------------- 结束 耗时：43 ms -------------
+2021-07-06 16:07:06.334 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67526727131336704 [0;39m ------------- 开始 -------------
+2021-07-06 16:07:06.335 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67526727131336704 [0;39m 请求地址: http://127.0.0.1:8880/doc/vote/64260071458213888 GET
+2021-07-06 16:07:06.335 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67526727131336704 [0;39m 类名方法: com.example.demo.controller.DocController.vote
+2021-07-06 16:07:06.336 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67526727131336704 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:07:06.336 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67526727131336704 [0;39m 请求参数: [64260071458213888]
+2021-07-06 16:07:06.337 INFO  com.example.demo.util.RedisUtil                   :28   [32m67526727131336704 [0;39m key已存在：DOC_VOTE_64260071458213888_127.0.0.1
+2021-07-06 16:07:06.338 WARN  c.e.demo.controller.ControllerExceptionHandler    :44   [32m67526727131336704 [0;39m 业务异常：您已点赞过
+2021-07-06 16:07:06.339 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver   :207  [32m67526727131336704 [0;39m Resolved [com.example.demo.exception.BusinessException: 您已点赞过]
+2021-07-06 16:07:07.248 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67526730964930560 [0;39m ------------- 开始 -------------
+2021-07-06 16:07:07.248 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67526730964930560 [0;39m 请求地址: http://127.0.0.1:8880/doc/find-content/64260284474331136 GET
+2021-07-06 16:07:07.249 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67526730964930560 [0;39m 类名方法: com.example.demo.controller.DocController.findContent
+2021-07-06 16:07:07.250 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67526730964930560 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:07:07.250 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67526730964930560 [0;39m 请求参数: [64260284474331136]
+2021-07-06 16:07:07.262 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67526730964930560 [0;39m ==>  Preparing: select id , content from content where id = ?
+2021-07-06 16:07:07.263 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67526730964930560 [0;39m ==> Parameters: 64260284474331136(Long)
+2021-07-06 16:07:07.498 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67526730964930560 [0;39m <==    Columns: id, content
+2021-07-06 16:07:07.499 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67526730964930560 [0;39m <==        Row: 64260284474331136, <<BLOB>>
+2021-07-06 16:07:07.499 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67526730964930560 [0;39m <==      Total: 1
+2021-07-06 16:07:07.500 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67526730964930560 [0;39m ==>  Preparing: update doc set view_count = view_count + 1 where id = ?
+2021-07-06 16:07:07.501 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67526730964930560 [0;39m ==> Parameters: 64260284474331136(Long)
+2021-07-06 16:07:07.525 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67526730964930560 [0;39m <==    Updates: 1
+2021-07-06 16:07:07.526 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67526730964930560 [0;39m 返回结果: {"content":"","success":true}
+2021-07-06 16:07:07.527 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67526730964930560 [0;39m ------------- 结束 耗时：279 ms -------------
+2021-07-06 16:07:08.158 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67526734781747200 [0;39m ------------- 开始 -------------
+2021-07-06 16:07:08.159 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67526734781747200 [0;39m 请求地址: http://127.0.0.1:8880/doc/vote/64260284474331136 GET
+2021-07-06 16:07:08.159 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67526734781747200 [0;39m 类名方法: com.example.demo.controller.DocController.vote
+2021-07-06 16:07:08.159 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67526734781747200 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:07:08.159 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67526734781747200 [0;39m 请求参数: [64260284474331136]
+2021-07-06 16:07:08.161 INFO  com.example.demo.util.RedisUtil                   :28   [32m67526734781747200 [0;39m key已存在：DOC_VOTE_64260284474331136_127.0.0.1
+2021-07-06 16:07:08.161 WARN  c.e.demo.controller.ControllerExceptionHandler    :44   [32m67526734781747200 [0;39m 业务异常：您已点赞过
+2021-07-06 16:07:08.162 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver   :207  [32m67526734781747200 [0;39m Resolved [com.example.demo.exception.BusinessException: 您已点赞过]
+2021-07-06 16:07:09.299 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67526739567448064 [0;39m ------------- 开始 -------------
+2021-07-06 16:07:09.299 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67526739567448064 [0;39m 请求地址: http://127.0.0.1:8880/category/all GET
+2021-07-06 16:07:09.300 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67526739567448064 [0;39m 类名方法: com.example.demo.controller.CategoryController.all
+2021-07-06 16:07:09.300 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67526739567448064 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:07:09.300 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67526739567448064 [0;39m 请求参数: []
+2021-07-06 16:07:09.312 DEBUG c.e.demo.mapper.CategoryMapper.selectByExample    :137  [32m67526739567448064 [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-07-06 16:07:09.312 DEBUG c.e.demo.mapper.CategoryMapper.selectByExample    :137  [32m67526739567448064 [0;39m ==> Parameters: 
+2021-07-06 16:07:09.325 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67526739567448064 [0;39m <==    Columns: id, parent, name, sort
+2021-07-06 16:07:09.325 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67526739567448064 [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-07-06 16:07:09.327 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67526739567448064 [0;39m <==        Row: 101, 100, Vue, 101
+2021-07-06 16:07:09.328 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67526739567448064 [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-07-06 16:07:09.328 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67526739567448064 [0;39m <==        Row: 200, 0, Java, 200
+2021-07-06 16:07:09.329 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67526739567448064 [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-07-06 16:07:09.329 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67526739567448064 [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-07-06 16:07:09.330 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67526739567448064 [0;39m <==        Row: 300, 0, Python, 300
+2021-07-06 16:07:09.331 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67526739567448064 [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-07-06 16:07:09.332 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67526739567448064 [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-07-06 16:07:09.332 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67526739567448064 [0;39m <==        Row: 400, 0, 数据库, 400
+2021-07-06 16:07:09.333 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67526739567448064 [0;39m <==        Row: 401, 400, MySQL, 401
+2021-07-06 16:07:09.333 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67526739567448064 [0;39m <==        Row: 500, 0, 其它, 500
+2021-07-06 16:07:09.334 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67526739567448064 [0;39m <==        Row: 501, 500, 服务器, 501
+2021-07-06 16:07:09.335 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67526739567448064 [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-07-06 16:07:09.335 TRACE c.e.demo.mapper.CategoryMapper.selectByExample    :143  [32m67526739567448064 [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-07-06 16:07:09.336 DEBUG c.e.demo.mapper.CategoryMapper.selectByExample    :137  [32m67526739567448064 [0;39m <==      Total: 15
+2021-07-06 16:07:09.338 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67526739567448064 [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-07-06 16:07:09.339 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67526739567448064 [0;39m ------------- 结束 耗时：40 ms -------------
+2021-07-06 16:07:11.585 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67526749155627008 [0;39m ------------- 开始 -------------
+2021-07-06 16:07:11.585 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67526749155627008 [0;39m 请求地址: http://127.0.0.1:8880/ebook/list GET
+2021-07-06 16:07:11.586 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67526749155627008 [0;39m 类名方法: com.example.demo.controller.EbookController.list
+2021-07-06 16:07:11.586 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67526749155627008 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:07:11.586 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67526749155627008 [0;39m 请求参数: [{"categoryId2":201,"page":1,"size":1000}]
+2021-07-06 16:07:11.601 DEBUG c.e.demo.mapper.EbookMapper.selectByExample_COUNT :137  [32m67526749155627008 [0;39m ==>  Preparing: SELECT count(0) FROM ebook WHERE (category2_id = ?)
+2021-07-06 16:07:11.602 DEBUG c.e.demo.mapper.EbookMapper.selectByExample_COUNT :137  [32m67526749155627008 [0;39m ==> Parameters: 201(Long)
+2021-07-06 16:07:11.614 TRACE c.e.demo.mapper.EbookMapper.selectByExample_COUNT :143  [32m67526749155627008 [0;39m <==    Columns: count(0)
+2021-07-06 16:07:11.614 TRACE c.e.demo.mapper.EbookMapper.selectByExample_COUNT :143  [32m67526749155627008 [0;39m <==        Row: 0
+2021-07-06 16:07:11.615 DEBUG c.e.demo.mapper.EbookMapper.selectByExample_COUNT :137  [32m67526749155627008 [0;39m <==      Total: 1
+2021-07-06 16:07:11.615 INFO  com.example.demo.service.EbookService             :45   [32m67526749155627008 [0;39m 总行数：0
+2021-07-06 16:07:11.616 INFO  com.example.demo.service.EbookService             :46   [32m67526749155627008 [0;39m 总页数：0
+2021-07-06 16:07:11.616 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67526749155627008 [0;39m 返回结果: {"content":{"list":[],"total":0},"success":true}
+2021-07-06 16:07:11.616 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67526749155627008 [0;39m ------------- 结束 耗时：31 ms -------------
+2021-07-06 16:07:12.711 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67526753878413312 [0;39m ------------- 开始 -------------
+2021-07-06 16:07:12.712 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67526753878413312 [0;39m 请求地址: http://127.0.0.1:8880/ebook/list GET
+2021-07-06 16:07:12.712 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67526753878413312 [0;39m 类名方法: com.example.demo.controller.EbookController.list
+2021-07-06 16:07:12.712 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67526753878413312 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:07:12.713 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67526753878413312 [0;39m 请求参数: [{"categoryId2":202,"page":1,"size":1000}]
+2021-07-06 16:07:12.731 DEBUG c.e.demo.mapper.EbookMapper.selectByExample_COUNT :137  [32m67526753878413312 [0;39m ==>  Preparing: SELECT count(0) FROM ebook WHERE (category2_id = ?)
+2021-07-06 16:07:12.732 DEBUG c.e.demo.mapper.EbookMapper.selectByExample_COUNT :137  [32m67526753878413312 [0;39m ==> Parameters: 202(Long)
+2021-07-06 16:07:12.744 TRACE c.e.demo.mapper.EbookMapper.selectByExample_COUNT :143  [32m67526753878413312 [0;39m <==    Columns: count(0)
+2021-07-06 16:07:12.745 TRACE c.e.demo.mapper.EbookMapper.selectByExample_COUNT :143  [32m67526753878413312 [0;39m <==        Row: 1
+2021-07-06 16:07:12.745 DEBUG c.e.demo.mapper.EbookMapper.selectByExample_COUNT :137  [32m67526753878413312 [0;39m <==      Total: 1
+2021-07-06 16:07:12.746 DEBUG c.example.demo.mapper.EbookMapper.selectByExample :137  [32m67526753878413312 [0;39m ==>  Preparing: select id , `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook WHERE ( category2_id = ? ) LIMIT ?
+2021-07-06 16:07:12.746 DEBUG c.example.demo.mapper.EbookMapper.selectByExample :137  [32m67526753878413312 [0;39m ==> Parameters: 202(Long), 1000(Integer)
+2021-07-06 16:07:12.758 TRACE c.example.demo.mapper.EbookMapper.selectByExample :143  [32m67526753878413312 [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-06 16:07:12.759 TRACE c.example.demo.mapper.EbookMapper.selectByExample :143  [32m67526753878413312 [0;39m <==        Row: 1, Spring Boot 入门教程, 200, 202, 零基础入门Java, /image/cover1.png, 10, 71, 1
+2021-07-06 16:07:12.759 DEBUG c.example.demo.mapper.EbookMapper.selectByExample :137  [32m67526753878413312 [0;39m <==      Total: 1
+2021-07-06 16:07:12.761 INFO  com.example.demo.service.EbookService             :45   [32m67526753878413312 [0;39m 总行数：1
+2021-07-06 16:07:12.761 INFO  com.example.demo.service.EbookService             :46   [32m67526753878413312 [0;39m 总页数：1
+2021-07-06 16:07:12.761 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67526753878413312 [0;39m 返回结果: {"content":{"list":[{"category1Id":200,"category2Id":202,"cover":"/image/cover1.png","description":"零基础入门Java","docCount":10,"id":1,"name":"Spring Boot 入门教程","viewCount":71,"voteCount":1}],"total":1},"success":true}
+2021-07-06 16:07:12.761 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67526753878413312 [0;39m ------------- 结束 耗时：50 ms -------------
+2021-07-06 16:07:13.442 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67526756944449536 [0;39m ------------- 开始 -------------
+2021-07-06 16:07:13.442 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67526756944449536 [0;39m 请求地址: http://127.0.0.1:8880/doc/all/1 GET
+2021-07-06 16:07:13.443 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67526756944449536 [0;39m 类名方法: com.example.demo.controller.DocController.all
+2021-07-06 16:07:13.443 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67526756944449536 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:07:13.443 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67526756944449536 [0;39m 请求参数: [1]
+2021-07-06 16:07:13.461 DEBUG com.example.demo.mapper.DocMapper.selectByExample :137  [32m67526756944449536 [0;39m ==>  Preparing: select id, ebook_id, parent, `name`, sort, view_count, vote_count from doc WHERE ( ebook_id = ? ) order by sort asc
+2021-07-06 16:07:13.463 DEBUG com.example.demo.mapper.DocMapper.selectByExample :137  [32m67526756944449536 [0;39m ==> Parameters: 1(Long)
+2021-07-06 16:07:13.486 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67526756944449536 [0;39m <==    Columns: id, ebook_id, parent, name, sort, view_count, vote_count
+2021-07-06 16:07:13.486 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67526756944449536 [0;39m <==        Row: 1, 1, 0, 文档1, 1, 35, 1
+2021-07-06 16:07:13.487 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67526756944449536 [0;39m <==        Row: 2, 1, 1, 文档1.1, 1, 22, 0
+2021-07-06 16:07:13.487 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67526756944449536 [0;39m <==        Row: 4, 1, 3, 文档2.1, 1, 2, 0
+2021-07-06 16:07:13.488 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67526756944449536 [0;39m <==        Row: 6, 1, 5, 文档2.2.1, 1, 0, 0
+2021-07-06 16:07:13.488 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67526756944449536 [0;39m <==        Row: 47229159042322432, 1, 2, 文档1.1.1, 1, 6, 0
+2021-07-06 16:07:13.488 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67526756944449536 [0;39m <==        Row: 47229314177044480, 1, 47229220182691840, 文档1.1.2.1, 1, 0, 0
+2021-07-06 16:07:13.489 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67526756944449536 [0;39m <==        Row: 3, 1, 0, 文档2, 2, 4, 0
+2021-07-06 16:07:13.489 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67526756944449536 [0;39m <==        Row: 5, 1, 3, 文档2.2, 2, 1, 0
+2021-07-06 16:07:13.489 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67526756944449536 [0;39m <==        Row: 47229220182691840, 1, 2, 文档1.1.2, 2, 0, 0
+2021-07-06 16:07:13.489 TRACE com.example.demo.mapper.DocMapper.selectByExample :143  [32m67526756944449536 [0;39m <==        Row: 47615547273252864, 1, 0, test, 3, 1, 0
+2021-07-06 16:07:13.491 DEBUG com.example.demo.mapper.DocMapper.selectByExample :137  [32m67526756944449536 [0;39m <==      Total: 10
+2021-07-06 16:07:13.492 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67526756944449536 [0;39m 返回结果: {"content":[{"ebookId":1,"id":1,"name":"文档1","parent":0,"sort":1,"viewCount":35,"voteCount":1},{"ebookId":1,"id":2,"name":"文档1.1","parent":1,"sort":1,"viewCount":22,"voteCount":0},{"ebookId":1,"id":4,"name":"文档2.1","parent":3,"sort":1,"viewCount":2,"voteCount":0},{"ebookId":1,"id":6,"name":"文档2.2.1","parent":5,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":47229159042322432,"name":"文档1.1.1","parent":2,"sort":1,"viewCount":6,"voteCount":0},{"ebookId":1,"id":47229314177044480,"name":"文档1.1.2.1","parent":47229220182691840,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":3,"name":"文档2","parent":0,"sort":2,"viewCount":4,"voteCount":0},{"ebookId":1,"id":5,"name":"文档2.2","parent":3,"sort":2,"viewCount":1,"voteCount":0},{"ebookId":1,"id":47229220182691840,"name":"文档1.1.2","parent":2,"sort":2,"viewCount":0,"voteCount":0},{"ebookId":1,"id":47615547273252864,"name":"test","parent":0,"sort":3,"viewCount":1,"voteCount":0}],"success":true}
+2021-07-06 16:07:13.492 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67526756944449536 [0;39m ------------- 结束 耗时：50 ms -------------
+2021-07-06 16:07:13.525 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67526757292576768 [0;39m ------------- 开始 -------------
+2021-07-06 16:07:13.526 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67526757292576768 [0;39m 请求地址: http://127.0.0.1:8880/doc/find-content/1 GET
+2021-07-06 16:07:13.526 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67526757292576768 [0;39m 类名方法: com.example.demo.controller.DocController.findContent
+2021-07-06 16:07:13.526 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67526757292576768 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:07:13.526 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67526757292576768 [0;39m 请求参数: [1]
+2021-07-06 16:07:13.527 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67526757292576768 [0;39m ==>  Preparing: select id , content from content where id = ?
+2021-07-06 16:07:13.527 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67526757292576768 [0;39m ==> Parameters: 1(Long)
+2021-07-06 16:07:13.540 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67526757292576768 [0;39m <==    Columns: id, content
+2021-07-06 16:07:13.540 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67526757292576768 [0;39m <==        Row: 1, <<BLOB>>
+2021-07-06 16:07:13.541 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67526757292576768 [0;39m <==      Total: 1
+2021-07-06 16:07:13.542 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67526757292576768 [0;39m ==>  Preparing: update doc set view_count = view_count + 1 where id = ?
+2021-07-06 16:07:13.542 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67526757292576768 [0;39m ==> Parameters: 1(Long)
+2021-07-06 16:07:13.566 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67526757292576768 [0;39m <==    Updates: 1
+2021-07-06 16:07:13.567 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67526757292576768 [0;39m 返回结果: {"content":"<p>文档1</p>","success":true}
+2021-07-06 16:07:13.567 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67526757292576768 [0;39m ------------- 结束 耗时：42 ms -------------
+2021-07-06 16:07:17.157 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67526772526288896 [0;39m ------------- 开始 -------------
+2021-07-06 16:07:17.158 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67526772526288896 [0;39m 请求地址: http://127.0.0.1:8880/doc/vote/1 GET
+2021-07-06 16:07:17.158 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67526772526288896 [0;39m 类名方法: com.example.demo.controller.DocController.vote
+2021-07-06 16:07:17.158 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67526772526288896 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:07:17.159 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67526772526288896 [0;39m 请求参数: [1]
+2021-07-06 16:07:17.160 INFO  com.example.demo.util.RedisUtil                   :31   [32m67526772526288896 [0;39m key不存在，放入：DOC_VOTE_1_127.0.0.1，过期 86400 秒
+2021-07-06 16:07:17.174 DEBUG c.e.demo.mapper.DocMapperCust.increasesVoteCount  :137  [32m67526772526288896 [0;39m ==>  Preparing: update doc set vote_count = vote_count + 1 where id = ?
+2021-07-06 16:07:17.175 DEBUG c.e.demo.mapper.DocMapperCust.increasesVoteCount  :137  [32m67526772526288896 [0;39m ==> Parameters: 1(Long)
+2021-07-06 16:07:17.199 DEBUG c.e.demo.mapper.DocMapperCust.increasesVoteCount  :137  [32m67526772526288896 [0;39m <==    Updates: 1
+2021-07-06 16:07:17.200 DEBUG c.example.demo.mapper.DocMapper.selectByPrimaryKey:137  [32m67526772526288896 [0;39m ==>  Preparing: select id, ebook_id, parent, `name`, sort, view_count, vote_count from doc where id = ?
+2021-07-06 16:07:17.201 DEBUG c.example.demo.mapper.DocMapper.selectByPrimaryKey:137  [32m67526772526288896 [0;39m ==> Parameters: 1(Long)
+2021-07-06 16:07:17.213 TRACE c.example.demo.mapper.DocMapper.selectByPrimaryKey:143  [32m67526772526288896 [0;39m <==    Columns: id, ebook_id, parent, name, sort, view_count, vote_count
+2021-07-06 16:07:17.214 TRACE c.example.demo.mapper.DocMapper.selectByPrimaryKey:143  [32m67526772526288896 [0;39m <==        Row: 1, 1, 0, 文档1, 1, 36, 2
+2021-07-06 16:07:17.214 DEBUG c.example.demo.mapper.DocMapper.selectByPrimaryKey:137  [32m67526772526288896 [0;39m <==      Total: 1
+2021-07-06 16:07:17.216 INFO  com.example.demo.websocket.WebSocketServer        :71   [32m67526772526288896 [0;39m 推送消息：bso5PYUIz5，内容：【文档1】被点赞!
+2021-07-06 16:07:17.216 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67526772526288896 [0;39m 返回结果: {"success":true}
+2021-07-06 16:07:17.217 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67526772526288896 [0;39m ------------- 结束 耗时：60 ms -------------
+2021-07-06 16:07:30.013 INFO  com.example.demo.job.DocJob                       :33   [32m67526826448261120 [0;39m 更新电子书下的文档开始
+2021-07-06 16:07:30.026 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526826448261120 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:07:30.026 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526826448261120 [0;39m ==> Parameters: 
+2021-07-06 16:07:30.051 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526826448261120 [0;39m <==    Updates: 2
+2021-07-06 16:07:30.051 INFO  com.example.demo.job.DocJob                       :36   [32m67526826448261120 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
+2021-07-06 16:07:41.921 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67526876394033152 [0;39m ------------- 开始 -------------
+2021-07-06 16:07:41.921 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67526876394033152 [0;39m 请求地址: http://127.0.0.1:8880/doc/find-content/2 GET
+2021-07-06 16:07:41.921 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67526876394033152 [0;39m 类名方法: com.example.demo.controller.DocController.findContent
+2021-07-06 16:07:41.922 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67526876394033152 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:07:41.922 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67526876394033152 [0;39m 请求参数: [2]
+2021-07-06 16:07:41.938 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67526876394033152 [0;39m ==>  Preparing: select id , content from content where id = ?
+2021-07-06 16:07:41.939 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67526876394033152 [0;39m ==> Parameters: 2(Long)
+2021-07-06 16:07:41.952 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67526876394033152 [0;39m <==    Columns: id, content
+2021-07-06 16:07:41.952 TRACE c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :143  [32m67526876394033152 [0;39m <==        Row: 2, <<BLOB>>
+2021-07-06 16:07:41.953 DEBUG c.e.demo.mapper.ContentMapper.selectByPrimaryKey  :137  [32m67526876394033152 [0;39m <==      Total: 1
+2021-07-06 16:07:41.954 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67526876394033152 [0;39m ==>  Preparing: update doc set view_count = view_count + 1 where id = ?
+2021-07-06 16:07:41.954 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67526876394033152 [0;39m ==> Parameters: 2(Long)
+2021-07-06 16:07:42.056 DEBUG c.e.demo.mapper.DocMapperCust.increasesViewCount  :137  [32m67526876394033152 [0;39m <==    Updates: 1
+2021-07-06 16:07:42.057 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67526876394033152 [0;39m 返回结果: {"content":"<p>文档1.1<br/></p>","success":true}
+2021-07-06 16:07:42.058 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67526876394033152 [0;39m ------------- 结束 耗时：137 ms -------------
+2021-07-06 16:07:43.542 INFO  com.example.demo.aspect.LogAspect                 :53   [32m67526883192999936 [0;39m ------------- 开始 -------------
+2021-07-06 16:07:43.543 INFO  com.example.demo.aspect.LogAspect                 :54   [32m67526883192999936 [0;39m 请求地址: http://127.0.0.1:8880/doc/vote/2 GET
+2021-07-06 16:07:43.543 INFO  com.example.demo.aspect.LogAspect                 :55   [32m67526883192999936 [0;39m 类名方法: com.example.demo.controller.DocController.vote
+2021-07-06 16:07:43.543 INFO  com.example.demo.aspect.LogAspect                 :56   [32m67526883192999936 [0;39m 远程地址: 127.0.0.1
+2021-07-06 16:07:43.544 INFO  com.example.demo.aspect.LogAspect                 :78   [32m67526883192999936 [0;39m 请求参数: [2]
+2021-07-06 16:07:43.545 INFO  com.example.demo.util.RedisUtil                   :31   [32m67526883192999936 [0;39m key不存在，放入：DOC_VOTE_2_127.0.0.1，过期 86400 秒
+2021-07-06 16:07:43.558 DEBUG c.e.demo.mapper.DocMapperCust.increasesVoteCount  :137  [32m67526883192999936 [0;39m ==>  Preparing: update doc set vote_count = vote_count + 1 where id = ?
+2021-07-06 16:07:43.559 DEBUG c.e.demo.mapper.DocMapperCust.increasesVoteCount  :137  [32m67526883192999936 [0;39m ==> Parameters: 2(Long)
+2021-07-06 16:07:43.584 DEBUG c.e.demo.mapper.DocMapperCust.increasesVoteCount  :137  [32m67526883192999936 [0;39m <==    Updates: 1
+2021-07-06 16:07:43.586 DEBUG c.example.demo.mapper.DocMapper.selectByPrimaryKey:137  [32m67526883192999936 [0;39m ==>  Preparing: select id, ebook_id, parent, `name`, sort, view_count, vote_count from doc where id = ?
+2021-07-06 16:07:43.586 DEBUG c.example.demo.mapper.DocMapper.selectByPrimaryKey:137  [32m67526883192999936 [0;39m ==> Parameters: 2(Long)
+2021-07-06 16:07:43.599 TRACE c.example.demo.mapper.DocMapper.selectByPrimaryKey:143  [32m67526883192999936 [0;39m <==    Columns: id, ebook_id, parent, name, sort, view_count, vote_count
+2021-07-06 16:07:43.599 TRACE c.example.demo.mapper.DocMapper.selectByPrimaryKey:143  [32m67526883192999936 [0;39m <==        Row: 2, 1, 1, 文档1.1, 1, 23, 1
+2021-07-06 16:07:43.599 DEBUG c.example.demo.mapper.DocMapper.selectByPrimaryKey:137  [32m67526883192999936 [0;39m <==      Total: 1
+2021-07-06 16:07:43.600 INFO  com.example.demo.websocket.WebSocketServer        :71   [32m67526883192999936 [0;39m 推送消息：bso5PYUIz5，内容：【文档1.1】被点赞!
+2021-07-06 16:07:43.601 INFO  com.example.demo.aspect.LogAspect                 :90   [32m67526883192999936 [0;39m 返回结果: {"success":true}
+2021-07-06 16:07:43.601 INFO  com.example.demo.aspect.LogAspect                 :91   [32m67526883192999936 [0;39m ------------- 结束 耗时：59 ms -------------
+2021-07-06 16:08:00.013 INFO  com.example.demo.job.DocJob                       :33   [32m67526952277381120 [0;39m 更新电子书下的文档开始
+2021-07-06 16:08:00.039 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526952277381120 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:08:00.039 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526952277381120 [0;39m ==> Parameters: 
+2021-07-06 16:08:00.099 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67526952277381120 [0;39m <==    Updates: 2
+2021-07-06 16:08:00.100 INFO  com.example.demo.job.DocJob                       :36   [32m67526952277381120 [0;39m 更新电子书下的文档结束，耗时: 87毫秒
+2021-07-06 16:08:30.007 INFO  com.example.demo.job.DocJob                       :33   [32m67527078081335296 [0;39m 更新电子书下的文档开始
+2021-07-06 16:08:30.024 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527078081335296 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:08:30.025 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527078081335296 [0;39m ==> Parameters: 
+2021-07-06 16:08:30.179 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527078081335296 [0;39m <==    Updates: 2
+2021-07-06 16:08:30.179 INFO  com.example.demo.job.DocJob                       :36   [32m67527078081335296 [0;39m 更新电子书下的文档结束，耗时: 171毫秒
+2021-07-06 16:09:00.005 INFO  com.example.demo.job.DocJob                       :33   [32m67527203902066688 [0;39m 更新电子书下的文档开始
+2021-07-06 16:09:00.017 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527203902066688 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:09:00.017 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527203902066688 [0;39m ==> Parameters: 
+2021-07-06 16:09:00.041 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527203902066688 [0;39m <==    Updates: 2
+2021-07-06 16:09:00.042 INFO  com.example.demo.job.DocJob                       :36   [32m67527203902066688 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:09:30.009 INFO  com.example.demo.job.DocJob                       :33   [32m67527329747963904 [0;39m 更新电子书下的文档开始
+2021-07-06 16:09:30.022 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527329747963904 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:09:30.022 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527329747963904 [0;39m ==> Parameters: 
+2021-07-06 16:09:30.046 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527329747963904 [0;39m <==    Updates: 2
+2021-07-06 16:09:30.046 INFO  com.example.demo.job.DocJob                       :36   [32m67527329747963904 [0;39m 更新电子书下的文档结束，耗时: 37毫秒
+2021-07-06 16:10:00.003 INFO  com.example.demo.job.DocJob                       :33   [32m67527455551918080 [0;39m 更新电子书下的文档开始
+2021-07-06 16:10:00.032 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527455551918080 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:10:00.032 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527455551918080 [0;39m ==> Parameters: 
+2021-07-06 16:10:00.079 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527455551918080 [0;39m <==    Updates: 2
+2021-07-06 16:10:00.080 INFO  com.example.demo.job.DocJob                       :36   [32m67527455551918080 [0;39m 更新电子书下的文档结束，耗时: 77毫秒
+2021-07-06 16:10:30.003 INFO  com.example.demo.job.DocJob                       :33   [32m67527581381038080 [0;39m 更新电子书下的文档开始
+2021-07-06 16:10:30.015 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527581381038080 [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view, sum(vote_count) vote from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view, t1.vote_count = t2.vote where t1.id = t2.ebook_id;
+2021-07-06 16:10:30.015 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527581381038080 [0;39m ==> Parameters: 
+2021-07-06 16:10:30.041 DEBUG c.e.demo.mapper.DocMapperCust.updateEbookInfo     :137  [32m67527581381038080 [0;39m <==    Updates: 2
+2021-07-06 16:10:30.041 INFO  com.example.demo.job.DocJob                       :36   [32m67527581381038080 [0;39m 更新电子书下的文档结束，耗时: 38毫秒
