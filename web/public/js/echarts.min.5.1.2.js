@@ -675,7 +675,7 @@
             var l = Math.round(Math.log((1 << s) - 1 & ~r) / Gt);
             return t[n][l]
         }
-        for (var u = i | 1 < < n, h = n + 1; i & 1 << h;) h++;
+        for (var u = i | 1 << n, h = n + 1; i & 1 << h;) h++;
         for (var c = 0, p = 0, d = 0; p < s; p++) {
             var f = 1 << p;
             f & r || (c += (d % 2 ? -1 : 1) * t[n][p] * Ht(t, e - 1, h, u, r | f, o), d++)
@@ -687,7 +687,7 @@
         var n = [[t[0], t[1], 1, 0, 0, 0, -e[0] * t[0], -e[0] * t[1]], [0, 0, 0, t[0], t[1], 1, -e[1] * t[0], -e[1] * t[1]], [t[2], t[3], 1, 0, 0, 0, -e[2] * t[2], -e[2] * t[3]], [0, 0, 0, t[2], t[3], 1, -e[3] * t[2], -e[3] * t[3]], [t[4], t[5], 1, 0, 0, 0, -e[4] * t[4], -e[4] * t[5]], [0, 0, 0, t[4], t[5], 1, -e[5] * t[4], -e[5] * t[5]], [t[6], t[7], 1, 0, 0, 0, -e[6] * t[6], -e[6] * t[7]], [0, 0, 0, t[6], t[7], 1, -e[7] * t[6], -e[7] * t[7]]],
             i = {}, r = Ht(n, 8, 0, 0, 0, i);
         if (0 !== r) {
-            for (var o = [], a = 0; a < 8; a++) for (var s = 0; s < 8; s++) null == o[s] && (o[s] = 0), o[s] += ((a + s) % 2 ? -1 : 1) * Ht(n, 7, 0 === a ? 1 : 0, 1 < < a, 1 < < s, i) / r * e[a];
+            for (var o = [], a = 0; a < 8; a++) for (var s = 0; s < 8; s++) null == o[s] && (o[s] = 0), o[s] += ((a + s) % 2 ? -1 : 1) * Ht(n, 7, 0 === a ? 1 : 0, 1 << a, 1 << s, i) / r * e[a];
             return function (t, e, n) {
                 var i = e * o[6] + n * o[7] + 1;
                 t[0] = (e * o[0] + n * o[1] + o[2]) / i, t[1] = (e * o[3] + n * o[4] + o[5]) / i
@@ -1609,8 +1609,7 @@
             var i = (t += "").replace(/ /g, "").toLowerCase();
             if (i in Le) return Ve(e, Le[i]), Ge(t, e), e;
             var r, o = i.length;
-            if ("#" === i.charAt(0)) return 4 === o || 5 === o ? (r = parseInt(i.slice(1, 4), 16)) >= 0 && r <= 4095 ? (Ee(e, (3840 & r) >> 4 | (3840 & r) >> 8, 240 & r | (240 & r) >> 4, 15 & r | (15 & r) <
-                <4,5===o?parseInt(i.slice(4),16)/15:1),Ge(t,e),e):void Ee(e,0,0,0,1):7===o||9===o?(r=parseInt(i.slice(1,7),16))>=0&&r
+            if ("#" === i.charAt(0)) return 4 === o || 5 === o ? (r = parseInt(i.slice(1, 4), 16)) >= 0 && r <= 4095 ? (Ee(e, (3840 & r) >> 4 | (3840 & r) >> 8, 240 & r | (240 & r) >> 4, 15 & r | (15 & r) <<4,5===o?parseInt(i.slice(4),16)/15:1),Ge(t,e),e):void Ee(e,0,0,0,1):7===o||9===o?(r=parseInt(i.slice(1,7),16))>=0&&r
             <=16777215?(Ee(e,(16711680&r)>>16,(65280&r)>>8,255&r,9===o?parseInt(i.slice(7),16)/255:1),Ge(t,e),e):void Ee(e,0,0,0,1):void 0;var a=i.indexOf("("),s=i.indexOf(")");if(-1!==a&&s+1===o){var l=i.substr(0,a),u=i.substr(a+1,s-(a+1)).split(","),h=1;switch(l){case"rgba":if(4!==u.length)return 3===u.length?Ee(e,+u[0],+u[1],+u[2],1):Ee(e,0,0,0,1);h=Re(u.pop());case"rgb":return 3!==u.length?void Ee(e,0,0,0,1):(Ee(e,Oe(u[0]),Oe(u[1]),Oe(u[2]),h),Ge(t,e),e);case"hsla":return 4!==u.length?void Ee(e,0,0,0,1):(u[3]=Re(u[3]),We(u,e),Ge(t,e),e);case"hsl":return 3!==u.length?void Ee(e,0,0,0,1):(We(u,e),Ge(t,e),e);default:return}}Ee(e,0,0,0,1)}}function We(t,e){var n=(parseFloat(t[0])%360+360)%360/360,i=Re(t[1]),r=Re(t[2]),o=r
             <=.5?r*(i+1):r+i-r*i,a=2*r-o;return Ee(e=e||[],ke(255*Ne(a,o,n+1/3)),ke(255*Ne(a,o,n)),ke(255*Ne(a,o,n-1/3)),1),4===t.length&&(e[3]=t[3]),e}function Ue(t,e){var n=He(t);if(n){for(var i=0;i
             <3;i++)n[i]=e
