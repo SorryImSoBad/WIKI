@@ -18,6 +18,7 @@ import com.example.demo.util.RequestContext;
 import com.example.demo.util.SnowFlake;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
@@ -50,6 +51,9 @@ public class DocService {
 
     @Resource
     private WsService wsService;
+
+    @Resource
+    private RocketMQTemplate rocketMQTemplate;
 
     //查询
     public List<DocQueryResp> all(Long ebookId) {
@@ -148,7 +152,8 @@ public class DocService {
         //推送信息
         Doc docDB = docMapper.selectByPrimaryKey(id);
         String logId = MDC.get("LOG_ID");
-        wsService.sendInfo("【" + docDB.getName() + "】被点赞!", logId);
+        //wsService.sendInfo("【" + docDB.getName() + "】被点赞!", logId);
+        rocketMQTemplate.convertAndSend("VOTE_TOPIC", "【" + docDB.getName() + "】被点赞!");
     }
 
     public void updateEbookInfo() {
