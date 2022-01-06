@@ -170,7 +170,7 @@ export default defineComponent({
           console.log('树形数组', level1.value);
 
           //不能选择当前节点及子孙节点，作为父节点，会使树断开
-          treeSelectData.value = Tool.copy(level1.value);
+          treeSelectData.value = Tool.copy(level1.value) || [];
           //为选择添加一个无
           treeSelectData.value.unshift({id: 0, name: '无'});
 
@@ -237,7 +237,7 @@ export default defineComponent({
         ebookId: route.query.ebookId,
       };
 
-      treeSelectData.value = Tool.copy(level1.value);
+      treeSelectData.value = Tool.copy(level1.value) || [];
 
       //为选择添加一个无
       treeSelectData.value.unshift({id: 0, name: '无'});
